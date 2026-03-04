@@ -1,0 +1,403 @@
+<!-- TradeElegance - Premium Construction Template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeElegance | Premium Construction Website Template</title>
+    <meta name="description" content="Professional website templates for construction companies, contractors, and tradespeople.">
+    
+    <!-- TradeElegance Design System -->
+    <style>
+        /* ===== DESIGN SYSTEM ===== */
+        :root {
+            /* Colors - Navy + Warm Neutrals */
+            --color-primary: #1e3a5f;        /* Deep Navy */
+            --color-primary-dark: #142841;   /* Darker Navy */
+            --color-accent: #c9a962;         /* Warm Gold */
+            --color-accent-light: #e0c998;   /* Light Gold */
+            
+            /* Neutrals */
+            --color-white: #ffffff;
+            --color-offwhite: #faf9f7;       /* Warm white */
+            --color-light-gray: #f5f4f2;     /* Light warm gray */
+            --color-medium-gray: #8a8a8a;    /* Medium gray */
+            --color-dark-gray: #4a4a4a;      /* Dark gray */
+            --color-charcoal: #2d2d2d;       /* Near black */
+            
+            /* Typography */
+            --font-heading: 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+            
+            /* Layout */
+            --max-width: 1200px;
+            --border-radius: 4px;
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.3s ease;
+        }
+        
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-charcoal);
+            background-color: var(--color-white);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        a:hover {
+            color: var(--color-accent);
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--space-sm);
+            color: var(--color-primary-dark);
+        }
+        
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        
+        p {
+            margin-bottom: var(--space-sm);
+            color: var(--color-dark-gray);
+        }
+        
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all var(--transition-medium);
+        }
+        
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+        }
+        
+        .btn-accent {
+            background-color: var(--color-accent);
+            color: var(--color-charcoal);
+        }
+        
+        .btn-accent:hover {
+            background-color: var(--color-accent-light);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        /* ===== HEADER ===== */
+        .header {
+            background-color: var(--color-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-sm) var(--space-md);
+        }
+        
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        
+        .logo span {
+            color: var(--color-accent);
+        }
+        
+        .nav {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        .nav a {
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            transition: width var(--transition-medium);
+        }
+        
+        .nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            color: var(--color-white);
+            margin-bottom: var(--space-md);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-light-gray);
+            max-width: 600px;
+            margin: 0 auto var(--space-md);
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: var(--space-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: var(--space-xl) 0;
+        }
+        
+        .section-alt {
+            background-color: var(--color-offwhite);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .section-title h2 {
+            margin-bottom: var(--space-xs);
+        }
+        
+        .section-title p {
+            color: var(--color-medium-gray);
+            font-size: 1.125rem;
+        }
+        
+        /* ===== SERVICES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .service-card {
+            background: var(--color-white);
+            padding: var(--space-md);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-light-gray);
+            border-radius: 50%;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+        }
+        
+        .service-card h3 {
+            margin-bottom: var(--space-xs);
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--color-primary-dark);
+            color: var(--color-light-gray);
+            padding: var(--space-lg) 0 var(--space-md);
+            text-align: center;
+        }
+        
+        .footer p {
+            color: var(--color-medium-gray);
+        }
+        
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+            
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: var(--space-lg) var(--space-sm);
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content container">
+            <div class="logo">Trade<span>Elegance</span></div>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#work">Our Work</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Building Excellence,<br>Crafted with Pride</h1>
+            <p>Premium construction services for discerning clients. Quality craftsmanship meets elegant design in every project we undertake.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-accent">Get a Quote</a>
+                <a href="#work" class="btn btn-outline" style="color: white; border-color: white;">View Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive construction solutions tailored to your vision</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Commercial Construction</h3>
+                    <p>From office buildings to retail spaces, we deliver commercial projects on time and within budget.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Residential Building</h3>
+                    <p>Custom homes and renovations crafted with attention to every detail and your unique lifestyle.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Renovations</h3>
+                    <p>Transform existing spaces with modern upgrades while preserving the character you love.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>Design Build</h3>
+                    <p>Integrated design and construction services for seamless project delivery from concept to completion.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏭</div>
+                    <h3>Industrial Projects</h3>
+                    <p>Heavy construction for warehouses, factories, and industrial facilities built to last.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3>Sustainable Building</h3>
+                    <p>Eco-friendly construction practices and materials for a greener future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TradeElegance Construction. All rights reserved.</p>
+            <p>Premium website template for construction professionals.</p>
+        </div>
+    </footer>
+</body>
+</html>
