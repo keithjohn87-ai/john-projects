@@ -63,6 +63,11 @@
 
 ---
 
+## State Backup
+**Gist URL:** https://gist.github.com/keithjohn87-ai/a5539d9a33a2d51f9401d97fb4c2617e  
+**Updates:** Every 15 minutes via cron  
+**Contains:** Current project status, last commits, configuration
+
 ## Rules for Myself
 
 1. **Commit immediately** — never "build later"
@@ -70,6 +75,7 @@
 3. **Check this file first** every session
 4. **No false status reports** — verify before claiming complete
 5. **End-of-session summary** with what's done vs committed
+6. **On restart with no memory:** Check Gist backup first
 
 ---
 
