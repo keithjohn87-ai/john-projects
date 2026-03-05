@@ -149,6 +149,17 @@
             color: var(--color-white);
         }
         
+        .btn-white {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+        
+        .btn-white:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+        
         /* ===== HEADER ===== */
         .header {
             background-color: var(--color-white);
@@ -289,19 +300,339 @@
             margin-bottom: var(--space-xs);
         }
         
+        /* ===== GALLERY / OUR WORK ===== */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-medium);
+            border-radius: var(--border-radius);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            background-color: var(--color-light-gray);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-medium);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(30, 58, 95, 0.95), transparent);
+            padding: var(--space-md);
+            transform: translateY(100%);
+            transition: transform var(--transition-medium);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h4 {
+            color: var(--color-white);
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .gallery-overlay p {
+            color: var(--color-accent-light);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .gallery-tag {
+            position: absolute;
+            top: var(--space-sm);
+            right: var(--space-sm);
+            background: var(--color-accent);
+            color: var(--color-charcoal);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: var(--border-radius);
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background-color: var(--color-light-gray);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-content h3 {
+            color: var(--color-accent);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .about-content h2 {
+            margin-bottom: var(--space-md);
+        }
+        
+        .about-content p {
+            margin-bottom: var(--space-md);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-dark-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* ===== CONTACT SECTION ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+        
+        .contact-info h3 {
+            margin-bottom: var(--space-md);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+        
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-text p {
+            margin-bottom: 0;
+            color: var(--color-dark-gray);
+        }
+        
+        .contact-form {
+            background: var(--color-white);
+            padding: var(--space-lg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--color-dark-gray);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-light-gray);
+            border-radius: var(--border-radius);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color var(--transition-fast);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+        
         /* ===== FOOTER ===== */
         .footer {
             background-color: var(--color-primary-dark);
             color: var(--color-light-gray);
             padding: var(--space-lg) 0 var(--space-md);
-            text-align: center;
         }
         
-        .footer p {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .footer-brand .logo {
+            color: var(--color-white);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .footer-brand p {
             color: var(--color-medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        .footer-links h4 {
+            color: var(--color-white);
+            font-size: 1rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--color-medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+        
+        .footer-bottom p {
+            color: var(--color-medium-gray);
+            font-size: 0.875rem;
+            margin-bottom: 0;
         }
         
         /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+            }
+        }
+        
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -317,7 +648,22 @@
                 padding: var(--space-lg) var(--space-sm);
             }
             
-            .services-grid {
+            .services-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .form-row {
                 grid-template-columns: 1fr;
             }
         }
@@ -345,7 +691,7 @@
             <p>Premium construction services for discerning clients. Quality craftsmanship meets elegant design in every project we undertake.</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-accent">Get a Quote</a>
-                <a href="#work" class="btn btn-outline" style="color: white; border-color: white;">View Our Work</a>
+                <a href="#work" class="btn btn-white">View Our Work</a>
             </div>
         </div>
     </section>
@@ -392,11 +738,241 @@
         </div>
     </section>
 
+    <!-- Our Work / Gallery Section -->
+    <section class="section section-alt" id="work">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Work</h2>
+                <p>Transforming visions into reality — explore our portfolio of completed projects</p>
+            </div>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active">All Projects</button>
+                <button class="filter-btn">Commercial</button>
+                <button class="filter-btn">Residential</button>
+                <button class="filter-btn">Renovations</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop" alt="Commercial office building construction">
+                    <span class="gallery-tag">Commercial</span>
+                    <div class="gallery-overlay">
+                        <h4>Metro Office Complex</h4>
+                        <p>Modern 12-story commercial building in downtown core</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop" alt="Custom luxury home">
+                    <span class="gallery-tag">Residential</span>
+                    <div class="gallery-overlay">
+                        <h4>Highland Estate Residence</h4>
+                        <p>Bespoke luxury home with mountain views</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" alt="Modern home renovation">
+                    <span class="gallery-tag">Renovation</span>
+                    <div class="gallery-overlay">
+                        <h4>Historic District Restoration</h4>
+                        <p>Complete renovation preserving original character</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="Retail shopping center">
+                    <span class="gallery-tag">Commercial</span>
+                    <div class="gallery-overlay">
+                        <h4>Riverside Retail Plaza</h4>
+                        <p>125,000 sq ft mixed-use development</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop" alt="Modern residential interior">
+                    <span class="gallery-tag">Renovation</span>
+                    <div class="gallery-overlay">
+                        <h4>Lakeside Kitchen Remodel</h4>
+                        <p>Contemporary open-concept transformation</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop" alt="Industrial warehouse">
+                    <span class="gallery-tag">Industrial</span>
+                    <div class="gallery-overlay">
+                        <h4>Horizon Logistics Center</h4>
+                        <p>240,000 sq ft distribution facility</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop" alt="Construction team at work">
+                </div>
+                <div class="about-content">
+                    <h3>About Us</h3>
+                    <h2>Building Trust Through Excellence</h2>
+                    <p>For over two decades, TradeElegance Construction has been transforming the landscape of commercial and residential building. We combine traditional craftsmanship with modern innovation to deliver projects that stand the test of time.</p>
+                    <p>Our commitment to quality, safety, and client satisfaction has made us the trusted partner for hundreds of projects across the region. Every structure we build reflects our dedication to excellence and attention to detail.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+                <p>Ready to start your project? Let's discuss how we can bring your vision to life</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>We'd love to hear about your project. Reach out through any of the channels below, or fill out the form and we'll get back to you within 24 hours.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>Address</h4>
+                            <p>123 Construction Avenue<br>Building District, BD 12345</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>(555) 123-4567<br>Mon-Fri 8am-6pm EST</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>info@tradeelegance.com<br>projects@tradeelegance.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="projectType">Project Type</label>
+                            <select id="projectType" name="projectType">
+                                <option value="">Select a project type</option>
+                                <option value="commercial">Commercial Construction</option>
+                                <option value="residential">Residential Building</option>
+                                <option value="renovation">Renovation</option>
+                                <option value="design-build">Design Build</option>
+                                <option value="industrial">Industrial</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tell us about your project</label>
+                            <textarea id="message" name="message" placeholder="Describe your project, timeline, and any specific requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 TradeElegance Construction. All rights reserved.</p>
-            <p>Premium website template for construction professionals.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">Trade<span>Elegance</span></div>
+                    <p>Premium construction services for discerning clients. Building excellence since 2000.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#work">Our Work</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Commercial</a></li>
+                        <li><a href="#">Residential</a></li>
+                        <li><a href="#">Renovations</a></li>
+                        <li><a href="#">Design Build</a></li>
+                        <li><a href="#">Industrial</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:5551234567">(555) 123-4567</a></li>
+                        <li><a href="mailto:info@tradeelegance.com">info@tradeelegance.com</a></li>
+                        <li>123 Construction Ave<br>Building District, BD 12345</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 TradeElegance Construction. All rights reserved.</p>
+                <p>Premier website template for construction professionals.</p>
+            </div>
         </div>
     </footer>
 </body>
