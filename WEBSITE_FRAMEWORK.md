@@ -43,7 +43,6 @@
 - Advanced estimating system
 - Complete contract library
 - All management forms
-- SBA loan templates
 - State-specific documents
 - Phone support
 
@@ -53,13 +52,33 @@
 - Everything in Professional
 - Custom estimating
 - Lien management system
-- SBA grant writing assistance
 - Priority support
 - Annual updates
 
 ---
 
-## 3. SBA LOAN CENTER FRAMEWORK
+## 3. VALUE-ADD OPTIONS (Standalone)
+
+### SBA LOAN & GRANT CENTER ($149 standalone / $99 with package)
+**Not included in tiers - Separate purchase**
+**Includes:**
+- SBA 7(a) Loan application kit
+- SBA 504 Loan application kit
+- Business plan template
+- Financial projections spreadsheet
+- Document checklist by loan type
+- Grant research database
+- Application walkthrough videos
+- 1-hour consultation call
+
+**Can be purchased:**
+- Standalone ($149)
+- Bundled with any tier (save $50)
+- Enterprise customers get 50% off
+
+---
+
+## 4. SBA LOAN CENTER DETAILS
 
 ### Sections:
 1. **Loan Types Overview**
@@ -86,7 +105,7 @@
 
 ---
 
-## 4. STATE RESOURCE FRAMEWORK
+## 5. STATE RESOURCE FRAMEWORK
 
 ### Per State Structure:
 ```
@@ -111,7 +130,7 @@
 
 ---
 
-## 5. TECHNICAL IMPLEMENTATION
+## 6. TECHNICAL IMPLEMENTATION
 
 ### State Selector (Technical)
 - JSON database of state info
@@ -133,7 +152,7 @@
 
 ---
 
-## 6. CONTENT CALENDAR
+## 7. CONTENT CALENDAR
 
 ### Phase 1: Framework (Week 1-2)
 - [ ] Build state selector
