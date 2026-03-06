@@ -37,7 +37,7 @@
 - Quick-start guide
 - Email support
 
-### TIER 2: PROFESSIONAL PACKAGE ($299)
+### TIER 2: PROFESSIONAL PACKAGE ($199)
 **Target:** Established contractors, 3-10 employees
 **Includes:**
 - Advanced estimating system
@@ -46,7 +46,7 @@
 - State-specific documents
 - Phone support
 
-### TIER 3: ENTERPRISE PACKAGE ($599)
+### TIER 3: ENTERPRISE PACKAGE ($299)
 **Target:** Growing companies, 10+ employees
 **Includes:**
 - Everything in Professional
