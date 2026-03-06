@@ -154,5 +154,120 @@
       "sales_tax": "4% state + local rates (up to 8.875% in NYC)",
       "contractor_tax": "Materials and certain services taxable"
     }
+  },
+  "IL": {
+    "name": "Illinois",
+    "licensing": {
+      "board": "Illinois Department of Financial and Professional Regulation (local licensing)",
+      "url": "https://idfpr.illinois.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Chicago requires General Contractor license",
+        "Cook County requires contractor registration",
+        "Specialty trades (electrical, plumbing) state-licensed",
+        "Local jurisdictions set their own requirements"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Intent to Lien required within 90 days of last furnishing (subcontractors/suppliers)",
+      "deadline": "Within 4 months of last furnishing",
+      "foreclosure": "Within 2 years of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6.25% state + local rates (up to 11% in Chicago)",
+      "contractor_tax": "Materials taxable; labor generally exempt for new construction"
+    }
+  },
+  "GA": {
+    "name": "Georgia",
+    "licensing": {
+      "board": "Georgia State Licensing Board for Residential and General Contractors",
+      "url": "https://sos.ga.gov/index.php/licensing",
+      "requirements": [
+        "License required for residential and general contracting",
+        "Pass NASCLA General Contractor Exam",
+        "Pass Georgia Business Law Exam",
+        "General liability insurance required",
+        "Workers' compensation required with 3+ employees"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice to Owner/Contractor required within 30 days for some claimants",
+      "deadline": "Within 90 days of last furnishing",
+      "foreclosure": "Within 365 days of filing lien (must file commencement of action within 30 days of suit)"
+    },
+    "taxes": {
+      "sales_tax": "4% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally not taxable"
+    }
+  },
+  "NC": {
+    "name": "North Carolina",
+    "licensing": {
+      "board": "North Carolina Licensing Board for General Contractors",
+      "url": "https://www.nclbgc.org/",
+      "requirements": [
+        "License required for projects $40,000 or more",
+        "Pass NC General Contractor Exam",
+        "Financial statement required",
+        "Minimum net worth requirements apply",
+        "Continuing education required for renewal"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice to Lien Agent required within 15 days of first furnishing (subcontractors/suppliers)",
+      "deadline": "Within 120 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "4.75% state + local rates",
+      "contractor_tax": "Materials taxable; labor exempt for real property contracts"
+    }
+  },
+  "WA": {
+    "name": "Washington",
+    "licensing": {
+      "board": "Washington State Department of Labor & Industries",
+      "url": "https://lni.wa.gov/",
+      "requirements": [
+        "Registration required for any work over $500",
+        "General Contractor or Specialty Contractor registration",
+        "Surety bond required ($12,000 for general contractors)",
+        "General liability insurance required",
+        "Workers' compensation required if employees"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Model Disclosure Statement required for residential; Notice to Owner within 60 days for commercial (subcontractors)",
+      "deadline": "Within 90 days of last furnishing",
+      "foreclosure": "Within 8 months of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6.5% state + local rates",
+      "contractor_tax": "Retail sales tax applies to construction services"
+    }
+  },
+  "CO": {
+    "name": "Colorado",
+    "licensing": {
+      "board": "No state-level licensing (local jurisdictions)",
+      "url": "https://www.colorado.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Denver, Boulder, and other cities require local licenses",
+        "Plumbing and electrical state-licensed",
+        "General liability insurance typically required locally",
+        "Workers' compensation required if employees"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Intent to Lien required at least 10 days before filing lien",
+      "deadline": "Within 4 months (residential) or 6 months (commercial) of last furnishing",
+      "foreclosure": "Within 6 months of project completion or last furnishing"
+    },
+    "taxes": {
+      "sales_tax": "2.9% state + local rates",
+      "contractor_tax": "Materials taxable; labor exempt for new construction"
+    }
   }
 }

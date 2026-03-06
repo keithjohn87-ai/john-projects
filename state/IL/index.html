@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illinois Contractor Resources - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="state-page" style="padding-top: 80px;">
+        <div class="container">
+            <div id="stateContent">
+                <h1>Illinois Contractor Resources</h1>
+                <div class="state-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem;">
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📋 Licensing</h2>
+                        <p><strong>Illinois Department of Financial and Professional Regulation (local licensing)</strong></p>
+                        <a href="https://idfpr.illinois.gov/" target="_blank" style="color: #1e3a5f;">Visit Board Website →</a>
+                        <h3 style="margin-top: 1rem;">Requirements:</h3>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>No state-level general contractor license</li>
+                            <li>Chicago requires General Contractor license</li>
+                            <li>Cook County requires contractor registration</li>
+                            <li>Specialty trades (electrical, plumbing) state-licensed</li>
+                            <li>Local jurisdictions set their own requirements</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #e3f2fd; border-radius: 8px;">
+                            <strong>Key Cities:</strong><br>
+                            <a href="https://www.chicago.gov/city/en/depts/bldgs/supp_info/TLdetails/GC.html" target="_blank" style="color: #1e3a5f;">Chicago Licensing →</a><br>
+                            <a href="https://www.cookcountyil.gov/service/contractor-registration" target="_blank" style="color: #1e3a5f;">Cook County Registration →</a>
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>⚖️ Lien Laws</h2>
+                        <p><strong>Preliminary Notice:</strong> Notice of Intent to Lien required within 90 days of last furnishing (subcontractors/suppliers)</p>
+                        <p><strong>Filing Deadline:</strong> Within 4 months of last furnishing</p>
+                        <p><strong>Foreclosure:</strong> Within 2 years of filing lien</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-radius: 8px;">
+                            <strong>⚠️ Important:</strong> Illinois has strict notice requirements. Subcontractors must send Notice of Intent to Lien before filing.
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>💰 Taxes</h2>
+                        <p><strong>Sales Tax:</strong> 6.25% state + local rates (up to 11% in Chicago)</p>
+                        <p><strong>Contractor Tax:</strong> Materials taxable; labor generally exempt for new construction</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://www2.illinois.gov/rev/Pages/default.aspx" target="_blank" style="color: #1e3a5f;">Illinois Department of Revenue →</a>
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📄 Documents</h2>
+                        <ul style="margin-left: 1.5rem;">
+                            <li>Preliminary Notice Template</li>
+                            <li>Notice of Intent to Lien (IL-specific)</li>
+                            <li>Mechanics Lien Form</li>
+                            <li>Release of Lien</li>
+                        </ul>
+                        <button class="btn btn-primary" style="margin-top: 1rem;" onclick="addToCart('essential')">Get Illinois Templates</button>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%); color: white; border-radius: 12px;">
+                    <h2 style="color: white; margin-bottom: 1rem;">Illinois-Specific Resources</h2>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                        <div>
+                            <h4>Chicago</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://www.chicago.gov/city/en/depts/bldgs.html" target="_blank" style="color: #ffd700;">Building Dept</a></li>
+                                <li><a href="https://www.chicago.gov/city/en/depts/fin/provdrs/tax_division.html" target="_blank" style="color: #ffd700;">Tax Division</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>State</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://idfpr.illinois.gov/" target="_blank" style="color: #ffd700;">IDFPR</a></li>
+                                <li><a href="https://www2.illinois.gov/rev/" target="_blank" style="color: #ffd700;">Revenue Dept</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Courts</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://www.illinoiscourts.gov/" target="_blank" style="color: #ffd700;">IL Courts</a></li>
+                                <li><a href="https://www.cookcountyclerkofcourt.org/" target="_blank" style="color: #ffd700;">Cook County Clerk</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

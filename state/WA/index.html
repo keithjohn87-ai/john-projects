@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washington Contractor Resources - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="state-page" style="padding-top: 80px;">
+        <div class="container">
+            <div id="stateContent">
+                <h1>Washington Contractor Resources</h1>
+                <div class="state-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem;">
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📋 Licensing</h2>
+                        <p><strong>Washington State Department of Labor & Industries</strong></p>
+                        <a href="https://lni.wa.gov/" target="_blank" style="color: #1e3a5f;">Visit L&I Website →</a>
+                        <h3 style="margin-top: 1rem;">Requirements:</h3>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Registration required for any work over $500</li>
+                            <li>General Contractor or Specialty Contractor registration</li>
+                            <li>Surety bond required ($12,000 for general contractors)</li>
+                            <li>General liability insurance required</li>
+                            <li>Workers' compensation required if employees</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #e3f2fd; border-radius: 8px;">
+                            <strong>Registration:</strong><br>
+                            <a href="https://secure.lni.wa.gov/verify/" target="_blank" style="color: #1e3a5f;">Verify a Contractor →</a><br>
+                            <a href="https://lni.wa.gov/licensing-permits/contractors/" target="_blank" style="color: #1e3a5f;">Register/Renew →</a>
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>⚖️ Lien Laws</h2>
+                        <p><strong>Preliminary Notice:</strong> Model Disclosure Statement required for residential; Notice to Owner within 60 days for commercial (subcontractors)</p>
+                        <p><strong>Filing Deadline:</strong> Within 90 days of last furnishing</p>
+                        <p><strong>Foreclosure:</strong> Within 8 months of filing lien</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-radius: 8px;">
+                            <strong>⚠️ Important:</strong> Washington requires a specific "Model Disclosure Statement" for residential work. Subcontractors must send Notice to Owner within 60 days.
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>💰 Taxes</h2>
+                        <p><strong>Sales Tax:</strong> 6.5% state + local rates</p>
+                        <p><strong>Contractor Tax:</strong> Retail sales tax applies to construction services</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://dor.wa.gov/" target="_blank" style="color: #1e3a5f;">WA Department of Revenue →</a>
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📄 Documents</h2>
+                        <ul style="margin-left: 1.5rem;">
+                            <li>Model Disclosure Statement (WA residential)</li>
+                            <li>Notice to Owner (WA-specific)</li>
+                            <li>Preliminary Notice Template</li>
+                            <li>Mechanics Lien Form</li>
+                            <li>Release of Lien</li>
+                        </ul>
+                        <button class="btn btn-primary" style="margin-top: 1rem;" onclick="addToCart('essential')">Get Washington Templates</button>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%); color: white; border-radius: 12px;">
+                    <h2 style="color: white; margin-bottom: 1rem;">Washington-Specific Resources</h2>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                        <div>
+                            <h4>L&I (Licensing)</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://lni.wa.gov/" target="_blank" style="color: #ffd700;">L&I Home</a></li>
+                                <li><a href="https://secure.lni.wa.gov/verify/" target="_blank" style="color: #ffd700;">Verify Contractor</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>State</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://dor.wa.gov/" target="_blank" style="color: #ffd700;">Revenue Dept</a></li>
+                                <li><a href="https://www.sos.wa.gov/" target="_blank" style="color: #ffd700;">Secretary of State</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Courts</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://www.courts.wa.gov/" target="_blank" style="color: #ffd700;">WA Courts</a></li>
+                                <li><a href="https://www.kingcounty.gov/depts/records-licensing/recorders-office.aspx" target="_blank" style="color: #ffd700;">King County Recorder</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
