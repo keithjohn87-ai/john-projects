@@ -1,0 +1,45 @@
+CHANGE ORDER REQUEST
+
+CO #: ___________ Date: ___________
+Project: _________________________
+
+DESCRIPTION OF CHANGE:
+_______________________________________________________________
+_______________________________________________________________
+_______________________________________________________________
+
+COST BREAKDOWN:
+Item                    Qty     Unit    Price   Total
+____________________   _____   _____   ______  ______
+____________________   _____   _____   ______  ______
+____________________   _____   _____   ______  ______
+____________________   _____   _____   ______  ______
+
+Subtotal:                              $___________
+Overhead & Profit (15%):               $___________
+TOTAL CHANGE ORDER:                     $___________
+
+TIME IMPACT:
+Original Completion: ___________
+Revised Completion: ___________
+Days Added: ___________
+
+REASON FOR CHANGE:
+☐ Owner request
+☐ Field condition
+☐ Design change
+☐ Unforeseen condition
+☐ Other: ___________
+
+APPROVALS:
+
+Requested by: _________________________ Date: ___________
+
+Reviewed by:
+☐ Approved as requested
+☐ Approved with modifications
+☐ Denied
+
+Approved by: _________________________ Date: ___________
+
+Notes: _______________________________________________________
