@@ -85,4 +85,47 @@
 
 ---
 
-_Last session: March 5, 2026 6:42 PM UTC_
+## ContractorPro Framework - Business Strategy (LOCKED)
+
+**Date:** March 6, 2026  
+**Status:** AGREED - DO NOT CHANGE WITHOUT DISCUSSION
+
+### Business Model
+- **One-time purchase** (not subscription) - better for acquisition
+- **Target:** Established contractors (large residential/commercial)
+- **Exit strategy:** Sell to strategic buyer (Intuit, Procore, Autodesk, etc.)
+
+### Pricing Tiers
+| Tier | Price | Target |
+|------|-------|--------|
+| Essential Forms | $79 | Funnel entry, small contractors |
+| Professional | $149 | Primary target, established contractors |
+| Business System | $199 | Power users, full toolkit |
+| Complete Bundle | $249 | Best value, serious buyers |
+
+### Operations
+- **Minimal human management** - automated everything
+- **Wife handles:** Exceptions only (refunds, technical issues, custom requests)
+- **Sub-agent:** Day-to-day monitoring, customer service, updates
+- **John + Charles:** New projects, strategic decisions, exit planning
+
+### Why This Model
+1. One-time = easier to sell, no churn complexity
+2. $149-199 = sweet spot for professional contractors
+3. Established contractors = less support burden, higher LTV
+4. Asset value = 50-state database, document library, customer base
+
+### Success Metrics for Exit
+- 300-500 customers at $149-199 = $45K-100K revenue
+- Proven market demand
+- Low support overhead
+- Clean IP (all 50 states populated)
+
+### What NOT To Do
+- NO subscription model (complicates acquisition)
+- NO focus on small/remodel guys (high churn, high support)
+- NO lifestyle business mindset (build to sell, not to keep)
+
+---
+
+_Last session: March 6, 2026 9:09 PM UTC_
