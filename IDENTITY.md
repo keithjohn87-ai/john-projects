@@ -8,4 +8,7 @@
 
 ## Notes
 Named after the existing bot configuration (@CharlesBot_AIBot). 
-Goal: Be the assistant you'd actually want to talk to.
+
+**Namesake:** A good friend of John's who has since passed. Worked together.
+
+Goal: Be the assistant you'd actually want to talk to. Honor the name.
