@@ -6,6 +6,7 @@
     <title>ContractorPro - Construction Business Framework</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -204,29 +205,30 @@
     <section id="pricing" class="section section-gray">
         <div class="container">
             <h2>Choose Your Plan</h2>
-            <p class="section-subtitle">Start with the basics or get the complete system. Add SBA guidance anytime.</p>
+            <p class="section-subtitle">Professional tools for established contractors. One-time purchase, lifetime access.</p>
             
             <div class="pricing-grid">
-                <!-- Starter Tier -->
+                <!-- Essential Forms Tier -->
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>Starter</h3>
+                        <h3>Essential Forms</h3>
                         <div class="price">
                             <span class="currency">$</span>
-                            <span class="amount">99</span>
+                            <span class="amount">79</span>
                             <span class="period">one-time</span>
                         </div>
                     </div>
                     <div class="pricing-features">
                         <ul>
-                            <li>✓ Business formation checklist</li>
-                            <li>✓ Basic contract templates (3)</li>
-                            <li>✓ Invoice & estimate templates</li>
-                            <li>✓ State license requirements lookup</li>
+                            <li>✓ Preliminary Notice template</li>
+                            <li>✓ Mechanics Lien form</li>
+                            <li>✓ Release of Lien template</li>
+                            <li>✓ Basic Construction Contract</li>
+                            <li>✓ 50-state lien law reference</li>
                             <li>✓ Email support</li>
                         </ul>
                     </div>
-                    <button class="btn btn-secondary btn-full" onclick="addToCart('starter')">Get Started</button>
+                    <button class="btn btn-secondary btn-full" onclick="addToCart('essential')">Get Essential</button>
                 </div>
 
                 <!-- Professional Tier -->
@@ -236,45 +238,57 @@
                         <h3>Professional</h3>
                         <div class="price">
                             <span class="currency">$</span>
+                            <span class="amount">149</span>
+                            <span class="period">one-time</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>✓ Everything in Essential Forms</li>
+                            <li>✓ Job Costing spreadsheet</li>
+                            <li>✓ Change Order Log</li>
+                            <li>✓ AR Tracker</li>
+                            <li>✓ Subcontractor Tracker</li>
+                            <li>✓ Priority email support</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary btn-full" onclick="addToCart('professional')">Get Professional</button>
+                </div>
+
+                <!-- Business System Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Business System</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
                             <span class="amount">199</span>
                             <span class="period">one-time</span>
                         </div>
                     </div>
                     <div class="pricing-features">
                         <ul>
-                            <li>✓ Everything in Starter</li>
-                            <li>✓ Complete contract library (15+)</li>
-                            <li>✓ Lien law tools & deadline tracker</li>
-                            <li>✓ Job costing spreadsheet</li>
-                            <li>✓ Basic SBA guidance included</li>
-                            <li>✓ Priority email support</li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-primary btn-full" onclick="addToCart('professional')">Get Started</button>
-                </div>
-
-                <!-- Enterprise Tier -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Enterprise</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">299</span>
-                            <span class="period">one-time</span>
-                        </div>
-                    </div>
-                    <div class="pricing-features">
-                        <ul>
                             <li>✓ Everything in Professional</li>
-                            <li>✓ Custom document generation</li>
-                            <li>✓ Advanced SBA funding strategy</li>
-                            <li>✓ Grant matching for trades</li>
-                            <li>✓ 1-on-1 onboarding call</li>
-                            <li>✓ Priority phone support</li>
+                            <li>✓ Project Tracker (costs & margins)</li>
+                            <li>✓ AP Tracker</li>
+                            <li>✓ COI Tracker</li>
+                            <li>✓ Enhanced Subcontractor Tracker</li>
+                            <li>✓ SBA Funding Guide included</li>
                         </ul>
                     </div>
-                    <button class="btn btn-secondary btn-full" onclick="addToCart('enterprise')">Get Started</button>
+                    <button class="btn btn-secondary btn-full" onclick="addToCart('business')">Get Business System</button>
                 </div>
+            </div>
+
+            <!-- Complete Bundle -->
+            <div class="bundle-offer" style="margin-top: 3rem; text-align: center; padding: 2rem; background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8f 100%); border-radius: 12px; color: white;">
+                <h3 style="color: white; margin-bottom: 0.5rem;">Complete Bundle</h3>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">Everything we offer. Best value for serious contractors.</p>
+                <div class="bundle-price" style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">
+                    <span style="font-size: 1.5rem; vertical-align: top;">$</span>249
+                    <span style="font-size: 1rem; opacity: 0.8;">one-time</span>
+                </div>
+                <p style="color: #ffd700; margin-bottom: 1.5rem;">Save $128 vs. buying separately</p>
+                <button class="btn btn-primary btn-lg" onclick="addToCart('complete')" style="background: white; color: #1e3a5f;">Get Complete Bundle</button>
             </div>
 
             <!-- SBA Add-on Section -->
@@ -506,5 +520,6 @@
     </div>
 
     <script src="js/app.js"></script>
+    <script src="js/stripe-config.js"></script>
 </body>
 </html><!-- Deployed: Fri Mar  6 20:06:22 UTC 2026 -->
