@@ -306,9 +306,8 @@ function navigateToState() {
     const stateCode = stateSelect.value;
     
     if (stateCode) {
-        // In a real app, this would navigate to /state/[code]/
-        // For demo, we'll show a modal with state info
-        showStateInfo(stateCode);
+        // Navigate to the state-specific page
+        window.location.href = `./state/${stateCode}/index.html`;
     }
 }
 
