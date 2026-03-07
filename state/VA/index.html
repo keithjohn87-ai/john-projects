@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virginia Contractor Resources - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="state-page" style="padding-top: 80px;">
+        <div class="container">
+            <div id="stateContent">
+                <h1>Virginia Contractor Resources</h1>
+                <div class="state-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem;">
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📋 Licensing</h2>
+                        <p><strong>Virginia Department of Professional and Occupational Regulation (DPOR)</strong></p>
+                        <a href="https://www.dpor.virginia.gov/" target="_blank" style="color: #1e3a5f;">Visit DPOR →</a>
+                        <h3 style="margin-top: 1rem;">Requirements:</h3>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Class A: Projects over $120,000; Class B: $10K-$120K; Class C: under $10K</li>
+                            <li>8 hours pre-license education required</li>
+                            <li>Must pass Business Law exam</li>
+                            <li>Trade exam may be required depending on classification</li>
+                            <li>General liability and workers' comp insurance required</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #e3f2fd; border-radius: 8px;">
+                            <strong>Resources:</strong><br>
+                            <a href="https://www.dpor.virginia.gov/Boards/Contractors/" target="_blank" style="color: #1e3a5f;">Contractor Board →</a><br>
+                            <a href="https://www.dpor.virginia.gov/Boards/Contractors/Examination/" target="_blank" style="color: #1e3a5f;">Exam Info →</a>
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>⚖️ Lien Laws</h2>
+                        <p><strong>Preliminary Notice:</strong> Notice to Owner required at time of filing for subcontractors</p>
+                        <p><strong>Filing Deadline:</strong> Within 90 days of last furnishing</p>
+                        <p><strong>Foreclosure:</strong> Within 6 months of filing lien</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-radius: 8px;">
+                            <strong>⚠️ Important:</strong> Virginia has a short 6-month foreclosure window — one of the shortest in the nation. Act quickly if payment is not received.
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>💰 Taxes</h2>
+                        <p><strong>Sales Tax:</strong> 5.3% state + local rates</p>
+                        <p><strong>Contractor Tax:</strong> Materials taxable; labor generally exempt</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://tax.virginia.gov/" target="_blank" style="color: #1e3a5f;">VA Department of Taxation →</a>
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📄 Documents</h2>
+                        <ul style="margin-left: 1.5rem;">
+                            <li>Notice to Owner (VA-specific)</li>
+                            <li>Preliminary Notice Template</li>
+                            <li>Mechanics Lien Form</li>
+                            <li>Release of Lien</li>
+                        </ul>
+                        <button class="btn btn-primary" style="margin-top: 1rem;" onclick="addToCart('essential')">Get Virginia Templates</button>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%); color: white; border-radius: 12px;">
+                    <h2 style="color: white; margin-bottom: 1rem;">Virginia-Specific Resources</h2>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                        <div>
+                            <h4>Licensing</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://www.dpor.virginia.gov/" target="_blank" style="color: #ffd700;">DPOR</a></li>
+                                <li><a href="https://www.dpor.virginia.gov/Boards/Contractors/" target="_blank" style="color: #ffd700;">Contractor Board</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>State</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://tax.virginia.gov/" target="_blank" style="color: #ffd700;">Taxation Dept</a></li>
+                                <li><a href="https://www.scc.virginia.gov/" target="_blank" style="color: #ffd700;">Secretary of State</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Courts</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://www.vacourts.gov/" target="_blank" style="color: #ffd700;">VA Courts</a></li>
+                                <li><a href="https://www.fairfaxcounty.gov/" target="_blank" style="color: #ffd700;">Fairfax County</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

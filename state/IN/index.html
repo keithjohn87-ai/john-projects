@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indiana Contractor Resources - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="state-page" style="padding-top: 80px;">
+        <div class="container">
+            <div id="stateContent">
+                <h1>Indiana Contractor Resources</h1>
+                <div class="state-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem;">
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📋 Licensing</h2>
+                        <p><strong>No state-level licensing (local jurisdictions)</strong></p>
+                        <a href="https://www.in.gov/" target="_blank" style="color: #1e3a5f;">Visit IN.gov →</a>
+                        <h3 style="margin-top: 1rem;">Requirements:</h3>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>No state-level general contractor license</li>
+                            <li>Local jurisdictions set their own requirements</li>
+                            <li>Indianapolis requires contractor license</li>
+                            <li>Plumbing, HVAC, and electrical state-licensed</li>
+                            <li>Insurance and bonding typically required locally</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #e3f2fd; border-radius: 8px;">
+                            <strong>Resources:</strong><br>
+                            <a href="https://www.indy.gov/activity/contractor-licenses" target="_blank" style="color: #1e3a5f;">Indianapolis Licensing →</a><br>
+                            <a href="https://www.procore.com/library/indiana-contractors-license" target="_blank" style="color: #1e3a5f;">IN Licensing Guide →</a>
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>⚖️ Lien Laws</h2>
+                        <p><strong>Preliminary Notice:</strong> Notice of Intent to File Lien may be sent</p>
+                        <p><strong>Filing Deadline:</strong> Within 60 days (residential) or 90 days (commercial) of last furnishing</p>
+                        <p><strong>Foreclosure:</strong> Within 1 year of filing lien</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-radius: 8px;">
+                            <strong>⚠️ Important:</strong> Indiana has different deadlines for residential vs commercial projects. Know which applies to your job.
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>💰 Taxes</h2>
+                        <p><strong>Sales Tax:</strong> 7% state + local rates</p>
+                        <p><strong>Contractor Tax:</strong> Materials taxable; labor generally exempt</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://www.in.gov/dor/" target="_blank" style="color: #1e3a5f;">IN Department of Revenue →</a>
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📄 Documents</h2>
+                        <ul style="margin-left: 1.5rem;">
+                            <li>Preliminary Notice Template</li>
+                            <li>Notice of Intent to File Lien</li>
+                            <li>Mechanics Lien Form</li>
+                            <li>Release of Lien</li>
+                        </ul>
+                        <button class="btn btn-primary" style="margin-top: 1rem;" onclick="addToCart('essential')">Get Indiana Templates</button>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%); color: white; border-radius: 12px;">
+                    <h2 style="color: white; margin-bottom: 1rem;">Indiana-Specific Resources</h2>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                        <div>
+                            <h4>Licensing</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://www.in.gov/" target="_blank" style="color: #ffd700;">IN.gov</a></li>
+                                <li><a href="https://www.indy.gov/activity/contractor-licenses" target="_blank" style="color: #ffd700;">Indianapolis</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>State</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://www.in.gov/dor/" target="_blank" style="color: #ffd700;">Revenue Dept</a></li>
+                                <li><a href="https://www.in.gov/sos/" target="_blank" style="color: #ffd700;">Secretary of State</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Courts</h4>
+                            <ul style="list-style: none; margin-top: 0.5rem;">
+                                <li><a href="https://www.in.gov/courts/" target="_blank" style="color: #ffd700;">IN Courts</a></li>
+                                <li><a href="https://www.indy.gov/" target="_blank" style="color: #ffd700;">Marion County</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
