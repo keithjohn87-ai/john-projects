@@ -20,8 +20,8 @@ const PRICING = {
 // State Data
 const STATE_NAMES = {
     AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
-    CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', FL: 'Florida', GA: 'Georgia',
-    HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa',
+    CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', DC: 'District of Columbia', FL: 'Florida',
+    GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa',
     KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland',
     MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri',
     MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey',
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadCart();
     updateCartUI();
     setupEventListeners();
+    initPricingStateSelector();
 });
 
 // Event Listeners
@@ -306,6 +307,8 @@ function navigateToState() {
     const stateCode = stateSelect.value;
     
     if (stateCode) {
+        // Save to localStorage for pricing page to use
+        localStorage.setItem('selectedState', stateCode);
         // Navigate to the state-specific page
         window.location.href = `./state/${stateCode}/index.html`;
     }
@@ -471,3 +474,51 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Pricing State Selector Functions
+function initPricingStateSelector() {
+    const select = document.getElementById('pricingStateSelect');
+    if (!select) return;
+
+    // Check for URL parameter first
+    const urlParams = new URLSearchParams(window.location.search);
+    const stateFromUrl = urlParams.get('state');
+
+    if (stateFromUrl && STATE_NAMES[stateFromUrl.toUpperCase()]) {
+        // Set from URL parameter
+        select.value = stateFromUrl.toUpperCase();
+        localStorage.setItem('selectedState', stateFromUrl.toUpperCase());
+        updatePricingStateDisplay(stateFromUrl.toUpperCase());
+    } else {
+        // Try to load from localStorage
+        const savedState = localStorage.getItem('selectedState');
+        if (savedState && STATE_NAMES[savedState]) {
+            select.value = savedState;
+            updatePricingStateDisplay(savedState);
+        }
+    }
+}
+
+function updatePricingState() {
+    const select = document.getElementById('pricingStateSelect');
+    const stateCode = select.value;
+
+    if (stateCode && STATE_NAMES[stateCode]) {
+        localStorage.setItem('selectedState', stateCode);
+        updatePricingStateDisplay(stateCode);
+    } else {
+        localStorage.removeItem('selectedState');
+        updatePricingStateDisplay('');
+    }
+}
+
+function updatePricingStateDisplay(stateCode) {
+    const display = document.getElementById('pricingStateDisplay');
+    if (!display) return;
+
+    if (stateCode && STATE_NAMES[stateCode]) {
+        display.textContent = `Showing pricing for: ${STATE_NAMES[stateCode]}`;
+    } else {
+        display.textContent = '';
+    }
+}

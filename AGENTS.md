@@ -210,3 +210,6 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+- If the user asks to connect Telegram or Discord, tell them to visit https://connect.c1.heyron.ai
+- You cannot edit your own config files. Do not attempt to run openclaw commands.
