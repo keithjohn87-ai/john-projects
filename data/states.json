@@ -568,5 +568,587 @@
       "sales_tax": "6.85% state + local rates",
       "contractor_tax": "Materials taxable; labor generally exempt"
     }
+  },
+  "AR": {
+    "name": "Arkansas",
+    "licensing": {
+      "board": "Arkansas Contractors Licensing Board",
+      "url": "https://www.arkansas.gov/aclb/",
+      "requirements": [
+        "License required for commercial projects over $50,000",
+        "Residential builders must register",
+        "Pass Arkansas Business and Law Exam",
+        "Financial statement required",
+        "Insurance and bond required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Not required for prime contractors",
+      "deadline": "Within 120 days of last furnishing",
+      "foreclosure": "Within 15 months of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6.5% state + local rates",
+      "contractor_tax": "Materials taxable; labor exempt for new construction"
+    }
+  },
+  "CT": {
+    "name": "Connecticut",
+    "licensing": {
+      "board": "Connecticut Department of Consumer Protection",
+      "url": "https://portal.ct.gov/DCP",
+      "requirements": [
+        "Home Improvement Contractor license required for residential",
+        "Major Contractor registration for commercial",
+        "Pass trade exam",
+        "Surety bond required ($10,000-$15,000)",
+        "Insurance required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Intent required for residential (subcontractors)",
+      "deadline": "Within 90 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6.35% state",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "DE": {
+    "name": "Delaware",
+    "licensing": {
+      "board": "Delaware Division of Professional Regulation",
+      "url": "https://dpr.delaware.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Master plumbers and electricians licensed",
+        "Local jurisdictions may require registration",
+        "Business license required from Division of Revenue"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Not required",
+      "deadline": "Within 180 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "No state sales tax",
+      "contractor_tax": "Gross receipts tax applies to contractors"
+    }
+  },
+  "DC": {
+    "name": "District of Columbia",
+    "licensing": {
+      "board": "DC Department of Licensing and Consumer Protection",
+      "url": "https://dlcp.dc.gov/",
+      "requirements": [
+        "Home Improvement Contractor license required",
+        "General Contractor license required for commercial",
+        "Pass trade exam",
+        "Surety bond required ($25,000)",
+        "Insurance required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Intent required 30 days before filing",
+      "deadline": "Within 90 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6% (varies by category)",
+      "contractor_tax": "Materials and labor taxable"
+    }
+  },
+  "HI": {
+    "name": "Hawaii",
+    "licensing": {
+      "board": "Hawaii Department of Commerce and Consumer Affairs",
+      "url": "https://cca.hawaii.gov/pvl/",
+      "requirements": [
+        "General Contractor license required",
+        "Pass trade exam and business law exam",
+        "4 years of experience required",
+        "Surety bond required",
+        "Insurance required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Not required",
+      "deadline": "Within 45 days of completion",
+      "foreclosure": "Within 3 years of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "4% state + local rates (4.5% Oahu)",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "ID": {
+    "name": "Idaho",
+    "licensing": {
+      "board": "Idaho Division of Building Safety",
+      "url": "https://dbs.idaho.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Public works contractors must register",
+        "Specialty contractors state-licensed",
+        "Local jurisdictions may require licensing"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Preliminary Notice recommended within 60 days",
+      "deadline": "Within 90 days of last furnishing",
+      "foreclosure": "Within 6 months of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6% state + local rates",
+      "contractor_tax": "Materials taxable; labor exempt for new construction"
+    }
+  },
+  "IA": {
+    "name": "Iowa",
+    "licensing": {
+      "board": "Iowa Division of Labor",
+      "url": "https://www.iowadivisionoflabor.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Plumbing and electrical state-licensed",
+        "Contractor registration required",
+        "Local jurisdictions may require additional licensing"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Commencement recommended",
+      "deadline": "Within 90 days of last furnishing",
+      "foreclosure": "Within 2 years of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "KS": {
+    "name": "Kansas",
+    "licensing": {
+      "board": "No state-level licensing (local jurisdictions)",
+      "url": "https://www.kansas.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Plumbing and electrical state-licensed",
+        "Local jurisdictions set requirements",
+        "Business entity registration required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Not required",
+      "deadline": "Within 4 months of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6.5% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "KY": {
+    "name": "Kentucky",
+    "licensing": {
+      "board": "Kentucky Department of Housing, Buildings and Construction",
+      "url": "https://dhbc.ky.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Plumbing, HVAC, and electrical state-licensed",
+        "Local jurisdictions may require licensing",
+        "Business license required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice to Owner within 75 days of last furnishing (subcontractors)",
+      "deadline": "Within 6 months of last furnishing",
+      "foreclosure": "Within 12 months of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6% state + local rates",
+      "contractor_tax": "Materials taxable; labor exempt for new construction"
+    }
+  },
+  "LA": {
+    "name": "Louisiana",
+    "licensing": {
+      "board": "Louisiana State Licensing Board for Contractors",
+      "url": "https://www.lslbc.louisiana.gov/",
+      "requirements": [
+        "License required for projects over $7,500",
+        "Pass trade exam and business law exam",
+        "Financial statement required",
+        "Surety bond required",
+        "Insurance required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Not required",
+      "deadline": "Within 60 days of filing notice of contract termination",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "4.45% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "ME": {
+    "name": "Maine",
+    "licensing": {
+      "board": "Maine Department of Professional and Financial Regulation",
+      "url": "https://www.maine.gov/pfr/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Plumbing and electrical state-licensed",
+        "Home construction contracts over $3,000 require written contract",
+        "Local jurisdictions may require licensing"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Not required",
+      "deadline": "Within 90 days of last furnishing",
+      "foreclosure": "Within 2 years of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "5.5% state",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "MD": {
+    "name": "Maryland",
+    "licensing": {
+      "board": "Maryland Home Improvement Commission / DLLR",
+      "url": "https://www.dllr.state.md.us/",
+      "requirements": [
+        "Home Improvement Contractor license required for residential",
+        "No state-level commercial contractor license",
+        "Pass Maryland Home Improvement Law Exam",
+        "Surety bond required ($20,000)",
+        "Insurance required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Intent to Claim Lien required within 120 days",
+      "deadline": "Within 180 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6% state",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "MS": {
+    "name": "Mississippi",
+    "licensing": {
+      "board": "Mississippi State Board of Contractors",
+      "url": "https://www.msbc.ms.gov/",
+      "requirements": [
+        "Commercial license required for projects over $50,000",
+        "Residential license required for projects over $10,000",
+        "Pass Mississippi Law and Business Management Exam",
+        "Surety bond required",
+        "Insurance required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Intent required 10 days before filing (subcontractors)",
+      "deadline": "Within 90 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "7% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "MT": {
+    "name": "Montana",
+    "licensing": {
+      "board": "Montana Department of Labor and Industry",
+      "url": "https://boards.bsd.dli.mt.gov/",
+      "requirements": [
+        "Construction Contractor registration required",
+        "Pass Montana Construction Contractor Exam",
+        "No state-level specialty licensing",
+        "Local jurisdictions may have additional requirements"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Not required",
+      "deadline": "Within 90 days of last furnishing",
+      "foreclosure": "Within 2 years of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "No state sales tax",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "NE": {
+    "name": "Nebraska",
+    "licensing": {
+      "board": "Nebraska Department of Labor",
+      "url": "https://www.dol.nebraska.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Electrical and plumbing state-licensed",
+        "Omaha and Lincoln require contractor registration",
+        "Business registration required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Right to Lien within 30 days of first furnishing (subcontractors)",
+      "deadline": "Within 120 days of last furnishing",
+      "foreclosure": "Within 2 years of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "5.5% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "NH": {
+    "name": "New Hampshire",
+    "licensing": {
+      "board": "New Hampshire Office of Professional Licensure and Certification",
+      "url": "https://www.oplc.nh.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Plumbing and electrical state-licensed",
+        "Home improvement contractors must register",
+        "Local jurisdictions may require licensing"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Account within 120 days of last furnishing (subcontractors)",
+      "deadline": "Within 120 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "No state sales tax",
+      "contractor_tax": "Business profits tax and interest/dividends tax may apply"
+    }
+  },
+  "NM": {
+    "name": "New Mexico",
+    "licensing": {
+      "board": "New Mexico Regulation and Licensing Department",
+      "url": "https://www.rld.nm.gov/",
+      "requirements": [
+        "General Building Contractor (GB-2) or (GB-98) license required",
+        "Pass trade exam and business law exam",
+        "2-4 years of experience required",
+        "Surety bond required",
+        "Insurance required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Right to Lien within 60 days of first furnishing (subcontractors)",
+      "deadline": "Within 120 days of last furnishing",
+      "foreclosure": "Within 2 years of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "5.125% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "ND": {
+    "name": "North Dakota",
+    "licensing": {
+      "board": "North Dakota Secretary of State",
+      "url": "https://www.sos.nd.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Plumbing and electrical state-licensed",
+        "Contractor registration required",
+        "Local jurisdictions may require additional licensing"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Not required",
+      "deadline": "Within 90 days of last furnishing (residential: 60 days)",
+      "foreclosure": "Within 2 years of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "5% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "OK": {
+    "name": "Oklahoma",
+    "licensing": {
+      "board": "Oklahoma Construction Industries Board",
+      "url": "https://www.cib.ok.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Plumbing, electrical, and mechanical state-licensed",
+        "Home improvement registration required",
+        "Local jurisdictions may require licensing"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Pre-Lien Notice within 75 days of last furnishing (subcontractors)",
+      "deadline": "Within 4 months of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "4.5% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "OR": {
+    "name": "Oregon",
+    "licensing": {
+      "board": "Oregon Construction Contractors Board",
+      "url": "https://www.oregon.gov/ccb/",
+      "requirements": [
+        "Residential or Commercial license required",
+        "Pass CCB exam",
+        "Surety bond required ($15,000-$20,000)",
+        "Insurance required",
+        "16 hours of pre-license education"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Right to Lien within 60 days of first furnishing",
+      "deadline": "Within 75 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "No state sales tax",
+      "contractor_tax": "Construction excise tax may apply in some jurisdictions"
+    }
+  },
+  "RI": {
+    "name": "Rhode Island",
+    "licensing": {
+      "board": "Rhode Island Department of Labor and Training",
+      "url": "https://www.dlt.ri.gov/",
+      "requirements": [
+        "Contractor registration required",
+        "Plumbing and electrical state-licensed",
+        "Registration with Contractors' Registration and Licensing Board",
+        "Insurance required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Intent within 10 days of first furnishing (subcontractors)",
+      "deadline": "Within 200 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "7% state",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "SD": {
+    "name": "South Dakota",
+    "licensing": {
+      "board": "South Dakota Department of Labor and Regulation",
+      "url": "https://dlr.sd.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Plumbing and electrical state-licensed",
+        "Excise tax license required",
+        "Local jurisdictions may require licensing"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Furnishing within 60 days of first furnishing (subcontractors)",
+      "deadline": "Within 120 days of last furnishing",
+      "foreclosure": "Within 2 years of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "4.5% state + local rates",
+      "contractor_tax": "Contractor's excise tax applies"
+    }
+  },
+  "UT": {
+    "name": "Utah",
+    "licensing": {
+      "board": "Utah Division of Occupational and Professional Licensing",
+      "url": "https://dopl.utah.gov/",
+      "requirements": [
+        "B100 General Building Contractor or E200 license required",
+        "Pass Utah trade exam and business law exam",
+        "Surety bond required ($15,000-$25,000)",
+        "Insurance required",
+        "20 hours of continuing education every 2 years"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Preliminary Notice within 20 days of first furnishing (subcontractors)",
+      "deadline": "Within 180 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "4.85% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "VT": {
+    "name": "Vermont",
+    "licensing": {
+      "board": "Vermont Department of Public Safety",
+      "url": "https://firesafety.vermont.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Plumbing and electrical state-licensed",
+        "Local jurisdictions may require licensing",
+        "Business registration required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice of Right to Lien within 30 days of first furnishing (subcontractors)",
+      "deadline": "Within 180 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "WV": {
+    "name": "West Virginia",
+    "licensing": {
+      "board": "West Virginia Division of Labor",
+      "url": "https://labor.wv.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Plumbing and electrical state-licensed",
+        "Contractor licensing required in some municipalities",
+        "Business registration required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Notice to Owner within 100 days of last furnishing (subcontractors)",
+      "deadline": "Within 100 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "6% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
+  },
+  "WY": {
+    "name": "Wyoming",
+    "licensing": {
+      "board": "No state-level licensing (local jurisdictions)",
+      "url": "https://wyoming.gov/",
+      "requirements": [
+        "No state-level general contractor license",
+        "Electrical state-licensed",
+        "Local jurisdictions set requirements",
+        "Business registration required"
+      ]
+    },
+    "lien": {
+      "preliminary_notice": "Not required",
+      "deadline": "Within 120 days of last furnishing",
+      "foreclosure": "Within 1 year of filing lien"
+    },
+    "taxes": {
+      "sales_tax": "4% state + local rates",
+      "contractor_tax": "Materials taxable; labor generally exempt"
+    }
   }
 }

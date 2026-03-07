@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>District of Columbia Contractor Resources - ContractorPro</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#features">Features</a>
+                <a href="../../index.html#pricing">Pricing</a>
+                <a href="../../index.html#states">State Resources</a>
+                <a href="../../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="state-page" style="padding-top: 80px;">
+        <div class="container">
+            <div id="stateContent">
+                <h1>District of Columbia Contractor Resources</h1>
+                <div class="state-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem;">
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📋 Licensing</h2>
+                        <p><strong>State contractor licensing information</strong></p>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://www.google.com/search?q=District of Columbia+contractor+license+requirements" target="_blank" style="color: #1e3a5f;">District of Columbia Licensing Info →</a>
+                        </div>
+                        <h3 style="margin-top: 1rem;">General Requirements:</h3>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Check state-specific requirements</li>
+                            <li>General liability insurance typically required</li>
+                            <li>Workers' compensation if employees</li>
+                            <li>May require state or local licensing</li>
+                        </ul>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>⚖️ Lien Laws</h2>
+                        <p><strong>Preliminary Notice:</strong> Check state requirements</p>
+                        <p><strong>Filing Deadline:</strong> Varies by state</p>
+                        <p><strong>Foreclosure:</strong> Varies by state</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-radius: 8px;">
+                            <strong>⚠️ Important:</strong> Verify specific District of Columbia lien law requirements before proceeding.
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>💰 Taxes</h2>
+                        <p><strong>Sales Tax:</strong> Check state rate</p>
+                        <p><strong>Contractor Tax:</strong> Varies by state</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://www.google.com/search?q=District of Columbia+department+of+revenue" target="_blank" style="color: #1e3a5f;">District of Columbia Revenue Department →</a>
+                        </div>
+                    </div>
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📄 Documents</h2>
+                        <ul style="margin-left: 1.5rem;">
+                            <li>Preliminary Notice Template</li>
+                            <li>Mechanics Lien Form</li>
+                            <li>Release of Lien</li>
+                            <li>Construction Contract</li>
+                        </ul>
+                        <button class="btn btn-primary" style="margin-top: 1rem;" onclick="addToCart('essential')">Get District of Columbia Templates</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/cart.js"></script>
+    <script src="../../js/account.js"></script>
+</body>
+</html>
