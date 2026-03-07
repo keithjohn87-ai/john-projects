@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Your Products - ContractorPro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .download-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8f 100%);
+            padding: 2rem;
+        }
+        .download-card {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .download-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .download-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+        .download-subtitle {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+        .product-list {
+            text-align: left;
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .product-list h3 {
+            font-size: 1rem;
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+        .product-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .product-list li {
+            padding: 0.5rem 0;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .product-list li::before {
+            content: "📄";
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #c19b2e 100%);
+            color: #1e3a5f;
+            font-weight: 700;
+            padding: 1rem 3rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.125rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+        .download-info {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .error-message {
+            color: #dc2626;
+            padding: 1rem;
+            background: #fef2f2;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .success-message {
+            color: #059669;
+            padding: 1rem;
+            background: #ecfdf5;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="download-page">
+        <div class="download-card" id="downloadCard">
+            <div class="download-icon">📦</div>
+            <h1 class="download-title">Your Download is Ready</h1>
+            <p class="download-subtitle">Thank you for your purchase!</p>
+            
+            <div id="contentArea">
+                <p>Loading your products...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/delivery-config.js"></script>
+    <script>
+        // Parse URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        const tier = urlParams.get('tier');
+        
+        const contentArea = document.getElementById('contentArea');
+        
+        if (!token && !tier) {
+            contentArea.innerHTML = `
+                <div class="error-message">
+                    <strong>Invalid download link</strong><br>
+                    Please check your email for the correct download link or contact support.
+                </div>
+            `;
+        } else {
+            // Verify token or use tier directly
+            let productTier = tier;
+            let isValid = true;
+            
+            if (token) {
+                const verification = ProductDelivery.verifyDownloadToken(token);
+                if (verification.valid) {
+                    productTier = verification.tier;
+                } else {
+                    isValid = false;
+                    contentArea.innerHTML = `
+                        <div class="error-message">
+                            <strong>Download link expired or invalid</strong><br>
+                            ${verification.error}. Please contact support for assistance.
+                        </div>
+                    `;
+                }
+            }
+            
+            if (isValid && productTier) {
+                const product = ProductDelivery.config.products[productTier];
+                if (product) {
+                    const fileList = product.files.map(file => 
+                        `<li>${file.split('/').pop()}</li>`
+                    ).join('');
+                    
+                    contentArea.innerHTML = `
+                        <div class="success-message">
+                            <strong>${product.name}</strong> is ready for download
+                        </div>
+                        
+                        <div class="product-list">
+                            <h3>📁 Files included (${product.files.length} items):</h3>
+                            <ul>
+                                ${fileList}
+                            </ul>
+                        </div>
+                        
+                        <button class="download-btn" onclick="downloadPackage('${productTier}')">
+                            ⬇️ Download All Files
+                        </button>
+                        
+                        <div class="download-info">
+                            <p>⏰ Link expires in 72 hours</p>
+                            <p>💾 Maximum 5 downloads</p>
+                            <p>📧 A copy has been sent to your email</p>
+                        </div>
+                    `;
+                } else {
+                    contentArea.innerHTML = `
+                        <div class="error-message">
+                            <strong>Product not found</strong><br>
+                            Please contact support for assistance.
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        async function downloadPackage(tier) {
+            const btn = document.querySelector('.download-btn');
+            btn.textContent = '⏳ Preparing download...';
+            btn.disabled = true;
+            
+            // Simulate zip creation and download
+            const package = await ProductDelivery.createZipPackage(tier);
+            
+            if (package) {
+                // In production, this would trigger actual file download
+                console.log('Downloading:', package.name);
+                console.log('Files:', package.files);
+                
+                // For now, show success and provide individual file links
+                setTimeout(() => {
+                    btn.textContent = '✅ Download Started';
+                    
+                    // Show individual file links
+                    const product = ProductDelivery.config.products[tier];
+                    const linksHtml = product.files.map(file => {
+                        const filename = file.split('/').pop();
+                        return `<a href="${file}" download style="display: block; margin: 0.5rem 0; color: #1e3a5f; text-decoration: underline;">${filename}</a>`;
+                    }).join('');
+                    
+                    contentArea.innerHTML += `
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: #f0f9ff; border-radius: 8px;">
+                            <h4 style="margin-bottom: 1rem;">Individual File Downloads:</h4>
+                            ${linksHtml}
+                        </div>
+                    `;
+                }, 1500);
+            }
+        }
+    </script>
+</body>
+</html>
