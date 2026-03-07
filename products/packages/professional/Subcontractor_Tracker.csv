@@ -1,0 +1,28 @@
+Company Name,Contact Name,Phone,Email,Address,Trade/Specialty,License Number,Insurance Expires,Hourly Rate/Day Rate,Rating,Reliability,Last Project,Notes
+ABC Plumbing,John Smith,555-0101,john@abcplumbing.com,123 Main St,Plumbing,PL-12345,2026-12-31,$85/hr,5,Excellent,Project PRJ-2026-001,Reliable emergency service
+XYZ Electric,Sarah Johnson,555-0102,sarah@xyzelec.com,456 Oak Ave,Electrical,EL-67890,2026-11-30,$95/hr,5,Excellent,Project PRJ-2026-002,Great with complex jobs
+Top HVAC,Mike Brown,555-0103,mike@tophvac.com,789 Pine Rd,HVAC,HV-54321,2026-10-15,$120/hr,4,Good,Project PRJ-2026-001,Sometimes slow to respond
+Quick Drywall,Dave Wilson,555-0104,dave@quickdry.com,321 Elm St,Drywall,DW-98765,2026-09-30,$45/hr,3,Fair,Project PRJ-2025-046,Quality varies by crew
+Pro Roofing,Lisa Davis,555-0105,lisa@proroof.com,654 Maple Dr,Roofing,RF-13579,2026-12-15,$150/day,5,Excellent,Project PRJ-2026-002,Best roofer in area
+Elite Painting,Tom Garcia,555-0106,tom@elitepaint.com,987 Cedar Ln,Painting,PT-24680,2026-08-31,$35/hr,4,Good,Project PRJ-2026-001,Detail-oriented work
+Speedy Concrete,Chris Lee,555-0107,chris@speedyconc.com,147 Birch St,Concrete,CN-97531,2026-11-01,$110/hr,2,Poor,Project PRJ-2025-045,Often late, quality ok
+Master Carpentry,Pat Taylor,555-0108,pat@mastercarp.com,258 Spruce Ave,Carpentry,CP-86420,2026-12-31,$75/hr,5,Excellent,Project PRJ-2026-002,True craftsman
+
+Instructions:
+1. Trade/Specialty: Plumbing, Electrical, HVAC, Drywall, Roofing, Painting, Concrete, Carpentry, Flooring, Masonry, Landscaping, etc.
+2. Rating: 1-5 scale (5 = best)
+3. Reliability: Excellent, Good, Fair, Poor
+4. Keep insurance expiration current — don't use subs with expired coverage
+5. Track hourly/day rates to compare pricing on future bids
+6. Note quality issues or standout performance for future reference
+7. Update after each project with new reliability assessment
+8. Use for quick reference when bidding new jobs
+9. Backup contact info in case primary contact unavailable
+10. Flag subs you won't use again in Notes column
+
+RED FLAGS TO TRACK:
+- Missed deadlines (Reliability: Poor)
+- Quality complaints (Rating: 1-2)
+- Expired insurance (don't use until renewed)
+- Pricing significantly above market
+- Communication issues
