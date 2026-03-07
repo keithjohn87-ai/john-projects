@@ -8,36 +8,31 @@
 
 Hey [Name],
 
-I've been working on a project I think might actually help your business, and I need feedback from someone who knows this industry inside and out.
+I've been building a business system for contractors — templates, trackers, lien law guides for all 50 states. The infrastructure most of us never have time to put together.
 
-**The short version:** I built a complete business system for contractors — document templates, job trackers, lien law guides for all 50 states, the whole thing. Think of it as the business infrastructure most contractors never have time to build.
+**What's in the attached package:**
+- **Document Templates:** Preliminary notices, mechanics liens, releases, contracts (HTML format, ready to use)
+- **Job Costing Spreadsheet:** Track labor, materials, subs, margins per project
+- **Project Tracker:** Full P&L by job with automatic margin calculation
+- **AR/AP Trackers:** Know who owes you and who you owe
+- **Subcontractor Tracker:** Insurance expirations, rates, performance ratings
+- **COI Tracker:** Certificate of insurance monitoring
+- **50-State Lien Law Database:** Deadlines, requirements, filing rules for every state
 
-**Why I'm reaching out to you:**
-- You know what actually works in this business
-- You won't blow smoke if something's off
-- If this helps you, it'll help a lot of other contractors
+Everything's in the zip file. Use what works, ignore what doesn't.
 
-**What I'm asking:**
-Take a look at the attached package. Use whatever's useful. Ignore whatever isn't. Then tell me:
-1. What would you actually use?
+**The feedback I need:**
+1. What would you actually use in your business?
 2. What's missing that you need?
-3. Would you have paid for this 5 years ago?
+3. Would you have paid for this 5 years ago? What would you pay now?
 
-No obligation, no pitch, no follow-up sales call. Just genuinely need your eyes on it.
+No call needed — I know you're busy. Shoot me a text or email with your thoughts whenever you have a minute.
 
-The package includes:
-- Contract templates (ready to use)
-- Job costing & project tracking spreadsheets
-- Lien law reference for every state
-- Subcontractor management tools
-- AR/AP tracking systems
+If you hate it, tell me why. If you love it, tell me what it's worth. Either way, I owe you one.
 
-If you hate it, tell me why. If you love it, tell me what you'd pay. Either way, I owe you one.
-
-Talk soon,
 [Your name]
 
-P.S. — There's a Project Tracker in there that calculates margins automatically. Try it on your next job and see if the numbers match your gut.
+P.S. — Try the Project Tracker on your current job. See if the margin calculation matches your gut feeling on profitability.
 
 ---
 
