@@ -1,0 +1,14 @@
+Vendor/Subcontractor Name,Policy Number,Insurance Company,Policy Type,Coverage Amount,Effective Date,Expiration Date,Status,Certificate File,Notes
+Sample Subcontractor,POL-123456,ABC Insurance,General Liability,2000000,2026-01-01,2026-12-31,Active,COI_Sample.pdf,Primary coverage
+Sample Subcontractor,POL-789012,ABC Insurance,Workers Comp,1000000,2026-01-01,2026-12-31,Active,COI_Sample.pdf,Waiver of subrogation included
+Sample Vendor,POL-345678,XYZ Insurance,Auto Liability,1000000,2025-06-01,2026-05-31,Expiring Soon,COI_Vendor.pdf,Renewal requested
+Sample Subcontractor,POL-901234,DEF Insurance,General Liability,1500000,2025-03-01,2026-02-28,Expired,COI_Expired.pdf,URGENT: Get updated COI
+Sample Vendor,POL-567890,GHI Insurance,Umbrella,5000000,2026-01-01,2026-12-31,Active,COI_Umbrella.pdf,Excess coverage
+
+Instructions:
+1. Policy Types: General Liability, Workers Comp, Auto Liability, Umbrella, Professional Liability
+2. Status options: Active, Expiring Soon (<30 days), Expired, Pending
+3. Keep digital copies of all COI files linked in Certificate File column
+4. Review weekly for upcoming expirations
+5. Require updated COI before work begins on new projects
+6. Verify coverage amounts meet your contract requirements

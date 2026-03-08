@@ -1,0 +1,28 @@
+Project Name,Project Number,Client Name,Start Date,Target Completion,Status,Contract Value,Total Budget,Materials Cost,Labor Cost,Subcontractor Cost,Other Costs,Total Costs,Gross Profit,Gross Margin %,Notes
+Sample Residential Project,PRJ-2026-001,John Smith,2026-01-15,2026-04-15,In Progress,125000,100000,28500,32000,25000,8500,94000,31000,24.8%,On schedule
+Sample Commercial Build,PRJ-2026-002,ABC Company,2026-02-01,2026-08-01,In Progress,450000,380000,95000,110000,85000,15000,305000,145000,32.2%,Waiting on permits
+Sample Renovation,PRJ-2026-003,Jane Doe,2026-03-01,2026-05-15,Not Started,85000,72000,0,0,0,0,0,0,0%,Materials ordered
+Sample Kitchen Remodel,PRJ-2025-045,Bob Johnson,2025-11-01,2026-01-15,Completed,65000,55000,18500,22000,8000,3500,52000,13000,20.0%,Final payment received
+Sample Bathroom Addition,PRJ-2025-046,Sarah Lee,2025-12-01,2026-02-28,Completed,42000,36000,12500,14500,5000,2000,34000,8000,19.0%,Warranty period active
+Sample Deck Construction,PRJ-2026-004,Mike Brown,2026-02-15,2026-03-30,In Progress,28000,24000,8500,9200,0,1200,18900,9100,32.5%,Weather delays possible
+
+Instructions:
+1. Contract Value = Total amount client agreed to pay
+2. Total Budget = Your internal cost estimate (should be < Contract Value)
+3. Cost Categories:
+   - Materials Cost: All materials, supplies, equipment rental
+   - Labor Cost: Wages, payroll taxes, benefits for your crew
+   - Subcontractor Cost: Payments to subs (plumbers, electricians, etc.)
+   - Other Costs: Permits, inspections, disposal, fuel, overhead allocation
+4. Total Costs = sum of all cost columns
+5. Gross Profit = Contract Value - Total Costs
+6. Gross Margin % = (Gross Profit / Contract Value) × 100
+7. Status options: Not Started, In Progress, On Hold, Completed, Cancelled
+8. Update costs weekly for active projects
+9. Review margins monthly to identify profitable vs problem projects
+10. Use Notes for delays, change orders, issues, or milestones
+
+KEY METRICS TO WATCH:
+- Gross Margin % should be 20-35% for most projects
+- If margin drops below 15%, investigate cost overruns immediately
+- Track budget vs actual costs to improve future estimates

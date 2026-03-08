@@ -1,0 +1,33 @@
+/* TradeElegance - Construction Template Styles */
+
+/* ===== CSS VARIABLES ===== */
+:root {
+    /* Colors */
+    --color-primary: #1e3a5f;
+    --color-primary-dark: #142841;
+    --color-accent: #c9a962;
+    --color-accent-light: #e0c998;
+    --color-white: #ffffff;
+    --color-offwhite: #faf9f7;
+    --color-light-gray: #f5f4f2;
+    --color-medium-gray: #8a8a8a;
+    --color-dark-gray: #4a4a4a;
+    --color-charcoal: #2d2d2d;
+    
+    /* Typography */
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Segoe UI', sans-serif;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+    
+    /* Layout */
+    --max-width: 1200px;
+    --border-radius: 4px;
+}
+
+/* Additional styles will be added as sections are built */

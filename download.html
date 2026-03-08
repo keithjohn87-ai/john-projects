@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Your Products - ContractorPro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .download-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8f 100%);
+            padding: 2rem;
+        }
+        .download-card {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .download-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .download-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+        .download-subtitle {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+        .product-list {
+            text-align: left;
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .product-list h3 {
+            font-size: 1rem;
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+        .product-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .product-list li {
+            padding: 0.5rem 0;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .product-list li::before {
+            content: "📄";
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #c19b2e 100%);
+            color: #1e3a5f;
+            font-weight: 700;
+            padding: 1rem 3rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.125rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+        .download-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .download-info {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .error-message {
+            color: #dc2626;
+            padding: 1rem;
+            background: #fef2f2;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .success-message {
+            color: #059669;
+            padding: 1rem;
+            background: #ecfdf5;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .file-card {
+            background: #f0f9ff;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .file-card:hover {
+            transform: translateY(-2px);
+            background: #e0f2fe;
+        }
+        .file-card a {
+            color: #1e3a5f;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+        }
+        .file-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .bundle-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #f59e0b;
+        }
+        .bundle-section h3 {
+            color: #92400e;
+            margin-bottom: 0.5rem;
+        }
+        .bundle-section p {
+            color: #78350f;
+            margin-bottom: 1rem;
+        }
+        .support-link {
+            color: #1e3a5f;
+            text-decoration: underline;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="download-page">
+        <div class="download-card" id="downloadCard">
+            <div class="download-icon">📦</div>
+            <h1 class="download-title">Your Download is Ready</h1>
+            <p class="download-subtitle">Thank you for your purchase!</p>
+            
+            <div id="contentArea">
+                <p>Loading your products...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product delivery configuration with actual file paths
+        const PRODUCT_CONFIG = {
+            // The v5 complete bundle
+            bundle: {
+                name: 'ContractorPro v5 Complete Bundle',
+                path: 'products/packages/contractorpro-v5-complete-bundle.zip',
+                size: '285 KB',
+                description: 'Everything you need to run your construction business'
+            },
+            // Individual products for tier-based downloads
+            products: {
+                'essential': {
+                    name: 'Essential Forms Package',
+                    price: 79,
+                    files: [
+                        { name: 'Preliminary Notice Template', icon: '📋', path: 'templates/documents/preliminary-notice.html' },
+                        { name: 'Mechanics Lien Form', icon: '⚖️', path: 'templates/documents/mechanics-lien.html' },
+                        { name: 'Release of Lien', icon: '✓', path: 'templates/documents/release-of-lien.html' },
+                        { name: 'Construction Contract', icon: '📄', path: 'templates/documents/construction-contract.html' }
+                    ]
+                },
+                'professional': {
+                    name: 'Professional Package',
+                    price: 149,
+                    files: [
+                        { name: 'Preliminary Notice Template', icon: '📋', path: 'templates/documents/preliminary-notice.html' },
+                        { name: 'Mechanics Lien Form', icon: '⚖️', path: 'templates/documents/mechanics-lien.html' },
+                        { name: 'Release of Lien', icon: '✓', path: 'templates/documents/release-of-lien.html' },
+                        { name: 'Construction Contract', icon: '📄', path: 'templates/documents/construction-contract.html' },
+                        { name: 'Job Costing Calculator', icon: '📊', path: 'templates/spreadsheets/job-costing-calculator.csv' },
+                        { name: 'Change Order Log', icon: '📝', path: 'templates/spreadsheets/change-order-log.csv' },
+                        { name: 'AR Tracker', icon: '💰', path: 'templates/spreadsheets/accounts-receivable-tracker.csv' },
+                        { name: 'Subcontractor Tracker', icon: '👷', path: 'products/templates/Subcontractor_Tracker.csv' }
+                    ]
+                },
+                'business': {
+                    name: 'Business System Package',
+                    price: 199,
+                    files: [
+                        { name: 'Preliminary Notice Template', icon: '📋', path: 'templates/documents/preliminary-notice.html' },
+                        { name: 'Mechanics Lien Form', icon: '⚖️', path: 'templates/documents/mechanics-lien.html' },
+                        { name: 'Release of Lien', icon: '✓', path: 'templates/documents/release-of-lien.html' },
+                        { name: 'Construction Contract', icon: '📄', path: 'templates/documents/construction-contract.html' },
+                        { name: 'Job Costing Calculator', icon: '📊', path: 'templates/spreadsheets/job-costing-calculator.csv' },
+                        { name: 'Change Order Log', icon: '📝', path: 'templates/spreadsheets/change-order-log.csv' },
+                        { name: 'AR Tracker', icon: '💰', path: 'templates/spreadsheets/accounts-receivable-tracker.csv' },
+                        { name: 'Subcontractor Tracker', icon: '👷', path: 'products/templates/Subcontractor_Tracker.csv' },
+                        { name: 'Project Tracker', icon: '📈', path: 'products/templates/Project_Tracker.csv' },
+                        { name: 'AP Tracker', icon: '💳', path: 'products/templates/AP_Tracker.csv' },
+                        { name: 'COI Tracker', icon: '🛡️', path: 'products/templates/COI_Tracker.csv' },
+                        { name: 'Subcontractor Tracker Pro', icon: '👷', path: 'products/templates/Subcontractor_Tracker_Pro.csv' }
+                    ]
+                },
+                'complete': {
+                    name: 'Complete Bundle',
+                    price: 249,
+                    files: [
+                        { name: 'Preliminary Notice Template', icon: '📋', path: 'templates/documents/preliminary-notice.html' },
+                        { name: 'Mechanics Lien Form', icon: '⚖️', path: 'templates/documents/mechanics-lien.html' },
+                        { name: 'Release of Lien', icon: '✓', path: 'templates/documents/release-of-lien.html' },
+                        { name: 'Construction Contract', icon: '📄', path: 'templates/documents/construction-contract.html' },
+                        { name: 'Job Costing Calculator', icon: '📊', path: 'templates/spreadsheets/job-costing-calculator.csv' },
+                        { name: 'Change Order Log', icon: '📝', path: 'templates/spreadsheets/change-order-log.csv' },
+                        { name: 'AR Tracker', icon: '💰', path: 'templates/spreadsheets/accounts-receivable-tracker.csv' },
+                        { name: 'Subcontractor Tracker', icon: '👷', path: 'products/templates/Subcontractor_Tracker.csv' },
+                        { name: 'Project Tracker', icon: '📈', path: 'products/templates/Project_Tracker.csv' },
+                        { name: 'AP Tracker', icon: '💳', path: 'products/templates/AP_Tracker.csv' },
+                        { name: 'COI Tracker', icon: '🛡️', path: 'products/templates/COI_Tracker.csv' },
+                        { name: 'Subcontractor Tracker Pro', icon: '👷', path: 'products/templates/Subcontractor_Tracker_Pro.csv' }
+                    ]
+                },
+                'sba': {
+                    name: 'SBA Funding Guide',
+                    price: 99,
+                    files: [
+                        { name: 'SBA Funding Guide', icon: '🏦', path: 'products/sba/SBA_Funding_Guide.pdf' },
+                        { name: 'Loan Application Checklist', icon: '✓', path: 'products/sba/Loan_Application_Checklist.docx' },
+                        { name: 'Financial Projections Template', icon: '📊', path: 'products/sba/Financial_Projections_Template.xlsx' }
+                    ]
+                }
+            }
+        };
+
+        // Parse URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        const tier = urlParams.get('tier');
+        const bundle = urlParams.get('bundle');
+        
+        const contentArea = document.getElementById('contentArea');
+        
+        // Verify purchase token (simple validation)
+        function verifyToken(token) {
+            if (!token) return { valid: false, error: 'No token provided' };
+            
+            try {
+                // Simple base64 decode check
+                const decoded = atob(token);
+                const parts = decoded.split(':');
+                if (parts.length < 3) return { valid: false, error: 'Invalid token format' };
+                
+                const [email, productTier, timestamp] = parts;
+                const purchaseTime = parseInt(timestamp);
+                const now = Date.now();
+                const hoursSince = (now - purchaseTime) / (1000 * 60 * 60);
+                
+                // Token expires after 72 hours
+                if (hoursSince > 72) {
+                    return { valid: false, error: 'Download link has expired (valid for 72 hours)' };
+                }
+                
+                return { valid: true, email, tier: productTier, purchaseTime };
+            } catch (e) {
+                return { valid: false, error: 'Invalid token' };
+            }
+        }
+        
+        // Generate download token (for testing/demo purposes)
+        function generateToken(email, tier) {
+            const timestamp = Date.now();
+            return btoa(`${email}:${tier}:${timestamp}`);
+        }
+        
+        // Main download page logic
+        if (bundle === 'v5') {
+            // Direct v5 bundle download
+            showBundleDownload();
+        } else if (token) {
+            // Verify token and show appropriate products
+            const verification = verifyToken(token);
+            if (verification.valid) {
+                showProductDownload(verification.tier, verification.email);
+            } else {
+                showError(verification.error);
+            }
+        } else if (tier && PRODUCT_CONFIG.products[tier]) {
+            // Demo mode - direct tier access (no verification)
+            showProductDownload(tier, 'demo@example.com');
+        } else {
+            showError('Invalid download link. Please check your email for the correct link or contact support.');
+        }
+        
+        function showBundleDownload() {
+            const bundle = PRODUCT_CONFIG.bundle;
+            contentArea.innerHTML = `
+                <div class="bundle-section">
+                    <h3>🎁 ${bundle.name}</h3>
+                    <p>${bundle.description}</p>
+                    <p><strong>File size:</strong> ${bundle.size}</p>
+                </div>
+                
+                <a href="${bundle.path}" class="download-btn" download>
+                    ⬇️ Download Complete Bundle
+                </a>
+                
+                <div class="download-info">
+                    <p>⏰ This is a one-time download link</p>
+                    <p>💾 Save the file to your computer</p>
+                    <p>📧 Having trouble? <a href="mailto:support@contractorpro.com" class="support-link">Contact support</a></p>
+                </div>
+            `;
+        }
+        
+        function showProductDownload(tier, email) {
+            const product = PRODUCT_CONFIG.products[tier];
+            if (!product) {
+                showError('Product not found. Please contact support.');
+                return;
+            }
+            
+            const fileList = product.files.map(file => 
+                `<li>${file.icon} ${file.name}</li>`
+            ).join('');
+            
+            const fileGrid = product.files.map(file => `
+                <div class="file-card">
+                    <div class="file-icon">${file.icon}</div>
+                    <a href="${file.path}" download>${file.name}</a>
+                </div>
+            `).join('');
+            
+            contentArea.innerHTML = `
+                <div class="success-message">
+                    <strong>${product.name}</strong> ($${product.price}) is ready for download
+                </div>
+                
+                <div class="product-list">
+                    <h3>📁 Files included (${product.files.length} items):</h3>
+                    <ul>
+                        ${fileList}
+                    </ul>
+                </div>
+                
+                <a href="products/packages/contractorpro-v5-complete-bundle.zip" class="download-btn" download>
+                    ⬇️ Download All Files (ZIP)
+                </a>
+                
+                <div class="download-info">
+                    <p>⏰ Link expires in 72 hours</p>
+                    <p>💾 Maximum 5 downloads</p>
+                    <p>📧 Download confirmation sent to ${email}</p>
+                </div>
+                
+                <h3 style="margin-top: 2rem; color: #1e3a5f;">Individual File Downloads</h3>
+                <div class="file-grid">
+                    ${fileGrid}
+                </div>
+            `;
+        }
+        
+        function showError(message) {
+            contentArea.innerHTML = `
+                <div class="error-message">
+                    <strong>Download Error</strong><br>
+                    ${message}
+                </div>
+                <p style="margin-top: 1rem;">
+                    <a href="index.html" class="btn btn-primary">Return to Home</a>
+                </p>
+                <p style="margin-top: 1rem;">
+                    <a href="mailto:support@contractorpro.com" class="support-link">Contact Support</a>
+                </p>
+            `;
+        }
+    </script>
+</body>
+</html>

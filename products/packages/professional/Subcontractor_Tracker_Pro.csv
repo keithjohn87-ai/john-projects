@@ -1,0 +1,50 @@
+Company Name,Contact Name,Phone,Email,Address,Trade/Specialty,License Number,License Expires,W9 On File,Insurance Expires,GL Coverage,WC Coverage,Current Rate,Rate History,Performance Trend,Compliance Status,Last Review,Documents Location,Notes
+ABC Plumbing,John Smith,555-0101,john@abcplumbing.com,123 Main St,Plumbing,PL-12345,2027-06-30,Yes,2026-12-31,2000000,1000000,$85/hr,$75→$80→$85 (2024-2026),↑ Improving,✅ Current,2026-03-01,Dropbox/Subs/ABC_Plumbing/,Reliable emergency service
+XYZ Electric,Sarah Johnson,555-0102,sarah@xyzelec.com,456 Oak Ave,Electrical,EL-67890,2027-03-15,Yes,2026-11-30,2000000,1000000,$95/hr,$85→$90→$95 (2023-2026),→ Stable,✅ Current,2026-02-15,Dropbox/Subs/XYZ_Electric/,Great with complex jobs
+Top HVAC,Mike Brown,555-0103,mike@tophvac.com,789 Pine Rd,HVAC,HV-54321,2026-12-01,Yes,2026-10-15,1500000,1000000,$120/hr,$110→$115→$120 (2024-2026),↓ Declining,⚠️ Insurance Expires Soon,2026-01-20,Dropbox/Subs/Top_HVAC/,Slow response times
+Quick Drywall,Dave Wilson,555-0104,dave@quickdry.com,321 Elm St,Drywall,DW-98765,2026-09-30,No,2026-09-30,1000000,500000,$45/hr,$40→$42→$45 (2023-2026),→ Stable,❌ W9 Missing,2026-02-28,Dropbox/Subs/Quick_Drywall/,Quality varies by crew
+Pro Roofing,Lisa Davis,555-0105,lisa@proroof.com,654 Maple Dr,Roofing,RF-13579,2027-01-31,Yes,2026-12-15,2000000,1000000,$150/day,$130→$140→$150 (2023-2026),↑ Improving,✅ Current,2026-03-05,Dropbox/Subs/Pro_Roofing/,Best roofer in area
+Elite Painting,Tom Garcia,555-0106,tom@elitepaint.com,987 Cedar Ln,Painting,PT-24680,2026-08-31,Yes,2026-08-31,1000000,500000,$35/hr,$30→$32→$35 (2022-2026),→ Stable,❌ License Expires Soon,2026-02-10,Dropbox/Subs/Elite_Painting/,Detail-oriented
+Speedy Concrete,Chris Lee,555-0107,chris@speedyconc.com,147 Birch St,Concrete,CN-97531,2026-11-01,Yes,2026-11-01,2000000,1000000,$110/hr,$100→$105→$110 (2024-2026),↓ Declining,⚠️ Both Expire Soon,2026-01-15,Dropbox/Subs/Speedy_Concrete/,Often late - use sparingly
+Master Carpentry,Pat Taylor,555-0108,pat@mastercarp.com,258 Spruce Ave,Carpentry,CP-86420,2027-12-31,Yes,2026-12-31,2000000,1000000,$75/hr,$65→$70→$75 (2023-2026),↑ Improving,✅ Current,2026-03-01,Dropbox/Subs/Master_Carpentry/,True craftsman
+
+Instructions:
+
+BASIC INFO (same as simple version):
+- Company Name, Contact, Phone, Email, Address
+- Trade/Specialty: Plumbing, Electrical, HVAC, etc.
+
+ENHANCED TRACKING:
+- License Number & Expires: Track state license expiration
+- W9 On File: Yes/No - required for 1099s at year-end
+- Insurance Expires: General liability expiration date
+- GL Coverage / WC Coverage: Coverage amounts ($)
+
+RATE HISTORY:
+- Current Rate: What they charge now
+- Rate History: Track increases over time (format: $old→$new→$current (years))
+- Use this to negotiate and budget future projects
+
+PERFORMANCE TREND:
+- ↑ Improving: Getting better over time
+- → Stable: Consistent quality
+- ↓ Declining: Quality or reliability dropping
+- Update quarterly based on recent projects
+
+COMPLIANCE STATUS:
+- ✅ Current: All docs up to date
+- ⚠️ Insurance Expires Soon: < 60 days
+- ❌ License Expires Soon: < 60 days
+- ❌ W9 Missing: Get this before year-end
+- Review weekly to stay compliant
+
+DOCUMENTS LOCATION:
+- File path or cloud storage location
+- Keep COI, license, W-9, contracts organized
+- Backup in case of audit
+
+ALERTS TO WATCH:
+- Insurance expires in < 60 days → Request renewal
+- License expires in < 60 days → Verify renewal
+- Performance trending down → Consider alternatives
+- Rate increases > 10%/year → Negotiate or shop around

@@ -1,0 +1,81 @@
+ALABAMA STEEL ERECTION CONTRACT
+
+THIS AGREEMENT is made this ____ day of __________, 20____, between:
+
+CONTRACTOR: _______________________________________
+a [Corporation/LLC/Partnership] organized under Alabama law
+License #: ________________
+Address: _______________________________________
+("Contractor")
+
+AND
+
+OWNER: _______________________________________
+Address: _______________________________________
+("Owner")
+
+1. PROJECT DESCRIPTION
+   Project Name: _______________________________________
+   Location: _______________________________________, Alabama
+   Scope: Structural steel erection as detailed in Exhibit A
+   Contract Price: $_______________
+
+2. PAYMENT TERMS
+   - 25% deposit upon execution: $_______________
+   - 50% progress upon steel delivery: $_______________
+   - 25% final upon completion: $_______________
+   Payment due within 15 days. 1.5% monthly late fee.
+
+3. TIME OF COMPLETION
+   Start Date: Within 14 days of Notice to Proceed
+   Duration: _______ calendar days
+   Liquidated Damages: $_______ per day (contractor-caused only)
+
+4. ALABAMA-SPECIFIC PROVISIONS
+   
+   4.1 MECHANIC'S LIEN
+   Contractor reserves right to file lien per Alabama Code § 35-11-210.
+   30-day notice required before filing.
+   
+   4.2 WORKERS COMPENSATION
+   Contractor carries Alabama workers comp per Code of Alabama § 25-5-1.
+   
+   4.3 HOME BUILDERS LIEN (if residential)
+   Per Alabama Home Builders Lien Act.
+   
+   4.4 GOVERNING LAW
+   Alabama law governs. Venue: ___________ County, Alabama.
+
+5. INSURANCE REQUIREMENTS
+   - General Liability: $2,000,000 per occurrence
+   - Workers Compensation: Alabama statutory limits
+   - Umbrella: $3,000,000
+
+6. STANDARD TERMS
+   - Contractor responsible for means/methods
+   - Owner provides site access/utilities
+   - Changes require written Change Order
+   - 7-day termination notice
+   - Mediation before litigation
+
+7. WARRANTIES
+   - Workmanship: 1 year from completion
+   - Structural: Per AISC standards
+   - Materials: Per manufacturer
+
+8. SIGNATURES
+
+   CONTRACTOR:
+   By: _________________________
+   Name: _________________________
+   Title: _________________________
+   Date: _________________________
+
+   OWNER:
+   By: _________________________
+   Name: _________________________
+   Title: _________________________
+   Date: _________________________
+
+EXHIBIT A - SCOPE OF WORK
+[Attach drawings and specifications]

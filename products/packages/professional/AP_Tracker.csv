@@ -1,0 +1,14 @@
+Vendor Name,Invoice Number,Invoice Date,Due Date,Amount,Status,Payment Date,Payment Method,Notes
+Sample Vendor,INV-001,2026-03-01,2026-03-31,2500.00,Unpaid,,,Net 30 terms
+Sample Vendor,INV-002,2026-03-05,2026-04-05,1800.00,Unpaid,,,
+Sample Vendor,INV-003,2026-02-15,2026-03-15,3200.00,Paid,2026-03-14,Check #1024,Early payment discount applied
+Sample Vendor,INV-004,2026-02-20,2026-03-20,950.00,Overdue,,,Follow up on payment
+Sample Vendor,INV-005,2026-01-10,2026-02-10,1500.00,Paid,2026-02-08,ACH,Recurring monthly service
+
+Instructions:
+1. Replace 'Sample Vendor' with actual vendor names
+2. Status options: Unpaid, Paid, Overdue, Disputed
+3. Payment Method: Check #, ACH, Credit Card, Cash, Wire
+4. Use Notes for terms, reminders, or issues
+5. Sort by Due Date to prioritize payments
+6. Filter by Status to see what's outstanding

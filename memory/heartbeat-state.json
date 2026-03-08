@@ -1,0 +1,9 @@
+{
+  "telegramHealthMonitor": {
+    "lastCheck": 1772922840,
+    "lastStatus": "OK",
+    "consecutiveFailures": 0,
+    "lastFailureTime": null,
+    "alertSent": false
+  }
+}
