@@ -11,9 +11,10 @@ let cart = {
 
 // Pricing Configuration
 const PRICING = {
-    starter: { id: 'starter', name: 'Starter Package', price: 99 },
-    professional: { id: 'professional', name: 'Professional Package', price: 199 },
-    enterprise: { id: 'enterprise', name: 'Enterprise Package', price: 299 },
+    essential: { id: 'essential', name: 'Essential Forms', price: 79 },
+    professional: { id: 'professional', name: 'Professional', price: 149 },
+    business: { id: 'business', name: 'Business System', price: 199 },
+    complete: { id: 'complete', name: 'Complete Bundle', price: 249 },
     sba: { id: 'sba', name: 'SBA Funding Guide', standalonePrice: 99, addonPrice: 49 }
 };
 
@@ -84,7 +85,7 @@ function addToCart(itemId) {
     }
 
     // Update hasTier flag
-    cart.hasTier = cart.items.some(i => ['starter', 'professional', 'enterprise'].includes(i.id));
+    cart.hasTier = cart.items.some(i => ['essential', 'professional', 'business', 'complete'].includes(i.id));
 
     // Recalculate SBA price if needed
     updateSBAPricing();
@@ -102,9 +103,13 @@ function updateSBAPricing() {
     }
 }
 
+function addSBAAddon() {
+    addToCart('sba');
+}
+
 function removeFromCart(itemId) {
     cart.items = cart.items.filter(i => i.id !== itemId);
-    cart.hasTier = cart.items.some(i => ['starter', 'professional', 'enterprise'].includes(i.id));
+    cart.hasTier = cart.items.some(i => ['essential', 'professional', 'business', 'complete'].includes(i.id));
     
     // Recalculate SBA price if still in cart
     updateSBAPricing();
