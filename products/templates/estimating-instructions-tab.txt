@@ -1,0 +1,125 @@
+ContractorPro - Job Costing Calculator - TRIAL VERSION
+
+⚠️ TRIAL VERSION LIMITATIONS:
+- Limited to 3 projects
+- Some advanced features locked
+- Watermark on printouts
+- Upgrade to full version at contractorpro.com
+
+═══════════════════════════════════════════════════════════════
+
+GETTING STARTED
+
+1. THIS IS THE INSTRUCTIONS TAB
+   - Review these instructions before using the calculator
+   - Yellow cells = You fill in
+   - Green cells = Auto-calculated
+   - Gray cells = Locked/protected
+
+2. HOW TO USE THIS SPREADSHEET:
+   a) Go to the "Project Estimator" tab
+   b) Enter your project information (yellow cells)
+   c) Fill in labor costs, materials, equipment
+   d) Add subcontractor estimates
+   e) Review the automatic totals and markup calculations
+   f) Check your profit margin
+
+3. TRIAL VERSION LIMITS:
+   - You can create up to 3 project estimates
+   - Print function includes trial watermark
+   - Some advanced features (change orders, multi-job reporting) are locked
+   - Full version includes: Unlimited projects, advanced reporting, integration with other trackers
+
+4. UNDERSTANDING THE COLORS:
+   🟡 YELLOW CELLS: Enter your data here
+   🟢 GREEN CELLS: Formulas calculate automatically
+   ⚪ WHITE CELLS: Optional notes/descriptions
+   ⬜ GRAY CELLS: Locked - do not modify
+
+5. KEY FEATURES:
+   ✅ Labor cost calculator with burden
+   ✅ Material cost tracking
+   ✅ Equipment rental/owned cost allocation
+   ✅ Subcontractor cost management
+   ✅ Automatic markup calculations
+   ✅ Profit margin analysis
+   ✅ Per-square-foot costing
+   ✅ Bid comparison tools
+
+6. FORMULAS EXPLAINED:
+   - Total Cost/Hr = Base Wage × (1 + Burden%)
+   - Total Labor Cost = Hours × Cost/Hr
+   - Subtotal = Sum of all category costs
+   - With Markup = Subtotal × (1 + Markup%)
+   - Profit Margin = (Price - Cost) / Price
+
+7. BEST PRACTICES:
+   ☑ Always include burden (taxes, insurance, benefits) in labor
+   ☑ Add 10-15% contingency for unknowns
+   ☑ Track actual vs estimated for future accuracy
+   ☑ Update material costs regularly (they change!)
+   ☑ Get 3+ subcontractor bids when possible
+
+8. UPGRADING TO FULL VERSION:
+   - Unlimited projects
+   - No watermarks
+   - Advanced reporting
+   - Integration with Project Tracker, AR Tracker
+   - Change order management
+   - Multi-job profitability reports
+   - Customer portal for approvals
+
+   Upgrade at: https://contrpro.com/pricing
+
+9. SUPPORT & HELP:
+   📧 Email: support@contractorpro.com
+   💬 LinkedIn: linkedin.com/company/contractorpro
+   📚 SBA Resources: sba.gov
+
+10. ABOUT CONTRACTORPRO:
+    Professional business tools built specifically for established 
+    contractors — not generic templates, construction-specific systems.
+    
+    Powered By Contractor Pros
+    © 2026 ContractorPro. All rights reserved.
+
+═══════════════════════════════════════════════════════════════
+
+QUICK START CHECKLIST:
+
+□ Read these instructions
+□ Click on "Project Estimator" tab
+□ Enter your first project name
+□ Fill in your labor rates
+□ Add material costs
+□ Review automatic calculations
+□ Adjust markup for profit
+□ Save your estimate
+□ Print or export as needed
+
+═══════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING:
+
+Q: I can't edit a cell
+A: It's probably locked (gray). Only yellow cells are editable in trial.
+
+Q: Formulas aren't calculating
+A: Make sure you've entered data in all yellow cells above it.
+
+Q: How do I add more projects?
+A: Trial version limited to 3. Upgrade for unlimited.
+
+Q: Can I remove the trial watermark?
+A: Watermark removed automatically when you upgrade to full version.
+
+═══════════════════════════════════════════════════════════════
+
+POWERED BY CONTRACTOR PROS
+Building better businesses, one contractor at a time.
+
+🔗 contractorpro.com
+💼 linkedin.com/company/contractorpro
+🏛️ sba.gov
+
+© 2026 ContractorPro - Trial Version

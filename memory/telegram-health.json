@@ -1,0 +1,13 @@
+{
+  "lastCheck": "2026-03-12T22:12:00Z",
+  "status": "healthy",
+  "telegram": {
+    "enabled": true,
+    "configured": true,
+    "running": true,
+    "mode": "polling",
+    "apiResponsive": true,
+    "consecutiveFailures": 0
+  },
+  "notes": "Telegram bot is responsive. OpenClaw status shows Telegram channel ON and OK."
+}

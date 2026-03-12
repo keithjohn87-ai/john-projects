@@ -1,0 +1,16 @@
+{
+  "telegramHealthMonitor": {
+    "lastCheck": 1741818720,
+    "lastCheckISO": "2026-03-12T21:52:00Z",
+    "lastStatus": "OK",
+    "consecutiveFailures": 0,
+    "firstFailureTime": null,
+    "firstFailureISO": null,
+    "downtimeMinutes": 0,
+    "alertSent": false,
+    "alertSentAt": null,
+    "alertSentISO": null,
+    "error": null,
+    "note": "Bot is responsive - health check received via Telegram at 21:52 UTC"
+  }
+}

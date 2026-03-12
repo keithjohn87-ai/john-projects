@@ -1,0 +1,10 @@
+{
+  "lastCheck": "2026-03-12T04:52:00Z",
+  "status": "HEALTHY",
+  "telegramState": "ON",
+  "error": null,
+  "alertSent": false,
+  "alertSentAt": null,
+  "downtimeMinutes": 0,
+  "checkResult": "OK: Telegram bot is responsive. Bot @Notifie_Test_Bot responding normally."
+}

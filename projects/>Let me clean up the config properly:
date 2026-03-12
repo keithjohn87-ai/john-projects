@@ -1,0 +1,15 @@
+
+
+```python
+# Read current config
+with open('/root/.openclaw/openclaw.json', 'r') as f:
+    config = f.read()
+
+# Remove email section
+import re
+config = re.sub(r",\s*\"email\":\s*{[^}]*}", "", config)
+
+with open('/root/.openclaw/openclaw.json', 'w') as f:
+    f.write(config)
+
+print("Email config removed")

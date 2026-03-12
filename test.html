@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Checkout - ContractorPro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        .test-container { max-width: 800px; margin: 0 auto; padding: 100px 2rem 2rem; }
+        .test-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .test-item { padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; margin-bottom: 1rem; cursor: pointer; transition: all 0.2s; }
+        .test-item:hover { border-color: #1e3a5f; }
+        .test-item.selected { border-color: #1e3a5f; background: #f0f9ff; }
+        .log { background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.875rem; max-height: 300px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ContractorPro" class="logo-img" style="height: 40px; width: auto;">
+            </a>
+            <div class="nav-actions">
+                <a href="admin.html" class="btn btn-ghost">Admin</a>
+                <a href="index.html" class="btn btn-primary">Back to Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="test-container">
+        <h1 style="margin-bottom: 2rem; color: #1e3a5f;">🧪 Test Checkout Flow</h1>
+
+        <!-- Test Product Selection -->
+        <div class="test-card">
+            <h2 style="margin-bottom: 1rem;">1. Select Test Product</h2>
+            <div class="test-item selected" onclick="selectTier('essential')" id="tier-essential">
+                <h3>Essential Forms - $79</h3>
+                <p style="color: #6b7280;">5 files • Best for testing</p>
+            </div>
+            <div class="test-item" onclick="selectTier('professional')" id="tier-professional">
+                <h3>Professional - $149</h3>
+                <p style="color: #6b7280;">9 files • Full tracking suite</p>
+            </div>
+            <div class="test-item" onclick="selectTier('sba')" id="tier-sba">
+                <h3>SBA Guide - $99</h3>
+                <p style="color: #6b7280;">2 files • Funding guide only</p>
+            </div>
+        </div>
+
+        <!-- Test Email -->
+        <div class="test-card">
+            <h2 style="margin-bottom: 1rem;">2. Test Email Delivery</h2>
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Test Email Address:</label>
+                <input type="email" id="testEmail" placeholder="you@example.com" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+            </div>
+            <button class="btn btn-primary" onclick="testDelivery()">Test Email Delivery</button>
+            <p style="margin-top: 0.5rem; color: #6b7280; font-size: 0.875rem;">This will simulate a delivery without payment</p>
+        </div>
+
+        <!-- Live Test -->
+        <div class="test-card">
+            <h2 style="margin-bottom: 1rem;">3. Live Stripe Test</h2>
+            <p style="margin-bottom: 1rem; color: #6b7280;">This will redirect to real Stripe checkout. Use test card: 4242 4242 4242 4242</p>
+            <button class="btn btn-primary" onclick="testStripeCheckout()">Start Test Checkout</button>
+        </div>
+
+        <!-- System Status -->
+        <div class="test-card">
+            <h2 style="margin-bottom: 1rem;">4. System Status</h2>
+            <div id="statusChecks">
+                <p>⏳ Checking systems...</p>
+            </div>
+        </div>
+
+        <!-- Test Log -->
+        <div class="test-card">
+            <h2 style="margin-bottom: 1rem;">Test Log</h2>
+            <div class="log" id="testLog">
+                <div>Test system initialized...</div>
+            </div>
+            <button class="btn btn-secondary" onclick="clearLog()" style="margin-top: 1rem;">Clear Log</button>
+        </div>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="js/stripe-config.js"></script>
+    <script src="js/delivery-config.js"></script>
+    <script src="js/emailjs-config.js"></script>
+    <script>
+        let selectedTier = 'essential';
+
+        function log(message) {
+            const logEl = document.getElementById('testLog');
+            const time = new Date().toLocaleTimeString();
+            logEl.innerHTML += `<div>[${time}] ${message}</div>`;
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+
+        function clearLog() {
+            document.getElementById('testLog').innerHTML = '<div>Log cleared...</div>';
+        }
+
+        function selectTier(tier) {
+            selectedTier = tier;
+            document.querySelectorAll('.test-item').forEach(el => el.classList.remove('selected'));
+            document.getElementById(`tier-${tier}`).classList.add('selected');
+            log(`Selected tier: ${tier}`);
+        }
+
+        async function testDelivery() {
+            const email = document.getElementById('testEmail').value;
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email');
+                return;
+            }
+
+            log(`Testing delivery to: ${email}`);
+            log(`Product: ${selectedTier}`);
+
+            try {
+                const result = await window.EmailDelivery.send(email, selectedTier, 'TEST-' + Date.now());
+                log(`Delivery result: ${result.success ? 'SUCCESS' : 'NEEDS MANUAL'}`);
+                if (result.downloadUrl) {
+                    log(`Download URL: ${result.downloadUrl.substring(0, 50)}...`);
+                }
+                if (result.message) {
+                    log(`Message: ${result.message}`);
+                }
+            } catch (error) {
+                log(`ERROR: ${error.message}`);
+            }
+        }
+
+        function testStripeCheckout() {
+            const email = document.getElementById('testEmail').value;
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email for delivery');
+                return;
+            }
+
+            log(`Starting Stripe checkout for: ${selectedTier}`);
+            
+            // Store checkout data
+            window.EmailDelivery.storeCheckoutData(email, selectedTier, 'Test User');
+            
+            // Redirect to Stripe
+            window.StripeCheckout.redirectToCheckout(selectedTier);
+        }
+
+        // Check system status
+        function checkStatus() {
+            const checks = [];
+            
+            // Check Stripe
+            checks.push(`Stripe: ${typeof Stripe !== 'undefined' ? '✅ Loaded' : '❌ Not loaded'}`);
+            
+            // Check ProductDelivery
+            checks.push(`ProductDelivery: ${window.ProductDelivery ? '✅ Loaded' : '❌ Not loaded'}`);
+            
+            // Check EmailDelivery
+            checks.push(`EmailDelivery: ${window.EmailDelivery ? '✅ Loaded' : '❌ Not loaded'}`);
+            
+            // Check EmailJS
+            checks.push(`EmailJS: ${typeof emailjs !== 'undefined' ? '✅ Loaded' : '⚠️ Not loaded (manual mode)'}`);
+            
+            // Check localStorage
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                checks.push(`localStorage: ✅ Available`);
+            } catch (e) {
+                checks.push(`localStorage: ❌ Not available`);
+            }
+
+            document.getElementById('statusChecks').innerHTML = checks.map(c => `<p>${c}</p>`).join('');
+            
+            checks.forEach(c => log(c));
+        }
+
+        // Run checks on load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(checkStatus, 500);
+        });
+    </script>
+</body>
+</html>

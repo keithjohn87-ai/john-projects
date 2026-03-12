@@ -1,0 +1,74 @@
+## ALABAMA STEEL ERECTION ESTIMATOR
+### TradeElegance Beta - Workbook Structure
+
+#### SHEET 1: PROJECT INFO
+Field,Value
+Project Name,[Enter Project Name]
+Location,[City, Alabama]
+Contractor,[Your Company]
+License #,[AL License]
+Date,[Auto: Today]
+Bid Valid,30 days
+Estimator,[Your Name]
+
+#### SHEET 2: MATERIALS
+Category,Item,Quantity,Unit,Unit Cost,Extension,Waste %,Freight %,Tax %
+Structural Steel,W12x26 Beams,45,LF,8.20,369.00,5,3.5,5.5
+Structural Steel,W10x19 Beams,32,LF,7.00,224.00,5,3.5,5.5
+Structural Steel,HSS 4x4x1/4 Columns,24,LF,11.50,276.00,5,3.5,5.5
+Structural Steel,Steel Deck 20ga,2400,SF,2.65,6360.00,5,3.5,5.5
+Structural Steel,Connection Plates,18,EA,42.00,756.00,5,3.5,5.5
+Structural Steel,Anchor Bolts 3/4,48,EA,7.80,374.40,5,3.5,5.5
+Hardware,A325 Bolts 3/4x3,180,EA,1.15,207.00,3,0,5.5
+Hardware,A325 Bolts 7/8x4,96,EA,1.70,163.20,3,0,5.5
+Hardware,E7018 Welding Rods,150,LBS,2.40,360.00,0,0,5.5
+Hardware,3/4 Shear Studs,320,EA,1.05,336.00,2,0,5.5
+Hardware,Touch-Up Paint,12,CAN,18.50,222.00,0,0,5.5
+
+#### SHEET 3: LABOR RATES (ALABAMA)
+Role,Base Wage,Burden %,Total Rate,Workers Comp,GL Ins,Notes
+Foreman/Rigger,38.50,40.95,54.29,10.98,0.96,Certified
+Journeyman Ironworker,35.00,40.95,49.35,9.98,0.88,AWS D1.1
+Apprentice 3rd Year,24.50,40.95,34.55,6.98,0.61,3+ years
+
+#### SHEET 4: LABOR ESTIMATE
+Task,Crew Size,Hours,Rate,Cost
+Site Mobilization,4,8,46.64,1492.48
+Column Layout,4,16,46.64,2984.96
+Column Installation,6,24,46.64,6716.16
+Beam Installation,6,40,46.64,11193.60
+Deck Placement,5,32,46.64,7462.40
+Final Bolt-Up,4,16,46.64,2984.96
+Touch-Up/Cleanup,3,8,46.64,1119.36
+
+#### SHEET 5: EQUIPMENT
+Equipment,Days,Rate,Cost,Supplier
+65-Ton Crane,6,1650,9900,Maxim Crane
+Welding Machine,10,115,1150,Sunbelt
+Impact Wrenches,12,45,540,United Rentals
+40ft Man Lift,8,265,2120,United Rentals
+Torque Wrench,3,85,255,Snap-on
+Rigging Hardware,1,450,450,Own
+
+#### SHEET 6: SUBCONTRACTORS
+Item,Vendor,Cost
+CWI Services,AWS CWI,1200
+Special Inspections,AL Building,850
+Fireproofing,By Others,4200
+Permits,Birmingham,385
+
+#### SHEET 7: COST SUMMARY
+Category,Amount
+Materials,11306.32
+Labor,8191.62
+Equipment,14955.00
+Subcontractors,6635.00
+DIRECT TOTAL,41087.94
+Overhead 4%,1643.52
+Contingency 3%,1232.64
+SUBTOTAL,43964.10
+Profit 15%,6594.62
+TOTAL BID,50558.72
+
+#### SHEET 8: PROPOSAL GENERATOR
+[Auto-populates from Sheets 1-7]

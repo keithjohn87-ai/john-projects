@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Complete - ContractorPro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ContractorPro" class="logo-img" style="height: 40px; width: auto;">
+            </a>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Content -->
+    <div class="success-page" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; padding-top: 100px;">
+        <div class="success-card" style="text-align: center; max-width: 600px; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);">
+            <div class="success-icon" style="font-size: 4rem; margin-bottom: 1rem;">🎉</div>
+            <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: #1e3a5f;">Order Complete!</h1>
+            <p style="color: #6b7280; margin-bottom: 2rem;">Thank you for your purchase. Your documents are being prepared.</p>
+            
+            <div class="delivery-info" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; text-align: left;">
+                <h3 style="margin-bottom: 1rem; color: #1e3a5f;">📧 What's Next?</h3>
+                <ul style="list-style: none; line-height: 2;">
+                    <li>✅ Payment confirmed</li>
+                    <li>📧 Download link sent to your email (within 5 minutes)</li>
+                    <li>💾 Files available for 72 hours</li>
+                    <li>💬 Support available if you need help</li>
+                </ul>
+            </div>
+
+            <div class="next-steps" style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem; color: #1e3a5f;">Quick Links</h3>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                    <a href="#" class="btn btn-secondary" onclick="alert('Dashboard coming soon!')">My Account</a>
+                </div>
+            </div>
+
+            <p style="color: #9ca3af; font-size: 0.875rem;">
+                Questions? Email us at <a href="mailto:support@contrpro.com" style="color: #1e3a5f;">support@contrpro.com</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/delivery-config.js"></script>
+    <script src="js/emailjs-config.js"></script>
+    <script>
+        // Clear cart on success page load
+        localStorage.removeItem('contractorProCart');
+        
+        // Get session ID from URL if present
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        
+        if (sessionId) {
+            console.log('Stripe session:', sessionId);
+            
+            // Process product delivery
+            if (window.EmailDelivery) {
+                window.EmailDelivery.processStripeSuccess(sessionId)
+                    .then(result => {
+                        console.log('Delivery result:', result);
+                        if (result.manual) {
+                            console.log('Manual delivery required - check pending deliveries');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Delivery error:', error);
+                    });
+            }
+        }
+    </script>
+</body>
+</html>

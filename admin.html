@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ContractorPro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        .admin-container { max-width: 1200px; margin: 0 auto; padding: 100px 2rem 2rem; }
+        .admin-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .admin-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .admin-table th, .admin-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        .admin-table th { background: #f9fafb; font-weight: 600; }
+        .status-badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .status-sent { background: #d1fae5; color: #065f46; }
+        .status-manual { background: #fee2e2; color: #991b1b; }
+        .btn-sm { padding: 0.5rem 1rem; font-size: 0.875rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ContractorPro" class="logo-img" style="height: 40px; width: auto;">
+            </a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-ghost">Back to Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <h1 style="margin-bottom: 2rem; color: #1e3a5f;">📊 Admin Dashboard</h1>
+
+        <!-- Stats Overview -->
+        <div class="admin-card">
+            <h2 style="margin-bottom: 1rem;">Overview</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: #1e3a5f;" id="pendingCount">0</div>
+                    <div style="color: #6b7280;">Pending Deliveries</div>
+                </div>
+                <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: #1e3a5f;" id="totalDeliveries">0</div>
+                    <div style="color: #6b7280;">Total Deliveries</div>
+                </div>
+                <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: #1e3a5f;" id="manualCount">0</div>
+                    <div style="color: #6b7280;">Need Manual Send</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Deliveries -->
+        <div class="admin-card">
+            <h2 style="margin-bottom: 1rem;">⏳ Pending Deliveries</h2>
+            <div id="pendingSection">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Email</th>
+                            <th>Product</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pendingTable">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Delivery History -->
+        <div class="admin-card">
+            <h2 style="margin-bottom: 1rem;">📦 Delivery History</h2>
+            <div id="historySection">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Email</th>
+                            <th>Product</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTable">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="admin-card">
+            <h2 style="margin-bottom: 1rem;">⚙️ Actions</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn btn-secondary" onclick="exportData()">Export Data</button>
+                <button class="btn btn-danger" onclick="clearAllData()" style="background: #ef4444;">Clear All Data</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/delivery-config.js"></script>
+    <script src="js/emailjs-config.js"></script>
+    <script>
+        // Product names mapping
+        const PRODUCT_NAMES = {
+            'essential': 'Essential Forms',
+            'professional': 'Professional Package',
+            'business': 'Business System',
+            'complete': 'Complete Bundle',
+            'sba': 'SBA Funding Guide'
+        };
+
+        // Load and display data
+        function loadDashboard() {
+            const pending = JSON.parse(localStorage.getItem('pendingDeliveries') || '[]');
+            const history = JSON.parse(localStorage.getItem('deliveryRecords') || '[]');
+
+            // Update stats
+            document.getElementById('pendingCount').textContent = pending.length;
+            document.getElementById('totalDeliveries').textContent = history.length;
+            document.getElementById('manualCount').textContent = pending.filter(p => p.status === 'pending').length;
+
+            // Populate pending table
+            const pendingTable = document.getElementById('pendingTable');
+            if (pending.length === 0) {
+                pendingTable.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #9ca3af;">No pending deliveries</td></tr>';
+            } else {
+                pendingTable.innerHTML = pending.map(d => `
+                    <tr>
+                        <td>${new Date(d.timestamp).toLocaleString()}</td>
+                        <td>${d.email}</td>
+                        <td>${PRODUCT_NAMES[d.tier] || d.tier}</td>
+                        <td><span class="status-badge status-pending">Pending</span></td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" onclick="copyDownloadUrl('${d.downloadUrl}')">Copy Link</button>
+                            <button class="btn btn-secondary btn-sm" onclick="markDelivered('${d.paymentId}')">Mark Sent</button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            // Populate history table
+            const historyTable = document.getElementById('historyTable');
+            if (history.length === 0) {
+                historyTable.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #9ca3af;">No delivery history</td></tr>';
+            } else {
+                historyTable.innerHTML = history.slice(-20).reverse().map(d => `
+                    <tr>
+                        <td>${new Date(d.timestamp).toLocaleString()}</td>
+                        <td>${d.email}</td>
+                        <td>${PRODUCT_NAMES[d.tier] || d.tier}</td>
+                        <td><span class="status-badge status-${d.status === 'sent' ? 'sent' : 'manual'}">${d.status}</span></td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        // Copy download URL to clipboard
+        function copyDownloadUrl(url) {
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Download link copied to clipboard!');
+            }).catch(() => {
+                prompt('Copy this link:', url);
+            });
+        }
+
+        // Mark delivery as complete
+        function markDelivered(paymentId) {
+            if (!confirm('Mark this delivery as sent?')) return;
+            
+            if (window.EmailDelivery) {
+                window.EmailDelivery.clearPendingDelivery(paymentId);
+            } else {
+                const pending = JSON.parse(localStorage.getItem('pendingDeliveries') || '[]');
+                const filtered = pending.filter(d => d.paymentId !== paymentId);
+                localStorage.setItem('pendingDeliveries', JSON.stringify(filtered));
+            }
+            
+            loadDashboard();
+        }
+
+        // Export data
+        function exportData() {
+            const data = {
+                pending: JSON.parse(localStorage.getItem('pendingDeliveries') || '[]'),
+                history: JSON.parse(localStorage.getItem('deliveryRecords') || '[]'),
+                exported: new Date().toISOString()
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `contractorpro-deliveries-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Clear all data
+        function clearAllData() {
+            if (!confirm('WARNING: This will delete ALL delivery data. Are you sure?')) return;
+            if (!confirm('Really sure? This cannot be undone.')) return;
+            
+            localStorage.removeItem('pendingDeliveries');
+            localStorage.removeItem('deliveryRecords');
+            localStorage.removeItem('lastCheckout');
+            
+            loadDashboard();
+            alert('All data cleared');
+        }
+
+        // Load on page load
+        document.addEventListener('DOMContentLoaded', loadDashboard);
+        
+        // Refresh every 30 seconds
+        setInterval(loadDashboard, 30000);
+    </script>
+</body>
+</html>

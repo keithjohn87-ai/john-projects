@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Your Files - ContractorPro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ContractorPro" class="logo-img" style="height: 40px; width: auto;">
+            </a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-ghost">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Download Content -->
+    <div class="download-page" style="min-height: 100vh; padding: 2rem; padding-top: 100px; max-width: 900px; margin: 0 auto;">
+        <div id="downloadContainer">
+            <!-- Content loaded via JavaScript -->
+            <div class="loading" style="text-align: center; padding: 4rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">⏳</div>
+                <h2>Verifying your download...</h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/delivery-config.js"></script>
+    <script>
+        // Get token from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        const container = document.getElementById('downloadContainer');
+
+        if (!token) {
+            container.innerHTML = `
+                <div class="error-card" style="text-align: center; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">❌</div>
+                    <h1 style="color: #1e3a5f; margin-bottom: 0.5rem;">Invalid Download Link</h1>
+                    <p style="color: #6b7280; margin-bottom: 2rem;">This download link appears to be invalid or expired.</p>
+                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                </div>
+            `;
+        } else {
+            // Verify token
+            const verification = window.ProductDelivery.verifyDownloadToken(token);
+            
+            if (!verification.valid) {
+                container.innerHTML = `
+                    <div class="error-card" style="text-align: center; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">⏰</div>
+                        <h1 style="color: #1e3a5f; margin-bottom: 0.5rem;">Link Expired</h1>
+                        <p style="color: #6b7280; margin-bottom: 2rem;">This download link has expired. Links are valid for 72 hours.</p>
+                        <p style="margin-bottom: 2rem;">Contact <a href="mailto:support@contrpro.com">support@contrpro.com</a> for assistance.</p>
+                        <a href="index.html" class="btn btn-primary">Back to Home</a>
+                    </div>
+                `;
+            } else {
+                // Show download page
+                const files = window.ProductDelivery.getProductFiles(verification.tier);
+                const product = window.ProductDelivery.config.products[verification.tier];
+                
+                container.innerHTML = `
+                    <div class="download-card" style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
+                            <h1 style="color: #1e3a5f;">${product.name}</h1>
+                            <p style="color: #6b7280;">Your files are ready for download</p>
+                        </div>
+
+                        <div class="files-list" style="margin-bottom: 2rem;">
+                            <h3 style="margin-bottom: 1rem; color: #1e3a5f;">Included Files (${files.length}):</h3>
+                            <ul style="list-style: none; background: #f9fafb; padding: 1.5rem; border-radius: 8px;">
+                                ${files.map(file => `
+                                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 0.5rem;">
+                                        <span>📄</span>
+                                        <span style="flex: 1;">${file.split('/').pop()}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="download-actions" style="text-align: center;">
+                            <button class="btn btn-primary btn-lg" onclick="downloadAll('${verification.tier}')" style="margin-bottom: 1rem;">
+                                📥 Download All Files
+                            </button>
+                            <p style="color: #9ca3af; font-size: 0.875rem;">
+                                Link expires in 72 hours • Single download only
+                            </p>
+                        </div>
+
+                        <div class="support" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+                            <p style="color: #6b7280; text-align: center; margin-bottom: 1rem;">Having trouble downloading?</p>
+                            <button class="btn btn-ghost" onclick="showSupportForm()" style="width: 100%;">Request Download Assistance</button>
+                            
+                            <div id="supportForm" style="display: none; margin-top: 1.5rem; background: #f9fafb; padding: 1.5rem; border-radius: 8px;">
+                                <h4 style="margin-bottom: 1rem; color: #1e3a5f;">Download Support Request</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">Please provide details about your issue. We typically respond within 4 hours during business hours.</p>
+                                
+                                <div style="margin-bottom: 1rem;">
+                                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Used for Purchase *</label>
+                                    <input type="email" id="supportEmail" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;" placeholder="your@email.com">
+                                </div>
+                                
+                                <div style="margin-bottom: 1rem;">
+                                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Order ID or Last 4 of Card *</label>
+                                    <input type="text" id="supportOrderId" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;" placeholder="Found in your receipt email">
+                                </div>
+                                
+                                <div style="margin-bottom: 1rem;">
+                                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">What happened? *</label>
+                                    <select id="supportIssue" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+                                        <option value="">Select an issue...</option>
+                                        <option value="download_failed">Download won't start</option>
+                                        <option value="file_corrupt">File appears corrupted</option>
+                                        <option value="wrong_product">Received wrong product</option>
+                                        <option value="cant_extract">Can't open zip file</option>
+                                        <option value="other">Other issue</option>
+                                    </select>
+                                </div>
+                                
+                                <div style="margin-bottom: 1.5rem;">
+                                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Additional Details</label>
+                                    <textarea id="supportDetails" rows="3" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; resize: vertical;" placeholder="Describe what you experienced..."></textarea>
+                                </div>
+                                
+                                <button class="btn btn-primary" onclick="submitSupportRequest()" style="width: 100%;">Submit Support Request</button>
+                                <p id="supportMessage" style="margin-top: 1rem; text-align: center; display: none;"></p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function downloadAll(tier) {
+            // Check if already downloaded
+            const downloadKey = 'downloaded_' + tier;
+            if (localStorage.getItem(downloadKey)) {
+                alert('This file has already been downloaded. Contact support@contrpro.com if you need assistance.');
+                return;
+            }
+            
+            // Map tiers to zip files with absolute paths
+            const baseUrl = window.location.origin;
+            const zipFiles = {
+                'essential': '/products/packages/essential-forms-79.zip',
+                'professional': '/products/packages/professional-package-149.zip',
+                'business': '/products/packages/business-system-199.zip',
+                'complete': '/products/packages/complete-bundle-249.zip',
+                'sba': '/products/packages/contractorpro-v5-complete-bundle.zip'
+            };
+            
+            const zipFile = zipFiles[tier];
+            if (zipFile) {
+                const fullUrl = baseUrl + zipFile;
+                console.log('Downloading from:', fullUrl);
+                
+                // Mark as downloaded
+                localStorage.setItem(downloadKey, 'true');
+                
+                // Create a temporary link and trigger download
+                const link = document.createElement('a');
+                link.href = fullUrl;
+                link.download = zipFile.split('/').pop();
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Show success message and disable button
+                const btn = document.querySelector('.download-actions button');
+                btn.innerHTML = '✓ Download Complete';
+                btn.style.background = '#22c55e';
+                btn.disabled = true;
+                btn.style.cursor = 'not-allowed';
+                btn.style.opacity = '0.6';
+                
+                // Update message
+                const msg = document.querySelector('.download-actions p');
+                if (msg) {
+                    msg.innerHTML = 'Download completed • Contact <a href="mailto:support@contrpro.com">support</a> for assistance';
+                }
+            } else {
+                alert('Download file not found for this product tier.');
+            }
+        }
+        
+        function showSupportForm() {
+            const form = document.getElementById('supportForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function submitSupportRequest() {
+            const email = document.getElementById('supportEmail').value;
+            const orderId = document.getElementById('supportOrderId').value;
+            const issue = document.getElementById('supportIssue').value;
+            const details = document.getElementById('supportDetails').value;
+            const msgEl = document.getElementById('supportMessage');
+            
+            if (!email || !orderId || !issue) {
+                msgEl.style.display = 'block';
+                msgEl.style.color = '#dc2626';
+                msgEl.textContent = 'Please fill in all required fields.';
+                return;
+            }
+            
+            // Store support request (in production, this would send to backend)
+            const requests = JSON.parse(localStorage.getItem('supportRequests') || '[]');
+            requests.push({
+                email,
+                orderId,
+                issue,
+                details,
+                timestamp: Date.now(),
+                status: 'pending'
+            });
+            localStorage.setItem('supportRequests', JSON.stringify(requests));
+            
+            // Show confirmation
+            msgEl.style.display = 'block';
+            msgEl.style.color = '#16a34a';
+            msgEl.innerHTML = 'Request submitted. Check your email (' + email + ') for updates.';
+            
+            // Clear form
+            document.getElementById('supportEmail').value = '';
+            document.getElementById('supportOrderId').value = '';
+            document.getElementById('supportIssue').value = '';
+            document.getElementById('supportDetails').value = '';
+            
+            // Hide form after delay
+            setTimeout(() => {
+                document.getElementById('supportForm').style.display = 'none';
+                msgEl.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+
+    <!-- Legal Disclaimer -->
+    <section style="background: #fff3cd; padding: 2rem; border-top: 3px solid #ffc107; margin-top: 3rem;">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <span style="font-size: 1.5rem;">⚖️</span>
+            <h3 style="color: #856404; margin: 0.5rem 0;">Important Legal Information</h3>
+            <p style="color: #856404; font-size: 0.9rem; line-height: 1.6;">
+                The documents you are downloading are templates for educational and business organization purposes only. 
+                ContractorPro is not a law firm and does not provide legal advice. 
+                <strong>Always have a qualified attorney licensed in your state review all documents before use.</strong> 
+                Construction laws vary by state—verify all requirements with your state contractor board.
+            </p>
+        </div>
+    </section>
+</body>
+</html>

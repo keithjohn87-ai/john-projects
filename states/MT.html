@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montana Contractor Resources - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="state-page" style="padding-top: 80px;">
+        <div class="container">
+            <div id="stateContent">
+                <h1>Montana Contractor Resources</h1>
+                <p style="color: #6b7280; margin-top: 0.5rem;">Complete guide to licensing, lien laws, and compliance for contractors in Montana.</p>
+                
+                <div class="state-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem;">
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📋 Licensing Requirements</h2>
+                        <p><strong>Montana Department of Labor and Industry</strong></p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Construction Contractor Registration required</p>
+                        <a href="https://erd.dli.mt.gov/work-comp-regulations/montana-contractor/construction-contractor-registration" target="_blank" style="color: #1e3a5f; display: inline-block; margin-top: 0.5rem;">Visit DLI Website →</a>
+                        <h3 style="margin-top: 1rem;">Key Requirements:</h3>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8;">
+                            <li><strong>Registration:</strong> Required for construction contractors with employees</li>
+                            <li><strong>Exemption:</strong> Independent contractors without employees exempt (but may register)</li>
+                            <li><strong>Workers' Comp:</strong> Required if you have employees</li>
+                            <li><strong>Unemployment Insurance:</strong> May be required</li>
+                            <li><strong>Local Licensing:</strong> Check with city/county building departments</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>⚖️ Lien Law Deadlines</h2>
+                        <p><strong>Preliminary Notice:</strong> Not required for prime contractors</p>
+                        <p style="margin-top: 0.75rem;"><strong>Filing Deadline:</strong> Within 90 days of last furnishing OR within 90 days of Notice of Completion (whichever is earlier)</p>
+                        <p style="margin-top: 0.75rem;"><strong>Foreclosure Period:</strong> Within 2 years of filing lien</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                            <strong>⚠️ Important:</strong> Montana has two potential deadlines - 90 days from last furnishing OR 90 days from Notice of Completion filing, whichever comes first.
+                        </div>
+                    </div>
+                    
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>💰 Tax Information</h2>
+                        <p><strong>Sales Tax Rate:</strong> No state sales tax in Montana</p>
+                        <p style="margin-top: 0.75rem;"><strong>Local Rates:</strong> No local sales tax</p>
+                        <p style="margin-top: 0.75rem;"><strong>Contractor Tax Notes:</strong> Montana has no general sales tax. Contractors pay no sales tax on materials. Other business taxes may apply.</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://mtrevenue.gov/" target="_blank" class="btn btn-secondary" style="font-size: 0.875rem;">View Tax Information</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📄 Document Templates</h2>
+                        <p>Download Montana-specific contractor documents:</p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.75rem; line-height: 2;">
+                            <li><a href="../resources/preliminary-notice.html" style="color: #1e3a5f;">Preliminary Notice Template</a></li>
+                            <li><a href="../resources/mechanics-lien.html" style="color: #1e3a5f;">Mechanics Lien Form</a></li>
+                            <li><a href="../resources/release-of-lien.html" style="color: #1e3a5f;">Release of Lien</a></li>
+                            <li><a href="../resources/stop-notice.html" style="color: #1e3a5f;">Stop Notice</a></li>
+                            <li><a href="../resources/construction-contract.html" style="color: #1e3a5f;">Contract Agreement Template</a></li>
+                        </ul>
+                        <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Download All Templates</button>
+                    </div>
+                </div>
+                
+                <div class="contact-section" style="background: #1e3a5f; color: white; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                    <h2 style="color: white; margin-bottom: 1rem;">📞 Contact Information</h2>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: #93c5fd; margin-bottom: 0.5rem;">Department of Labor and Industry</h4>
+                            <p>Employment Relations Division</p>
+                            <p>PO Box 8011, Helena, MT 59604</p>
+                            <p>Phone: (406) 444-3665</p>
+                            <p>Website: erd.dli.mt.gov</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #93c5fd; margin-bottom: 0.5rem;">Department of Revenue</h4>
+                            <p>PO Box 5805, Helena, MT 59604</p>
+                            <p>Phone: (406) 444-6900</p>
+                            <p>Website: mtrevenue.gov</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; text-align: center;">
+                    <a href="../index.html#states" class="btn btn-secondary">← Back to All States</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

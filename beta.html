@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Tester Account - ContractorPro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        .beta-container { max-width: 1000px; margin: 0 auto; padding: 100px 2rem 2rem; }
+        .beta-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .beta-badge { background: #8b5cf6; color: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
+        .test-account { background: #f0f9ff; border: 2px solid #0ea5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; }
+        .credential { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: white; border-radius: 6px; margin-bottom: 0.5rem; }
+        .purchase-history { width: 100%; border-collapse: collapse; }
+        .purchase-history th, .purchase-history td { padding: 1rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        .purchase-history th { background: #f9fafb; font-weight: 600; }
+        .status-badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; }
+        .status-completed { background: #d1fae5; color: #065f46; }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .feature-card { background: #f9fafb; padding: 1.5rem; border-radius: 8px; }
+        .quick-action { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ContractorPro" class="logo-img" style="height: 40px; width: auto;">
+            </a>
+            <div class="nav-actions">
+                <span id="userDisplay" style="color: #6b7280; margin-right: 1rem;"></span>
+                <button class="btn btn-ghost" onclick="logout()" id="logoutBtn" style="display: none;">Logout</button>
+                <a href="index.html" class="btn btn-primary">Live Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="beta-container">
+        <!-- Beta Header -->
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <span class="beta-badge">🔮 BETA TESTER PORTAL</span>
+            <h1 style="color: #1e3a5f; margin-top: 1rem;">ContractorPro Beta</h1>
+            <p style="color: #6b7280;">Test the complete platform before public launch</p>
+        </div>
+
+        <!-- Login Section (shown when not logged in) -->
+        <div id="loginSection" class="beta-card">
+            <h2 style="margin-bottom: 1rem;">Beta Tester Login</h2>
+            <p style="color: #6b7280; margin-bottom: 1.5rem;">Use the credentials below to access the beta test environment.</p>
+            
+            <div class="test-account">
+                <h3 style="color: #0ea5e9; margin-bottom: 1rem;">🧪 Test Account Credentials</h3>
+                
+                <div class="credential">
+                    <span><strong>Email:</strong></span>
+                    <code style="background: #f3f4f6; padding: 0.25rem 0.5rem; border-radius: 4px;">beta@contrpro.com</code>
+                </div>
+                
+                <div class="credential">
+                    <span><strong>Password:</strong></span>
+                    <code style="background: #f3f4f6; padding: 0.25rem 0.5rem; border-radius: 4px;">BetaTest2026!</code>
+                </div>
+                
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #bae6fd;">
+                    <p style="font-size: 0.875rem; color: #0369a1;">
+                        <strong>Note:</strong> This is a shared test account. All purchases are simulated — no real charges.
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <button class="btn btn-primary btn-lg" onclick="login()" style="width: 100%;">
+                    Login as Beta Tester
+                </button>
+            </div>
+        </div>
+
+        <!-- Dashboard (shown when logged in) -->
+        <div id="dashboardSection" style="display: none;">
+            
+            <!-- Welcome -->
+            <div class="beta-card">
+                <h2 style="margin-bottom: 0.5rem;">Welcome, Beta Tester! 👋</h2>
+                <p style="color: #6b7280;">You have full access to test all platform features. Your test purchases and activity are tracked below.</p>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="beta-card">
+                <h3 style="margin-bottom: 1rem;">Quick Actions</h3>
+                <div class="quick-action">
+                    <a href="test-purchase.html" class="btn btn-primary">🛒 Test Purchase Flow</a>
+                    <a href="admin.html" class="btn btn-secondary">📊 View Admin Dashboard</a>
+                    <a href="index.html" class="btn btn-secondary">🏠 Browse Live Site</a>
+                    <button class="btn btn-secondary" onclick="clearTestData()">🗑️ Clear Test Data</button>
+                </div>
+            </div>
+
+            <!-- Test Features -->
+            <div class="beta-card">
+                <h3 style="margin-bottom: 1rem;">What to Test</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🛒 Purchase Flow</h4>
+                        <p style="font-size: 0.875rem; color: #6b7280;">Add items to cart, checkout, receive delivery email</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📧 Email Delivery</h4>
+                        <p style="font-size: 0.875rem; color: #6b7280;">Verify download links, file access, expiration</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📱 Mobile Experience</h4>
+                        <p style="font-size: 0.875rem; color: #6b7280;">Test on phone/tablet, check responsiveness</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📊 State Pages</h4>
+                        <p style="font-size: 0.875rem; color: #6b7280;">Navigate state-specific contractor resources</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>💳 Stripe Integration</h4>
+                        <p style="font-size: 0.875rem; color: #6b7280;">Test real checkout (use test card 4242...)</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🔐 Download Security</h4>
+                        <p style="font-size: 0.875rem; color: #6b7280;">Verify token-based access, expiration handling</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Purchase History -->
+            <div class="beta-card">
+                <h3 style="margin-bottom: 1rem;">Your Test Purchase History</h3>
+                <div id="purchaseHistoryContainer">
+                    <table class="purchase-history">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="purchaseHistoryTable">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <p id="noPurchases" style="text-align: center; color: #9ca3af; padding: 2rem; display: none;">
+                    No test purchases yet. <a href="test-purchase.html">Run your first test!</a>
+                </p>
+            </div>
+
+            <!-- Feedback -->
+            <div class="beta-card">
+                <h3 style="margin-bottom: 1rem;">Submit Feedback</h3>
+                <p style="color: #6b7280; margin-bottom: 1rem;">Found a bug? Have a suggestion? Let us know!</p>
+                <textarea id="feedbackText" placeholder="Describe your feedback..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; min-height: 100px; margin-bottom: 1rem;"></textarea>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button class="btn btn-primary" onclick="submitFeedback()">Submit Feedback</button>
+                    <span id="feedbackStatus" style="color: #22c55e; display: none;">✓ Feedback saved!</span>
+                </div>
+            </div>
+
+            <!-- System Status -->
+            <div class="beta-card">
+                <h3 style="margin-bottom: 1rem;">System Status</h3>
+                <div id="systemStatus">
+                    <p>Checking systems...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const BETA_USER = {
+            email: 'beta@contrpro.com',
+            password: 'BetaTest2026!',
+            name: 'Beta Tester'
+        };
+
+        // Check login status on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = localStorage.getItem('betaLoggedIn') === 'true';
+            if (isLoggedIn) {
+                showDashboard();
+            }
+        });
+
+        function login() {
+            // Simulate login (in real app, validate against server)
+            localStorage.setItem('betaLoggedIn', 'true');
+            localStorage.setItem('betaUser', JSON.stringify(BETA_USER));
+            showDashboard();
+        }
+
+        function logout() {
+            localStorage.removeItem('betaLoggedIn');
+            localStorage.removeItem('betaUser');
+            location.reload();
+        }
+
+        function showDashboard() {
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('dashboardSection').style.display = 'block';
+            document.getElementById('logoutBtn').style.display = 'inline-block';
+            document.getElementById('userDisplay').textContent = BETA_USER.email;
+            
+            loadPurchaseHistory();
+            checkSystemStatus();
+        }
+
+        function loadPurchaseHistory() {
+            const history = JSON.parse(localStorage.getItem('betaPurchaseHistory') || '[]');
+            const tableBody = document.getElementById('purchaseHistoryTable');
+            const noPurchases = document.getElementById('noPurchases');
+            
+            if (history.length === 0) {
+                tableBody.innerHTML = '';
+                noPurchases.style.display = 'block';
+                return;
+            }
+            
+            noPurchases.style.display = 'none';
+            
+            const PRODUCT_NAMES = {
+                'essential': 'Essential Forms',
+                'professional': 'Professional Package',
+                'business': 'Business System',
+                'complete': 'Complete Bundle',
+                'sba': 'SBA Funding Guide'
+            };
+            
+            tableBody.innerHTML = history.slice().reverse().map(purchase => `
+                <tr>
+                    <td>${new Date(purchase.date).toLocaleString()}</td>
+                    <td>${PRODUCT_NAMES[purchase.product] || purchase.product}</td>
+                    <td>$${purchase.amount}</td>
+                    <td><span class="status-badge status-${purchase.status}">${purchase.status}</span></td>
+                    <td>
+                        ${purchase.downloadUrl ? `<a href="${purchase.downloadUrl}" class="btn btn-secondary btn-sm">Download</a>` : '-'}
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function clearTestData() {
+            if (!confirm('Clear all test purchase history? This cannot be undone.')) return;
+            
+            localStorage.removeItem('betaPurchaseHistory');
+            localStorage.removeItem('pendingDeliveries');
+            localStorage.removeItem('deliveryRecords');
+            localStorage.removeItem('lastCheckout');
+            localStorage.removeItem('contractorProCart');
+            
+            alert('Test data cleared!');
+            loadPurchaseHistory();
+        }
+
+        function submitFeedback() {
+            const feedback = document.getElementById('feedbackText').value;
+            if (!feedback.trim()) {
+                alert('Please enter your feedback');
+                return;
+            }
+            
+            // Store feedback (in real app, send to server)
+            const feedbacks = JSON.parse(localStorage.getItem('betaFeedback') || '[]');
+            feedbacks.push({
+                date: new Date().toISOString(),
+                user: BETA_USER.email,
+                feedback: feedback
+            });
+            localStorage.setItem('betaFeedback', JSON.stringify(feedbacks));
+            
+            document.getElementById('feedbackText').value = '';
+            document.getElementById('feedbackStatus').style.display = 'inline';
+            setTimeout(() => {
+                document.getElementById('feedbackStatus').style.display = 'none';
+            }, 3000);
+        }
+
+        function checkSystemStatus() {
+            const checks = [];
+            
+            // Check various systems
+            checks.push(`Stripe: ${typeof Stripe !== 'undefined' ? '✅ Ready' : '⚠️ Not loaded'}`);
+            checks.push(`Product Delivery: ${window.ProductDelivery ? '✅ Ready' : '❌ Error'}`);
+            checks.push(`Email Service: ${typeof emailjs !== 'undefined' ? '✅ Configured' : '⚠️ Manual mode'}`);
+            checks.push(`Local Storage: ${typeof Storage !== 'undefined' ? '✅ Available' : '❌ Error'}`);
+            
+            const siteUrl = window.location.origin;
+            checks.push(`Site URL: ${siteUrl}`);
+            
+            document.getElementById('systemStatus').innerHTML = checks.map(c => `<p>${c}</p>`).join('');
+        }
+
+        // Record test purchase (called from test-purchase.html)
+        function recordTestPurchase(product, amount, downloadUrl) {
+            const history = JSON.parse(localStorage.getItem('betaPurchaseHistory') || '[]');
+            history.push({
+                date: new Date().toISOString(),
+                product: product,
+                amount: amount,
+                status: 'completed',
+                downloadUrl: downloadUrl
+            });
+            localStorage.setItem('betaPurchaseHistory', JSON.stringify(history));
+        }
+
+        // Make available globally
+        window.BetaAccount = {
+            recordTestPurchase,
+            loadPurchaseHistory
+        };
+    </script>
+    <!-- Legal Disclaimer -->
+    <section style="background: #fff3cd; padding: 2rem; border-top: 3px solid #ffc107; margin-top: 3rem;">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <span style="font-size: 1.5rem;">⚖️</span>
+            <h3 style="color: #856404; margin: 0.5rem 0;">Legal Notice</h3>
+            <p style="color: #856404; font-size: 0.9rem; line-height: 1.6;">
+                ContractorPro provides educational templates and business tools only. We are not a law firm and do not provide legal advice. 
+                All document templates should be reviewed by a qualified attorney licensed in your state before use. 
+                Construction laws vary by state—verify all requirements with your state contractor board.
+            </p>
+        </div>
+    </section>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="js/delivery-config.js"></script>
+    <script src="js/emailjs-config.js"></script>
+</body>
+</html>
