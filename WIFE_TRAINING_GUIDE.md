@@ -1,4 +1,4 @@
-# Wife Training Guide - Customer Support
+# Savannah's Customer Support Guide
 
 ## Role Overview
 Handle exceptions only:
@@ -25,7 +25,7 @@ It will appear on your card within 5-7 business days.
 Is there anything specific that didn't work for you? Your feedback helps us improve.
 
 Best,
-[Her name]
+Savannah
 ContractorPro Support
 ```
 
@@ -43,7 +43,7 @@ Can you tell me:
 I'll send you a fresh download link right away.
 
 Best,
-[Her name]
+Savannah
 ```
 
 ### Angry Customer
@@ -58,7 +58,7 @@ Here's what I'm going to do to fix this:
 I appreciate your patience. Please let me know if there's anything else I can do.
 
 Best,
-[Her name]
+Savannah
 ```
 
 ### Custom Request (Document modification)
@@ -70,7 +70,7 @@ Thanks for reaching out. Custom document modifications are handled on a case-by-
 Can you tell me more about what you need? I'll review and get back to you within 24 hours with options and pricing.
 
 Best,
-[Her name]
+Savannah
 ```
 
 ## Escalation Rules
@@ -89,7 +89,7 @@ Best,
 
 ## Tools Access
 
-**She needs:**
+**Savannah needs:**
 - Access to CharlesCreatorAI@gmail.com
 - Stripe dashboard (read-only)
 - Telegram for Charles questions
@@ -117,3 +117,18 @@ Best,
 - Refund rate: < 5%
 - Customer satisfaction: Track via follow-up emails
 - Escalation rate: < 10% of tickets
+
+---
+
+## Savannah's Other Roles
+
+### LinkedIn Content Manager
+- Weekly content emails to Savannah (Mondays 10 AM)
+- ContractorPro brand presence on LinkedIn
+- Content calendar managed by Charles
+
+## Contact
+- **Name:** Savannah
+- **Role:** Customer Support Lead + LinkedIn Content
+- **Reports to:** John
+- **Works with:** Charles (for technical questions)
