@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Purchase - ContractorPro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        .test-container { max-width: 900px; margin: 0 auto; padding: 100px 2rem 2rem; }
+        .test-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .step { display: flex; gap: 1rem; margin-bottom: 1.5rem; opacity: 0.5; }
+        .step.active { opacity: 1; }
+        .step.completed { opacity: 1; }
+        .step-number { width: 32px; height: 32px; border-radius: 50%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; }
+        .step.active .step-number { background: #1e3a5f; color: white; }
+        .step.completed .step-number { background: #22c55e; color: white; }
+        .product-option { border: 2px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; cursor: pointer; transition: all 0.2s; }
+        .product-option:hover { border-color: #1e3a5f; }
+        .product-option.selected { border-color: #1e3a5f; background: #f0f9ff; }
+        .test-mode-badge { background: #fbbf24; color: #92400e; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
+        .log { background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.875rem; max-height: 400px; overflow-y: auto; }
+        .success-check { color: #22c55e; font-size: 1.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ContractorPro" class="logo-img" style="height: 40px; width: auto;">
+            </a>
+            <div class="nav-actions">
+                <a href="admin.html" class="btn btn-ghost">Admin</a>
+                <a href="index.html" class="btn btn-primary">Live Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="test-container">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <span class="test-mode-badge">🧪 TEST MODE - NO REAL CHARGES</span>
+            <h1 style="color: #1e3a5f; margin-top: 1rem;">End-to-End Purchase Test</h1>
+            <p style="color: #6b7280;">Verify the complete customer journey from purchase to delivery</p>
+        </div>
+
+        <!-- Step 1: Select Product -->
+        <div class="test-card">
+            <div class="step active" id="step1">
+                <div class="step-number">1</div>
+                <div style="flex: 1;">
+                    <h3>Select Product to Test</h3>
+                    <p style="color: #6b7280; margin-bottom: 1rem;">Choose which package to simulate purchasing</p>
+                    
+                    <div class="product-option selected" onclick="selectProduct('essential')" id="prod-essential">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h4>Essential Forms</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">5 files • Preliminary notices, liens, contracts</p>
+                            </div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #1e3a5f;">$79</div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-option" onclick="selectProduct('professional')" id="prod-professional">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h4>Professional Package</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">9 files • + Job costing, AR tracker, change orders</p>
+                            </div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #1e3a5f;">$149</div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-option" onclick="selectProduct('business')" id="prod-business">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h4>Business System</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">14 files • + Project tracking, SBA guide included</p>
+                            </div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #1e3a5f;">$199</div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-option" onclick="selectProduct('complete')" id="prod-complete">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h4>Complete Bundle ⭐</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">16+ files • Everything + business plan & marketing</p>
+                            </div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #1e3a5f;">$249</div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-option" onclick="selectProduct('sba')" id="prod-sba">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h4>SBA Funding Guide</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">2 files • Complete SBA loan guide</p>
+                            </div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #1e3a5f;">$99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Enter Email -->
+        <div class="test-card">
+            <div class="step" id="step2">
+                <div class="step-number">2</div>
+                <div style="flex: 1;">
+                    <h3>Enter Delivery Email</h3>
+                    <p style="color: #6b7280; margin-bottom: 1rem;">Where should we send the download link?</p>
+                    <input type="email" id="testEmail" placeholder="your-email@example.com" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; margin-bottom: 1rem; font-size: 1rem;">
+                    <p style="font-size: 0.875rem; color: #6b7280;">✉️ Check this inbox for the delivery email after "purchase"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Simulate Purchase -->
+        <div class="test-card">
+            <div class="step" id="step3">
+                <div class="step-number">3</div>
+                <div style="flex: 1;">
+                    <h3>Simulate Purchase</h3>
+                    <p style="color: #6b7280; margin-bottom: 1rem;">This will trigger the complete post-purchase flow</p>
+                    <button class="btn btn-primary btn-lg" onclick="simulatePurchase()" id="purchaseBtn">
+                        🛒 Simulate Purchase & Delivery
+                    </button>
+                    <p style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
+                        ⚠️ No real payment processed — this is a test simulation
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Verify Results -->
+        <div class="test-card">
+            <div class="step" id="step4">
+                <div class="step-number">4</div>
+                <div style="flex: 1;">
+                    <h3>Verify Results</h3>
+                    <div id="verificationResults" style="display: none;">
+                        <div style="background: #f0fdf4; border: 1px solid #86efac; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="color: #166534; margin-bottom: 0.5rem;">✅ Test Purchase Complete!</h4>
+                            <p style="color: #166534;">Check your email for the delivery message.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <h4>What to verify in your email:</h4>
+                            <ul style="margin-left: 1.5rem; line-height: 2;">
+                                <li>Email arrived in inbox (not spam)</li>
+                                <li>Subject line is clear</li>
+                                <li>Product name is correct</li>
+                                <li>Download link works</li>
+                                <li>Link takes you to correct file list</li>
+                                <li>Files listed match what was purchased</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="admin.html" class="btn btn-secondary">View in Admin Dashboard</a>
+                            <button class="btn btn-primary" onclick="resetTest()">Run Another Test</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Log -->
+        <div class="test-card">
+            <h3 style="margin-bottom: 1rem;">Test Log</h3>
+            <div class="log" id="testLog">
+                <div>> Test system ready...</div>
+                <div>> Select a product to begin</div>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="test-card">
+            <h3 style="margin-bottom: 1rem;">Quick Links</h3>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="admin.html" class="btn btn-secondary">📊 Admin Dashboard</a>
+                <a href="download.html" class="btn btn-secondary">⬇️ Download Page</a>
+                <a href="success.html" class="btn btn-secondary">✅ Success Page</a>
+                <a href="index.html" class="btn btn-secondary">🏠 Live Site</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/delivery-config.js"></script>
+    <script src="js/emailjs-config.js"></script>
+    <script>
+        let selectedProduct = 'essential';
+        const PRODUCT_NAMES = {
+            'essential': 'Essential Forms',
+            'professional': 'Professional Package',
+            'business': 'Business System',
+            'complete': 'Complete Bundle',
+            'sba': 'SBA Funding Guide'
+        };
+
+        function log(message) {
+            const logEl = document.getElementById('testLog');
+            const time = new Date().toLocaleTimeString();
+            logEl.innerHTML += `<div>[${time}] ${message}</div>`;
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+
+        function selectProduct(product) {
+            selectedProduct = product;
+            document.querySelectorAll('.product-option').forEach(el => el.classList.remove('selected'));
+            document.getElementById(`prod-${product}`).classList.add('selected');
+            log(`Selected: ${PRODUCT_NAMES[product]}`);
+            
+            // Activate step 2
+            document.getElementById('step2').classList.add('active');
+            document.getElementById('testEmail').focus();
+        }
+
+        // Activate step 2 when email is entered
+        document.getElementById('testEmail').addEventListener('input', function() {
+            if (this.value.includes('@')) {
+                document.getElementById('step3').classList.add('active');
+            }
+        });
+
+        async function simulatePurchase() {
+            const email = document.getElementById('testEmail').value;
+            
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            const btn = document.getElementById('purchaseBtn');
+            btn.disabled = true;
+            btn.textContent = 'Processing...';
+
+            log('========================================');
+            log('SIMULATING PURCHASE...');
+            log(`Product: ${PRODUCT_NAMES[selectedProduct]}`);
+            log(`Email: ${email}`);
+            log('========================================');
+
+            // Step 1: Store checkout data (as if Stripe redirect happened)
+            const mockPaymentId = 'TEST-' + Date.now();
+            window.EmailDelivery.storeCheckoutData(email, selectedProduct, 'Test Customer');
+            log('✓ Checkout data stored');
+
+            // Step 2: Simulate success page processing
+            log('✓ Simulating success page...');
+            
+            // Step 3: Trigger delivery
+            log('✓ Triggering product delivery...');
+            
+            try {
+                const result = await window.EmailDelivery.send(email, selectedProduct, mockPaymentId, 'Test Customer');
+                
+                // Record in beta account history
+                if (window.BetaAccount) {
+                    const prices = { essential: 79, professional: 149, business: 199, complete: 249, sba: 99 };
+                    window.BetaAccount.recordTestPurchase(selectedProduct, prices[selectedProduct], result.downloadUrl);
+                    log('✓ Purchase recorded in beta account history');
+                }
+                
+                if (result.success) {
+                    log('✓ Delivery email sent successfully!');
+                    log(`✓ Download URL: ${result.downloadUrl.substring(0, 60)}...`);
+                } else if (result.manual) {
+                    log('⚠ EmailJS not configured - delivery logged for manual send');
+                    log(`✓ Download URL ready: ${result.downloadUrl.substring(0, 60)}...`);
+                    log('→ Check Admin Dashboard to send manually');
+                }
+
+                // Step 4: Show verification
+                document.getElementById('step1').classList.add('completed');
+                document.getElementById('step2').classList.add('completed');
+                document.getElementById('step3').classList.add('completed');
+                document.getElementById('step4').classList.add('active');
+                document.getElementById('verificationResults').style.display = 'block';
+                
+                log('========================================');
+                log('TEST COMPLETE!');
+                log('Check your email and verify the delivery.');
+                log('========================================');
+
+            } catch (error) {
+                log(`✗ Error: ${error.message}`);
+                btn.disabled = false;
+                btn.textContent = '🛒 Simulate Purchase & Delivery';
+            }
+        }
+
+        function resetTest() {
+            document.getElementById('testEmail').value = '';
+            document.getElementById('verificationResults').style.display = 'none';
+            document.getElementById('step2').classList.remove('active', 'completed');
+            document.getElementById('step3').classList.remove('active', 'completed');
+            document.getElementById('step4').classList.remove('active', 'completed');
+            document.getElementById('purchaseBtn').disabled = false;
+            document.getElementById('purchaseBtn').textContent = '🛒 Simulate Purchase & Delivery';
+            
+            document.getElementById('testLog').innerHTML = `
+                <div>> Test reset...</div>
+                <div>> Select a product to begin</div>
+            `;
+            
+            window.scrollTo(0, 0);
+        }
+
+        // Auto-activate step 2 on load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('step2').classList.add('active');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "lastHealthCheck": "2026-03-12T19:17:00Z",
+  "status": "unauthorized",
+  "consecutiveFailures": 5,
+  "lastSuccessfulMessage": "2026-03-12T14:17:00Z",
+  "downtimeMinutes": 180,
+  "errorType": "401 Unauthorized - Bot token invalid or revoked",
+  "alertSent": true,
+  "alertPending": false,
+  "alertSentAt": "2026-03-12T16:48:00Z",
+  "alertRecipient": "keithjohn87@gmail.com",
+  "alertReason": "Downtime exceeds 10 minute threshold"
+}

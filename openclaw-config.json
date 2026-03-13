@@ -1,0 +1,91 @@
+{
+  "gateway": {
+    "port": 18789,
+    "bind": "lan",
+    "mode": "local",
+    "trustedProxies": [
+      "172.16.0.0/12",
+      "10.0.0.0/8",
+      "192.168.0.0/16"
+    ],
+    "auth": {
+      "token": "voD8JL7ckrAAedB4Y9tE0Be803a7cHIm"
+    },
+    "controlUi": {
+      "allowInsecureAuth": true,
+      "dangerouslyAllowHostHeaderOriginFallback": true,
+      "dangerouslyDisableDeviceAuth": true,
+      "allowedOrigins": [
+        "*"
+      ]
+    }
+  },
+  "models": {
+    "providers": {
+      "moonshot": {
+        "apiKey": "${env:MOONSHOT_API_KEY}",
+        "baseUrl": "https://api.moonshot.ai/v1",
+        "models": [
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "api": "openai-completions",
+            "reasoning": false,
+            "contextWindow": 128000
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "moonshot/kimi-k2.5"
+      },
+      "compaction": {
+        "mode": "default",
+        "maxHistoryShare": 0.5,
+        "memoryFlush": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "provider": "brave",
+        "apiKey": "BSAKdgsp7CNI0j1aX7Iahw6HM5KB021"
+      }
+    },
+    "exec": {
+      "host": "gateway",
+      "security": "full",
+      "ask": "off"
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "botToken": "8622191614:AAHGx0C-27nKPhYCmdKL57AsHM_K2JylBkY",
+      "allowFrom": [
+        "*"
+      ],
+      "groupPolicy": "allowlist",
+      "streaming": "partial"
+    }
+  },
+  "update": {
+    "checkOnStart": false
+  },
+  "commands": {
+    "config": false
+  },
+  "session": {
+    "reset": {
+      "mode": "idle",
+      "idleMinutes": 360
+    }
+  }
+}

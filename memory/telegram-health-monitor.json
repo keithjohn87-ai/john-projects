@@ -1,0 +1,15 @@
+{
+  "lastCheck": "2026-03-12T20:37:00Z",
+  "status": "up",
+  "channel": "telegram",
+  "state": "HEALTHY",
+  "consecutiveFailures": 0,
+  "botInfo": {
+    "id": 8622191614,
+    "username": "CharlesBot_AIBot",
+    "firstName": "Charles"
+  },
+  "lastHealthyAt": "2026-03-12T20:37:00Z",
+  "alertSentAt": null,
+  "downtimeMinutes": 0
+}

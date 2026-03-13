@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Contract - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="info-page" style="padding-top: 100px; max-width: 800px; margin: 0 auto; padding-bottom: 4rem;">
+        <div class="container">
+            <a href="javascript:history.back()" class="btn btn-secondary" style="margin-bottom: 1.5rem;">← Back</a>
+            
+            <h1>📄 Construction Contract</h1>
+            <p class="subtitle" style="color: #6b7280; font-size: 1.125rem; margin-top: 0.5rem;">Protect your business with a solid agreement.</p>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                <h2>Why You Need a Written Contract</h2>
+                <p style="margin-top: 1rem; line-height: 1.8;">A construction contract is a legally binding agreement between you and your client that defines the scope of work, payment terms, timelines, and responsibilities. Operating without one is like building without blueprints — you're asking for disputes, payment delays, and potential legal problems.</p>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Essential Elements</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Parties:</strong> Full legal names and addresses of all parties</li>
+                    <li><strong>Scope of work:</strong> Detailed description of what you'll do (and won't do)</li>
+                    <li><strong>Payment terms:</strong> Total price, deposit amount, progress payments, final payment</li>
+                    <li><strong>Timeline:</strong> Start date, completion date, milestones</li>
+                    <li><strong>Materials:</strong> Who provides what, quality standards, allowances</li>
+                    <li><strong>Change orders:</strong> How changes are requested, priced, and approved</li>
+                    <li><strong>Warranties:</strong> Workmanship and material warranties</li>
+                    <li><strong>Insurance:</strong> Required coverage and certificates</li>
+                    <li><strong>Dispute resolution:</strong> Mediation, arbitration, or litigation process</li>
+                    <li><strong>Termination:</strong> How either party can end the contract</li>
+                </ul>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>State-Specific Requirements</h2>
+                <p style="margin-top: 1rem; line-height: 1.8;">Many states have specific requirements for construction contracts, including:</p>
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>California:</strong> Must include license number, notice of lien rights, and specific cancellation language</li>
+                    <li><strong>New York:</strong> Home improvement contracts require specific disclosures</li>
+                    <li><strong>Florida:</strong> Must include notice of right to cancel and lien warning</li>
+                    <li><strong>Texas:</strong> Residential contracts require specific payment and performance disclosures</li>
+                    <li><strong>Many states:</strong> Require notice of pre-existing liens or property encumbrances</li>
+                </ul>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                    <strong>⚠️ Important:</strong> Using a generic contract that doesn't meet your state's requirements can make it unenforceable.
+                </div>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Payment Terms Best Practices</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Never front all costs:</strong> Get a deposit (typically 10-30%)</li>
+                    <li><strong>Milestone payments:</strong> Tie payments to completed work, not dates</li>
+                    <li><strong>Retainage:</strong> Expect 5-10% held until final completion</li>
+                    <li><strong>Final payment:</strong> Due upon substantial completion, not final punch list</li>
+                    <li><strong>Late fees:</strong> Specify interest rate for overdue payments</li>
+                    <li><strong>Stop work rights:</strong> Reserve right to stop work if payments are late</li>
+                </ul>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Change Orders</h2>
+                <p style="margin-top: 1rem; line-height: 1.8;">Changes are inevitable in construction. Your contract should require:</p>
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem; line-height: 2;">
+                    <li>Written change order requests</li>
+                    <li>Detailed description of the change</li>
+                    <li>Price adjustment (up or down)</li>
+                    <li>Timeline impact</li>
+                    <li>Signed approval before work begins</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>Golden rule:</strong> No written change order = no extra work.</p>
+            </div>
+            
+            <div class="cta-section" style="background: #1e3a5f; color: white; padding: 2rem; border-radius: 12px; margin-top: 2rem; text-align: center;">
+                <h2 style="color: white;">Get State-Specific Contract Templates</h2>
+                <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem;">Our templates include state-required clauses and disclosures.</p>
+                <a href="../index.html#pricing" class="btn btn-primary" style="margin-top: 1rem; background: white; color: #1e3a5f;">View Packages</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

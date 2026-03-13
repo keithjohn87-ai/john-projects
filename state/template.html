@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Resources - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="state-page" style="padding-top: 80px;">
+        <div class="container">
+            <div id="stateContent">
+                <h1>Loading state information...</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Get state from URL
+        const pathParts = window.location.pathname.split('/');
+        const stateCode = pathParts[pathParts.length - 2] || 'CA';
+        
+        // Load state data
+        fetch('../data/states.json')
+            .then(res => res.json())
+            .then(data => {
+                const state = data[stateCode];
+                if (state) {
+                    document.getElementById('stateContent').innerHTML = `
+                        <h1>${state.name} Contractor Resources</h1>
+                        <div class="state-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem;">
+                            <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                                <h2>📋 Licensing</h2>
+                                <p><strong>${state.licensing.board}</strong></p>
+                                <a href="${state.licensing.url}" target="_blank" style="color: #1e3a5f;">Visit Board Website →</a>
+                                <h3 style="margin-top: 1rem;">Requirements:</h3>
+                                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                    ${state.licensing.requirements.map(r => `<li>${r}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                                <h2>⚖️ Lien Laws</h2>
+                                <p><strong>Preliminary Notice:</strong> ${state.lien.preliminary_notice}</p>
+                                <p><strong>Filing Deadline:</strong> ${state.lien.deadline}</p>
+                                <p><strong>Foreclosure:</strong> ${state.lien.foreclosure}</p>
+                            </div>
+                            <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                                <h2>💰 Taxes</h2>
+                                <p><strong>Sales Tax:</strong> ${state.taxes.sales_tax}</p>
+                                <p><strong>Contractor Tax:</strong> ${state.taxes.contractor_tax}</p>
+                            </div>
+                            <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                                <h2>📄 Documents</h2>
+                                <ul style="margin-left: 1.5rem;">
+                                    <li>Preliminary Notice Template</li>
+                                    <li>Mechanics Lien Form</li>
+                                    <li>Release of Lien</li>
+                                    <li>Stop Notice</li>
+                                </ul>
+                                <button class="btn btn-primary" style="margin-top: 1rem;">Download All Templates</button>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    document.getElementById('stateContent').innerHTML = `
+                        <h1>State Not Found</h1>
+                        <p>We don't have detailed information for this state yet.</p>
+                        <a href="../index.html" class="btn btn-primary">Back to Home</a>
+                    `;
+                }
+            });
+    </script>
+</body>
+</html>

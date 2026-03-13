@@ -1,0 +1,58 @@
+<!-- Universal Legal Disclaimer Template for ContractorPro Documents -->
+<!-- Include this at the TOP of every document template -->
+
+<div class="legal-disclaimer">
+    <div class="legal-disclaimer-header">
+        <span class="legal-disclaimer-icon">⚖️</span>
+        <span>IMPORTANT LEGAL DISCLAIMER</span>
+    </div>
+    <div class="legal-disclaimer-content">
+        <p><strong>This document is a template provided for educational and business organization purposes only.</strong></p>
+        <ul>
+            <li><strong>Not Legal Advice:</strong> ContractorPro is not a law firm. This template does not constitute legal advice.</li>
+            <li><strong>Attorney Review Required:</strong> Have a qualified attorney licensed in your state review all documents before use.</li>
+            <li><strong>State-Specific Laws:</strong> Construction laws vary by state. This template may not comply with your state's specific requirements.</li>
+            <li><strong>No Warranty:</strong> We make no representations about the legal sufficiency of this document for your specific situation.</li>
+            <li><strong>Assumption of Risk:</strong> You assume all risk for documents you file, sign, or submit using this template.</li>
+        </ul>
+        <div class="legal-disclaimer-footer">
+            📍 Verify all state-specific requirements at your state's contractor licensing board before using this document.
+        </div>
+    </div>
+</div>
+
+<!-- State-Specific Warning (customize per state page) -->
+<div class="state-warning" id="stateSpecificWarning" style="display: none;">
+    <div class="state-warning-header">
+        <span>📍</span>
+        <span>STATE-SPECIFIC REQUIREMENTS</span>
+    </div>
+    <p id="stateWarningText">This template may not meet all requirements for your state. Please verify with your state contractor board.</p>
+</div>
+
+<script>
+// Auto-detect state and show relevant warning
+function showStateWarning(stateCode) {
+    const warningDiv = document.getElementById('stateSpecificWarning');
+    const warningText = document.getElementById('stateWarningText');
+    
+    if (stateCode && stateWarnings[stateCode]) {
+        warningText.innerHTML = stateWarnings[stateCode];
+        warningDiv.style.display = 'block';
+    }
+}
+
+// State-specific warning messages
+const stateWarnings = {
+    'CA': 'California requires specific language for mechanics liens and has strict preliminary notice requirements.',
+    'TX': 'Texas has unique lien waiver requirements and prompt pay statutes that must be included.',
+    'FL': 'Florida requires specific contractor recovery fund notices and construction lien law disclosures.',
+    'NY': 'New York has specific home improvement contract requirements including cancellation rights.',
+    'IL': 'Illinois requires specific disclosures for residential construction contracts.',
+    'PA': 'Pennsylvania has specific requirements for contractor registration and lien notices.',
+    'OH': 'Ohio requires specific language regarding lien rights and payment schedules.',
+    'MI': 'Michigan has specific licensing disclosure requirements for residential builders.',
+    'AZ': 'Arizona requires specific cancellation rights and license disclosures.',
+    'NV': 'Nevada has specific requirements for residential construction contracts and lien notices.'
+};
+</script>

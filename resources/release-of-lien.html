@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release of Lien - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="info-page" style="padding-top: 100px; max-width: 800px; margin: 0 auto; padding-bottom: 4rem;">
+        <div class="container">
+            <a href="javascript:history.back()" class="btn btn-secondary" style="margin-bottom: 1.5rem;">← Back</a>
+            
+            <h1>✅ Release of Lien</h1>
+            <p class="subtitle" style="color: #6b7280; font-size: 1.125rem; margin-top: 0.5rem;">Clear the property title after payment.</p>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                <h2>What is a Release of Lien?</h2>
+                <p style="margin-top: 1rem; line-height: 1.8;">A Release of Lien (also called a "Lien Waiver" or "Satisfaction of Lien") is a legal document that removes a previously filed mechanics lien from a property's title. Once you receive payment, you're legally required to release the lien so the property owner can sell, refinance, or otherwise transfer the property.</p>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Why It Matters</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Legal requirement:</strong> Most states require lien release within a specific timeframe after payment</li>
+                    <li><strong>Avoid penalties:</strong> Failing to release a lien can result in fines or legal action</li>
+                    <li><strong>Professional reputation:</strong> Quick releases build trust with property owners and GCs</li>
+                    <li><strong>Clear title:</strong> Enables property transactions to proceed</li>
+                </ul>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Types of Lien Releases</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Conditional Release:</strong> Effective only upon actual receipt of payment (safer for contractors)</li>
+                    <li><strong>Unconditional Release:</strong> Effective immediately upon signing (risky if check bounces)</li>
+                    <li><strong>Partial Release:</strong> Releases lien rights for a specific payment amount, not the full contract</li>
+                    <li><strong>Final Release:</strong> Releases all lien rights for the project upon final payment</li>
+                </ul>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>When to Release</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>After payment clears:</strong> Wait for funds to be in your account (not just a promise)</li>
+                    <li><strong>Within state deadlines:</strong> Most states require release within 10-30 days of payment</li>
+                    <li><strong>Upon request:</strong> Property owners often require release for final payment</li>
+                </ul>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>How to File a Release</h2>
+                <ol style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Prepare the release document</strong> — reference the original lien by date and recording number</li>
+                    <li><strong>Sign and notarize</strong> — most states require notarization</li>
+                    <li><strong>File with county recorder</strong> — same office where the original lien was filed</li>
+                    <li><strong>Pay recording fee</strong> — typically $25-$75</li>
+                    <li><strong>Send copy to property owner</strong> — proves you've released the lien</li>
+                </ol>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Best Practices</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li>Use conditional releases until payment clears</li>
+                    <li>Keep records of all releases filed</li>
+                    <li>Don't sign unconditional releases before payment</li>
+                    <li>Release promptly after payment to avoid penalties</li>
+                </ul>
+            </div>
+            
+            <div class="cta-section" style="background: #1e3a5f; color: white; padding: 2rem; border-radius: 12px; margin-top: 2rem; text-align: center;">
+                <h2 style="color: white;">Get State-Specific Release Forms</h2>
+                <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem;">Our forms include conditional and unconditional release templates.</p>
+                <a href="../index.html#pricing" class="btn btn-primary" style="margin-top: 1rem; background: white; color: #1e3a5f;">View Packages</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

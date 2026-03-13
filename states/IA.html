@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iowa Contractor Resources - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="state-page" style="padding-top: 80px;">
+        <div class="container">
+            <div id="stateContent">
+                <h1>Iowa Contractor Resources</h1>
+                <p style="color: #6b7280; margin-top: 0.5rem;">Complete guide to licensing, lien laws, and compliance for contractors in Iowa.</p>
+                
+                <div class="state-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem;">
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📋 Licensing Requirements</h2>
+                        <p><strong>Iowa Division of Labor - Contractor Registration</strong></p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Department of Inspections, Appeals, and Licensing (DIAL)</p>
+                        <a href="https://dial.iowa.gov/licenses/building/contractors" target="_blank" style="color: #1e3a5f; display: inline-block; margin-top: 0.5rem;">Visit DIAL Website →</a>
+                        <h3 style="margin-top: 1rem;">Key Requirements:</h3>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8;">
+                            <li><strong>Registration:</strong> Required if earning $2,000+ annually</li>
+                            <li><strong>Trade Licenses:</strong> Plumbing, HVAC, Electrical through DIAL</li>
+                            <li><strong>Insurance:</strong> Workers' compensation required with employees</li>
+                            <li><strong>Unemployment Insurance:</strong> Required if applicable</li>
+                            <li><strong>Out-of-State:</strong> Must register to work in Iowa</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>⚖️ Lien Law Deadlines</h2>
+                        <p><strong>Preliminary Notice:</strong> Not required for prime contractors</p>
+                        <p style="margin-top: 0.75rem;"><strong>Filing Deadline:</strong> Within 90 days of last furnishing labor/materials</p>
+                        <p style="margin-top: 0.75rem;"><strong>Foreclosure Period:</strong> Within 2 years and 90 days from last furnishing</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                            <strong>⚠️ Important:</strong> Iowa has a unique online Mechanics' Notice and Lien Registry. Liens must be posted to the registry within 90 days.
+                        </div>
+                    </div>
+                    
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>💰 Tax Information</h2>
+                        <p><strong>Sales Tax Rate:</strong> 6% state rate</p>
+                        <p style="margin-top: 0.75rem;"><strong>Local Rates:</strong> Additional local option taxes may apply</p>
+                        <p style="margin-top: 0.75rem;"><strong>Contractor Tax Notes:</strong> Contractors pay sales tax on materials. Construction services are generally exempt from sales tax.</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://tax.iowa.gov/" target="_blank" class="btn btn-secondary" style="font-size: 0.875rem;">View Tax Information</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-section" style="background: #f9fafb; padding: 1.5rem; border-radius: 12px;">
+                        <h2>📄 Document Templates</h2>
+                        <p>Download Iowa-specific contractor documents:</p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.75rem; line-height: 2;">
+                            <li><a href="../resources/preliminary-notice.html" style="color: #1e3a5f;">Preliminary Notice Template</a></li>
+                            <li><a href="../resources/mechanics-lien.html" style="color: #1e3a5f;">Mechanics Lien Form</a></li>
+                            <li><a href="../resources/release-of-lien.html" style="color: #1e3a5f;">Release of Lien</a></li>
+                            <li><a href="../resources/stop-notice.html" style="color: #1e3a5f;">Stop Notice</a></li>
+                            <li><a href="../resources/construction-contract.html" style="color: #1e3a5f;">Contract Agreement Template</a></li>
+                        </ul>
+                        <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Download All Templates</button>
+                    </div>
+                </div>
+                
+                <div class="contact-section" style="background: #1e3a5f; color: white; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                    <h2 style="color: white; margin-bottom: 1rem;">📞 Contact Information</h2>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: #93c5fd; margin-bottom: 0.5rem;">Contractor Registration</h4>
+                            <p>Iowa Division of Labor</p>
+                            <p>150 Des Moines Street, Des Moines, IA 50309</p>
+                            <p>Phone: (515) 242-5871</p>
+                            <p>Email: contractor.registration@iwd.iowa.gov</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #93c5fd; margin-bottom: 0.5rem;">Department of Revenue</h4>
+                            <p>PO Box 10457, Des Moines, IA 50306</p>
+                            <p>Phone: (515) 281-3114</p>
+                            <p>Website: tax.iowa.gov</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; text-align: center;">
+                    <a href="../index.html#states" class="btn btn-secondary">← Back to All States</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

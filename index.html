@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContractorPro - Construction Business Framework</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+</head>
+<body>
+    <!-- Logo Banner -->
+    <div class="logo-banner">
+        <img src="images/logo-transparent.png" alt="ContractorPro" class="logo-banner-img">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ContractorPro" class="logo-img" style="height: 40px; width: auto;">
+            </a>
+
+            <div class="nav-actions">
+                <a href="beta.html" class="btn btn-ghost" style="color: #8b5cf6;">🔮 Beta</a>
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+        <button class="btn btn-primary" onclick="showCart()">Cart (<span id="cartCountMobile">0</span>)</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Build Your Construction Business Right</h1>
+            <p class="hero-subtitle">Complete business framework, state-specific compliance tools, and SBA funding guidance — all in one platform.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary btn-lg" onclick="scrollToSection('pricing')">Get Started</button>
+                <button class="btn btn-secondary btn-lg" onclick="scrollToSection('states')">Find Your State</button>
+                <a href="https://www.sba.gov" target="_blank" class="btn btn-outline btn-lg" style="text-decoration: none;">🏛️ SBA Resources</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">50</span>
+                    <span class="stat-label">States Covered</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Documents Generated</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">$45B</span>
+                    <span class="stat-label">FY25 SBA Loans to Small Business</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="card-header">
+                    <span class="status-badge active">Active</span>
+                    <span class="license-badge">Licensed</span>
+                </div>
+                <h3 id="companyName">Your Company LLC</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%"></div>
+                </div>
+                <p class="progress-text">Business Setup 85% Complete</p>
+                <div class="checklist">
+                    <div class="check-item done">✓ Business License</div>
+                    <div class="check-item done">✓ Insurance Verified</div>
+                    <div class="check-item done">✓ Bond Posted</div>
+                    <div class="check-item pending">○ SBA Pre-Qualification</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- State Selector Section -->
+    <section id="states" class="section section-dark">
+        <div class="container">
+            <h2>Select Your State</h2>
+            <p class="section-subtitle">Get state-specific licensing requirements, lien laws, and compliance documents.</p>
+            <div class="state-selector">
+                <select id="stateSelect" class="state-dropdown" onchange="navigateToState()">
+                    <option value="">Choose your state...</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+                <button class="btn btn-primary" onclick="navigateToState()">Go</button>
+            </div>
+            <div class="popular-states">
+                <span class="label">Popular:</span>
+                <a href="state/CA/index.html" class="state-chip">California</a>
+                <a href="state/TX/index.html" class="state-chip">Texas</a>
+                <a href="state/FL/index.html" class="state-chip">Florida</a>
+                <a href="state/IL/index.html" class="state-chip">Illinois</a>
+                <a href="state/GA/index.html" class="state-chip">Georgia</a>
+                <a href="state/NC/index.html" class="state-chip">North Carolina</a>
+                <a href="state/WA/index.html" class="state-chip">Washington</a>
+                <a href="state/NY/index.html" class="state-chip">New York</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contractor Type Selection -->
+    <section id="contractor-type" class="section section-gray">
+        <div class="container">
+            <h2>What Type of Contractor Are You?</h2>
+            <p class="section-subtitle">Get templates and resources tailored to your specific trade.</p>
+            
+            <div class="contractor-type-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('general')">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏗️</div>
+                    <h3>General Contractor</h3>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">Manage entire construction projects from start to finish.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #374151; line-height: 1.8;">
+                        <li>Prime contract templates</li>
+                        <li>Subcontractor agreements</li>
+                        <li>Project management forms</li>
+                        <li>Payment applications</li>
+                    </ul>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select General Contractor</button>
+                </div>
+                
+                <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('electrical')">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+                    <h3>Electrical Contractor</h3>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">Licensed electrical work for residential and commercial.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #374151; line-height: 1.8;">
+                        <li>Electrical service contracts</li>
+                        <li>Permit applications</li>
+                        <li>Inspection checklists</li>
+                        <li>Code compliance guides</li>
+                    </ul>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select Electrical</button>
+                </div>
+                
+                <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('plumbing')">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🚿</div>
+                    <h3>Plumbing Contractor</h3>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">Water, sewer, and gas line installation and repair.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #374151; line-height: 1.8;">
+                        <li>Plumbing service agreements</li>
+                        <li>Backflow prevention docs</li>
+                        <li>Water heater contracts</li>
+                        <li>Gas line permits</li>
+                    </ul>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select Plumbing</button>
+                </div>
+                
+                <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('hvac')">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">❄️</div>
+                    <h3>HVAC Contractor</h3>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">Heating, ventilation, and air conditioning systems.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #374151; line-height: 1.8;">
+                        <li>HVAC installation contracts</li>
+                        <li>Maintenance agreements</li>
+                        <li>Refrigerant handling docs</li>
+                        <li>Energy efficiency forms</li>
+                    </ul>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select HVAC</button>
+                </div>
+                
+                <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('roofing')">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏠</div>
+                    <h3>Roofing Contractor</h3>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">Roof installation, repair, and maintenance services.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #374151; line-height: 1.8;">
+                        <li>Roofing contracts</li>
+                        <li>Warranty documents</li>
+                        <li>Insurance claim forms</li>
+                        <li>Safety compliance checklists</li>
+                    </ul>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select Roofing</button>
+                </div>
+                
+                <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('structural')">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🦾</div>
+                    <h3>Structural Steel</h3>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">Steel erection, fabrication, and structural welding.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #374151; line-height: 1.8;">
+                        <li>Steel erection contracts</li>
+                        <li>Fabrication agreements</li>
+                        <li>Welding certifications</li>
+                        <li>Structural safety compliance</li>
+                    </ul>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select Structural Steel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2>Everything You Need to Succeed</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Business Formation</h3>
+                    <p>LLC setup, EIN registration, and compliance checklists tailored to your state.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Lien Law Tools</h3>
+                    <p>Preliminary notices, lien waivers, and claim forms with state-specific deadlines.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3>License Management</h3>
+                    <p>Track license requirements, renewal dates, and continuing education.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>SBA Funding Guide</h3>
+                    <p>Loan matching, document checklists, and application walkthroughs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Contract Templates</h3>
+                    <p>Attorney-reviewed contracts for residential, commercial, and sub work.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Financial Tools</h3>
+                    <p>Job costing, invoicing templates, and tax preparation checklists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section section-gray">
+        <div class="container">
+            <h2>Choose Your Plan</h2>
+            <p class="section-subtitle">Professional tools for established contractors. One-time purchase, lifetime access.</p>
+            
+            <!-- State Selector for Pricing -->
+            <div class="pricing-state-selector" style="margin: 2rem 0; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <label for="pricingStateSelect" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #374151;">Select your state:</label>
+                <select id="pricingStateSelect" class="state-dropdown" onchange="updatePricingState()" style="width: 100%; max-width: 300px; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem;">
+                    <option value="">Choose your state...</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+                <p id="pricingStateDisplay" style="margin-top: 0.75rem; color: #1e3a5f; font-weight: 500;"></p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Essential Forms Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Essential Forms</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">79</span>
+                            <span class="period">one-time</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>✓ Preliminary Notice template</li>
+                            <li>✓ Mechanics Lien form</li>
+                            <li>✓ Release of Lien template</li>
+                            <li>✓ Basic Construction Contract</li>
+                            <li>✓ 50-state lien law reference</li>
+
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary btn-full" onclick="addToCart('essential')">Get Essential</button>
+                </div>
+
+                <!-- Professional Tier -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">149</span>
+                            <span class="period">one-time</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>✓ Everything in Essential Forms</li>
+                            <li>✓ Job Costing spreadsheet</li>
+                            <li>✓ Change Order Log</li>
+                            <li>✓ AR Tracker</li>
+                            <li>✓ Subcontractor Tracker</li>
+
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary btn-full" onclick="addToCart('professional')">Get Professional</button>
+                </div>
+
+                <!-- Business System Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Business System</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">199</span>
+                            <span class="period">one-time</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>✓ Everything in Professional</li>
+                            <li>✓ Project Tracker (costs & margins)</li>
+                            <li>✓ AP Tracker</li>
+                            <li>✓ COI Tracker</li>
+                            <li>✓ Enhanced Subcontractor Tracker</li>
+                            <li>✓ SBA Funding Guide included</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary btn-full" onclick="addToCart('business')">Get Business System</button>
+                </div>
+            </div>
+
+            <!-- Complete Bundle -->
+            <div class="bundle-offer" style="margin-top: 3rem; text-align: center; padding: 2rem; background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8f 100%); border-radius: 12px; color: white;">
+                <h3 style="color: white; margin-bottom: 0.5rem;">Complete Bundle</h3>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">Everything we offer. Best value for serious contractors.</p>
+                <div class="bundle-price" style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">
+                    <span style="font-size: 1.5rem; vertical-align: top;">$</span>249
+                    <span style="font-size: 1rem; opacity: 0.8;">one-time</span>
+                </div>
+                <p style="color: #ffd700; margin-bottom: 1.5rem;">Save $128 vs. buying separately</p>
+                <button class="btn btn-primary btn-lg" onclick="addToCart('complete')" style="background: white; color: #1e3a5f;">Get Complete Bundle</button>
+            </div>
+
+            <!-- SBA Add-on Section -->
+            <div id="sba" class="sba-addon-section">
+                <div class="sba-card">
+                    <div class="sba-content">
+                        <div class="sba-icon">🏦</div>
+                        <div class="sba-text">
+                            <h3>SBA Funding Mastery Guide</h3>
+                            <p>The complete guide to securing SBA loans for your construction business.</p>
+                            <ul class="sba-features">
+                                <li>📊 SBA loan types breakdown (7(a), 504, Microloans)</li>
+                                <li>📋 Document checklists by loan type</li>
+                                <li>📝 Step-by-step application walkthroughs</li>
+                                <li>🎯 Grant matching for construction trades</li>
+                                <li>💡 Lender matching strategies</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sba-pricing">
+                        <div class="sba-price-box">
+                            <div class="price-option">
+                                <span class="price-label">Standalone</span>
+                                <span class="price-value">$99</span>
+                            </div>
+                            <div class="price-option highlighted">
+                                <span class="price-label">With any tier</span>
+                                <span class="price-value">$49</span>
+                                <span class="savings">Save $50</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-full" id="sbaAddBtn" onclick="addSBAAddon()">
+                            Add SBA Guide - $99
+                        </button>
+                        <p class="sba-note">Price automatically adjusts when you add a tier</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="ContractorPro" class="logo-img" style="height: 32px; width: auto; margin-bottom: 1rem;">
+                    <p>Building better businesses, one contractor at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#sba">SBA Guide</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="#states">State Guides</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ContractorPro. All rights reserved.</p>
+                <p style="margin-top: 0.5rem;"><a href="terms.html" style="color: #9ca3af;">Terms of Service</a> | <a href="privacy.html" style="color: #9ca3af;">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-overlay" onclick="hideCart()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Cart</h2>
+                <button class="close-btn" onclick="hideCart()">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="cart-items">
+                    <p class="empty-cart">Your cart is empty</p>
+                </div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">$0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="cartTotal">$0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="hideCart()">Continue Shopping</button>
+                <button class="btn btn-primary" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Modal -->
+    <div class="modal" id="accountModal">
+        <div class="modal-overlay" onclick="hideAccountModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Account</h2>
+                <button class="close-btn" onclick="hideAccountModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="account-tabs">
+                    <button class="tab-btn active" onclick="showTab('login')" id="loginTabBtn">Sign In</button>
+                    <button class="tab-btn" onclick="showTab('register')" id="registerTabBtn">Create Account</button>
+                    <button class="tab-btn" onclick="showTab('forgot')" id="forgotTabBtn" style="display: none;">Reset Password</button>
+                </div>
+                <div id="loginTab" class="tab-content active">
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="loginEmail" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="loginPassword" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                    </form>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="showForgotPassword(); return false;" style="color: #1e3a5f; font-size: 0.9rem;">Forgot your password?</a>
+                    </div>
+                </div>
+                <div id="registerTab" class="tab-content">
+                    <form onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                    </form>
+                </div>
+                <div id="forgotTab" class="tab-content">
+                    <form onsubmit="handleForgotPassword(event)">
+                        <p style="color: #6b7280; margin-bottom: 1rem; font-size: 0.9rem;">Enter your email address and we'll send you a link to reset your password.</p>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="forgotEmail" placeholder="you@example.com" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Reset Link</button>
+                        <div style="text-align: center; margin-top: 1rem;">
+                            <a href="#" onclick="showTab('login'); return false;" style="color: #1e3a5f; font-size: 0.9rem;">← Back to Sign In</a>
+                        </div>
+                    </form>
+                    <div id="forgotSuccess" style="display: none; text-align: center; padding: 2rem 1rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📧</div>
+                        <h3 style="color: #1e3a5f; margin-bottom: 0.5rem;">Check Your Email</h3>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">If an account exists with that email, we've sent password reset instructions.</p>
+                        <button class="btn btn-secondary" onclick="showTab('login')">Back to Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-overlay" onclick="hideCheckoutModal()"></div>
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h2>Checkout</h2>
+                <button class="close-btn" onclick="hideCheckoutModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-grid">
+                    <div class="checkout-form">
+                        <h3>Contact Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="you@example.com" required>
+                        </div>
+                        <h3>Payment Information</h3>
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="4242 4242 4242 4242" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiry</label>
+                                <input type="text" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group">
+                                <label>CVC</label>
+                                <input type="text" placeholder="123" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkout-summary">
+                        <h3>Order Summary</h3>
+                        <div id="checkoutItems" class="checkout-items"></div>
+                        <div class="checkout-total">
+                            <span>Total</span>
+                            <span id="checkoutTotal">$0</span>
+                        </div>
+                        <button class="btn btn-primary btn-full btn-lg" onclick="processPayment()">Complete Purchase</button>
+                        <p class="secure-note">🔒 Secure SSL Encrypted Transaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay" onclick="hideSuccessModal()"></div>
+        <div class="modal-content modal-sm">
+            <div class="modal-body text-center">
+                <div class="success-icon">🎉</div>
+                <h2>Order Complete!</h2>
+                <p>Thank you for your purchase. Check your email for instant access to your documents.</p>
+                <div class="delivery-info">
+                    <h4>What's Next?</h4>
+                    <ul>
+                        <li>📧 Download link sent to your email</li>
+                        <li>📱 Access from your account dashboard</li>
+                        <li>💬 Support available if you need help</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary btn-full" onclick="hideSuccessModal()">Go to Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Disclaimer Section -->
+    <section class="section" style="background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%); border-top: 3px solid #ffc107;">
+        <div class="container" style="max-width: 1000px;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <span style="font-size: 2rem;">⚖️</span>
+                <h2 style="color: #856404; margin-top: 0.5rem;">Important Legal Information</h2>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 12px; border: 2px solid #ffc107;">
+                <p style="color: #856404; font-size: 1.1rem; margin-bottom: 1rem;"><strong>ContractorPro provides educational templates and business tools, not legal advice.</strong></p>
+                <ul style="color: #856404; line-height: 1.8; margin-bottom: 1.5rem;">
+                    <li><strong>Not a Law Firm:</strong> We are not attorneys and do not provide legal advice.</li>
+                    <li><strong>Attorney Review Required:</strong> All document templates should be reviewed by a qualified attorney licensed in your state before use.</li>
+                    <li><strong>State Laws Vary:</strong> Construction laws, licensing requirements, and lien statutes vary significantly by state. Verify all requirements with your state contractor board.</li>
+                    <li><strong>No Warranty:</strong> Templates are provided "AS IS" without warranty of any kind. You assume all risk for documents created using our templates.</li>
+                    <li><strong>Educational Purpose:</strong> Our products are for business organization and educational purposes only.</li>
+                </ul>
+                <div style="background: #fff8e1; padding: 1rem; border-radius: 8px; border-left: 4px solid #ffc107;">
+                    <p style="color: #856404; margin: 0;"><strong>📍 Always consult with a qualified attorney before signing or filing any legal document.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/stripe-config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/delivery-config.js"></script>
+    <script src="js/emailjs-config.js"></script>
+    <script>
+        // Daily company name rotation
+        const companyNames = [
+            "Your Company LLC",
+            "Premier Builders LLC",
+            "Elite Construction Co.",
+            "Summit Contractors LLC",
+            "Pinnacle Builders Inc.",
+            "Atlas Construction Group",
+            "Heritage Builders LLC",
+            "Sterling Construction Co.",
+            "Paramount Contractors LLC",
+            "Vanguard Builders Inc.",
+            "Champion Construction LLC",
+            "Legacy Builders Group",
+            "Cornerstone Contractors LLC",
+            "Foundry Construction Co.",
+            "Ironclad Builders LLC"
+        ];
+        
+        function getDailyCompanyName() {
+            const today = new Date();
+            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+            const index = dayOfYear % companyNames.length;
+            return companyNames[index];
+        }
+        
+        document.getElementById('companyName').textContent = getDailyCompanyName();
+        
+        // Contractor type selection
+        function selectContractorType(type) {
+            localStorage.setItem('contractorType', type);
+            const typeNames = {
+                'general': 'General Contractor',
+                'electrical': 'Electrical Contractor',
+                'plumbing': 'Plumbing Contractor',
+                'hvac': 'HVAC Contractor',
+                'roofing': 'Roofing Contractor',
+                'structural': 'Structural Steel Contractor'
+            };
+            alert(`Selected: ${typeNames[type]}\n\nWe'll customize your experience with templates and resources specific to ${typeNames[type]} work.`);
+            // Future: Redirect to specialized dashboard or filter products
+        }
+    </script>
+</body>
+</html><!-- Deployed: Fri Mar  6 20:06:22 UTC 2026 -->
