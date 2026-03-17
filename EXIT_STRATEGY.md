@@ -112,6 +112,11 @@
 | DigitalOcean (old VPS) | $24 |
 | **Total** | **$53** |
 
+### Pending Additions (Review Friday)
+| Item | Est. Monthly Cost | Notes |
+|------|-------------------|-------|
+| Twilio SMS fallback | ~$2 ( $1 number + <$1 usage ) | Dedicated backup comm channel; only active when approved |
+
 ### Target State (Independence)
 | Item | Monthly Cost |
 |------|-------------|

@@ -220,28 +220,15 @@
                     <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select HVAC</button>
                 </div>
                 
-                <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('roofing')">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏠</div>
-                    <h3>Roofing Contractor</h3>
-                    <p style="color: #6b7280; margin-top: 0.5rem;">Roof installation, repair, and maintenance services.</p>
-                    <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #374151; line-height: 1.8;">
-                        <li>Roofing contracts</li>
-                        <li>Warranty documents</li>
-                        <li>Insurance claim forms</li>
-                        <li>Safety compliance checklists</li>
-                    </ul>
-                    <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select Roofing</button>
-                </div>
-                
                 <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('structural')">
                     <div style="font-size: 3rem; margin-bottom: 1rem;">🦾</div>
                     <h3>Structural Steel</h3>
-                    <p style="color: #6b7280; margin-top: 0.5rem;">Steel erection, fabrication, and structural welding.</p>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">Field erection, rigging, and structural welding crews.</p>
                     <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #374151; line-height: 1.8;">
-                        <li>Steel erection contracts</li>
-                        <li>Fabrication agreements</li>
-                        <li>Welding certifications</li>
-                        <li>Structural safety compliance</li>
+                        <li>Steel erection & rigging contracts</li>
+                        <li>Change-order & T&M docs for erection crews</li>
+                        <li>Field welding certifications & inspections</li>
+                        <li>Jobsite safety + lift plan checklists</li>
                     </ul>
                     <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select Structural Steel</button>
                 </div>
@@ -754,7 +741,6 @@
                 'electrical': 'Electrical Contractor',
                 'plumbing': 'Plumbing Contractor',
                 'hvac': 'HVAC Contractor',
-                'roofing': 'Roofing Contractor',
                 'structural': 'Structural Steel Contractor'
             };
             alert(`Selected: ${typeNames[type]}\n\nWe'll customize your experience with templates and resources specific to ${typeNames[type]} work.`);
