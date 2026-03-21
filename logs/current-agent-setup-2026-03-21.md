@@ -100,3 +100,9 @@ Snapshot of the active automation + skill stack as of Mar 21, 2026. Covers:
 - Skill quarantined at `skills/_quarantine/capability-evolver/`.
 - Re-enable only in `--review` mode after ContrPro launch and a full code review.
 - Documented in audit to prevent automatic runs.
+
+## Default Delivery Flow
+1. Build the deliverable.
+2. Test/QA it locally.
+3. Email the deliverable as an attachment to John for review (include summary).
+4. Immediately start the next task; no waiting for approval unless blocked.
