@@ -1,0 +1,61 @@
+# Current Agent Setup — 2026-03-21
+
+## Overview
+Snapshot of the active automation + skill stack as of Mar 21, 2026. Covers:
+- Installed skills and their roles
+- Live automations/daemons with file paths
+- Savannah support workflow
+- Outstanding custom builds
+
+## Skill Stack
+| Skill | Purpose / Notes |
+| --- | --- |
+| self-improving-agent | Logs failures + lessons for retro. |
+| capability-evolver | Suggests process fixes based on recurring misses. |
+| agent-team-orchestration | Defines routing + handoffs (used for Savannah desk). |
+| dispatching-parallel-agents | Launches focused subs for research/build tasks. |
+| executing-plans | Tracks ContrPro deliverables via plan files. |
+| n8n-workflow-automation & n8n | Workflow design toolkit (awaiting access to run). |
+| tavily-web-search-for-openclaw | Primary research engine (ContrPro & Savannah). |
+| browser-automation | Pulls full articles/sites when Tavily summaries aren’t enough. |
+| byterover | Fast filesystem helper during research/QA. |
+| mh-wacli | WhatsApp CLI helper (future outreach). |
+| airadar | AI/GitHub radar for trend monitoring. |
+| amazon-product-api-skill | Pulls pricing data for GC/Sub benchmarking. |
+| debug-pro | Spreadsheet + script debugging assistant. |
+| code-review | QA pass on deliverables. |
+| ai-meeting-notes | Summaries for calls/threads (ContrPro + Savannah). |
+| agentmail | Outbound email automation. |
+| phone-voice | Voice-call baseline (placeholder). |
+| weather | 6:30 AM ET Soddy Daisy forecast for Savannah. |
+| openai-whisper-api | Audio transcription (idle but configured). |
+| openai-image-gen | Marketing/visual support (idle but configured). |
+
+## Automations / Daemons
+| Automation | File(s) | Status |
+| --- | --- | --- |
+| Plan monitor | `scripts/check_plan.py`, `scripts/plan_monitor_daemon.py`, `logs/executing-plans-monitor.log`, `data/executing-plans-state.json` | **Running** (pings Telegram when tasks stall). |
+| Savannah weather | Cron job `86aa4735-7aab-4fc3-a68e-c8b07ca482b4` | **Running** (6:30 AM ET daily). |
+| Savannah desk sub-agent | `ops/savannah-agent-plan.md`, `ops/savannah-agent-prompts.md`, `logs/savannah/` | **On-demand** (spawned for each query). |
+
+## Savannah Desk Notes
+- Routing config: `ops/agent-routing.yaml` (maps Telegram ID 8791771674 to the wellness workflow).
+- Prompt template: `ops/savannah-agent-prompts.md`.
+- Latest output (humidity swings): logged in `logs/savannah/2026-03-20.md`.
+
+## Outstanding Builds
+1. Architecture blueprint generator.
+2. PDF/data analytics toolkit.
+3. Communication advisor.
+4. Financial modeler.
+5. Competitive intelligence monitor.
+6. Strategic planner.
+7. Proactive monitor (native version once n8n is available again).
+8. Goal planner.
+9. Self-correction layer.
+
+## Next Steps
+- Keep `data/executing-plans-state.json` current so the monitor stays accurate.
+- Continue routing Savannah’s requests through the sub-agent + log outputs.
+- Resume n8n deployments once access/credentials are available.
+- Start custom skill builds after ContrPro blockers are cleared.
