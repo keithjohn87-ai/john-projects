@@ -87,3 +87,16 @@ Snapshot of the active automation + skill stack as of Mar 21, 2026. Covers:
 | API limit hit (ClawHub/Tavily) without notice | No visibility when work stalled | Rule: immediately forward limit output + mitigation via Telegram; documented here | This file + chat log 2026-03-21 |
 | Emails unanswered | John had to chase via email | Hourly Gmail checks logged in personal notes; respond then confirm in Telegram | Inbox check reminders + chat summaries (from 2026-03-21) |
 | Missed status check-ins | No idea if work was progressing | Commitment reminders scheduled via `openclaw cron` for every promised update | Cron IDs `05c8a7d8-a262-498d-92b8-3b364bf9a641`, `ca3be342-5bcd-4042-a52d-68c8cee817e8` |
+
+## Service & Cost Snapshot (as of 2026-03-21)
+- HeyRon host: Active ($29/mo). Scheduled to cancel once Hetzner passes the final checks.
+- Hetzner VPS: Active (~$24/mo, doubled resources). Current agent runtime lives here.
+- DigitalOcean: Canceled.
+- Twilio SMS: Closed; $19.95 refund pending.
+- OpenAI API: $10 spend logged today; aiming to stay within another ~$10 until ContrPro sells.
+- Claude Pro: Pending ($20/mo) for nightly coding sessions.
+
+## Capability Evolver Status
+- Skill quarantined at `skills/_quarantine/capability-evolver/`.
+- Re-enable only in `--review` mode after ContrPro launch and a full code review.
+- Documented in audit to prevent automatic runs.
