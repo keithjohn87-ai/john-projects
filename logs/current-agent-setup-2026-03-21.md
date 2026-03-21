@@ -79,3 +79,11 @@ Snapshot of the active automation + skill stack as of Mar 21, 2026. Covers:
 - Continue routing Savannah’s requests through the sub-agent + log outputs.
 - Resume n8n deployments once access/credentials are available.
 - Start custom skill builds after ContrPro blockers are cleared.
+
+## Issue → Fix Log
+| Issue | Impact | Fix | Proof |
+| --- | --- | --- | --- |
+| Missed skill/install deadlines | ContrPro launch slipped | Deadlines tracked in `plans/contrpro-deliverables-2026-03-20.md` + plan-monitor daemon alerts | `logs/executing-plans-monitor.log`, Telegram alert ID 5179 |
+| API limit hit (ClawHub/Tavily) without notice | No visibility when work stalled | Rule: immediately forward limit output + mitigation via Telegram; documented here | This file + chat log 2026-03-21 |
+| Emails unanswered | John had to chase via email | Hourly Gmail checks logged in personal notes; respond then confirm in Telegram | Inbox check reminders + chat summaries (from 2026-03-21) |
+| Missed status check-ins | No idea if work was progressing | Commitment reminders scheduled via `openclaw cron` for every promised update | Cron IDs `05c8a7d8-a262-498d-92b8-3b364bf9a641`, `ca3be342-5bcd-4042-a52d-68c8cee817e8` |
