@@ -38,6 +38,26 @@ Snapshot of the active automation + skill stack as of Mar 21, 2026. Covers:
 | Savannah weather | Cron job `86aa4735-7aab-4fc3-a68e-c8b07ca482b4` | **Running** (6:30 AM ET daily). |
 | Savannah desk sub-agent | `ops/savannah-agent-plan.md`, `ops/savannah-agent-prompts.md`, `logs/savannah/` | **On-demand** (spawned for each query). |
 
+## Key Files & Paths
+| Path | Purpose |
+| --- | --- |
+| `/root/.openclaw/workspace/ops/savannah-agent-plan.md` | Roles, routing, escalation for Savannah's workflow. |
+| `/root/.openclaw/workspace/ops/savannah-agent-prompts.md` | Prompt + step-by-step instructions for wellness responses. |
+| `/root/.openclaw/workspace/ops/agent-routing.yaml` | Maps Telegram ID 8791771674 to Savannah desk workflow. |
+| `/root/.openclaw/workspace/logs/savannah/` | Transcript/log of Savannah requests + responses (latest entry: humidity swings). |
+| `/root/.openclaw/workspace/scripts/check_plan.py` | Reads `data/executing-plans-state.json` and reports stale tasks. |
+| `/root/.openclaw/workspace/scripts/plan_monitor_daemon.py` | Background loop that calls `check_plan.py` and sends Telegram alerts. |
+| `/root/.openclaw/workspace/logs/executing-plans-monitor.log` | Output/log for the daemon (includes message IDs for sent alerts). |
+| `/root/.openclaw/workspace/data/executing-plans-state.json` | Source-of-truth timestamps for each ContrPro task. |
+| `/root/.openclaw/workspace/plans/contrpro-deliverables-2026-03-20.md` | Executing-plans checklist for current work (steel estimator, GC/Sub pack, launch). |
+| `/root/.openclaw/workspace/research/queue.md` | Backlog for airadar + Amazon product research. |
+| `/root/.openclaw/workspace/reports/skill-brief-2026-03-20.md` | Earlier skills summary (pre-dating this file). |
+| `/root/.openclaw/workspace/logs/progress-*` | Daily status logs (latest: 2026-03-18). |
+| `/root/.openclaw/workspace/data/plan_monitor_state.json` | Tracks last alert per task (prevents spam). |
+| `/root/.openclaw/workspace/memory/2026-03-15.md` | Notes on Savannah weather cron. |
+
+> If the workspace ever resets, replicating the rows above (plus re-enabling the cron job) recreates the current behavior without digging through multiple directories.
+
 ## Savannah Desk Notes
 - Routing config: `ops/agent-routing.yaml` (maps Telegram ID 8791771674 to the wellness workflow).
 - Prompt template: `ops/savannah-agent-prompts.md`.
