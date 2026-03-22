@@ -4,6 +4,11 @@
 **Campaign Start:** Monday, March 10, 2026  
 **Status:** ✅ READY TO LAUNCH
 
+
+## Communication Policy
+- All Telegram replies must come from the dedicated Savannah desk sub-agent.
+- Main agent only joins when John explicitly asks.
+
 ---
 
 ## Communication Channels
