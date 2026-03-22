@@ -3,7 +3,7 @@
 | Skill | Path | Status |
 | --- | --- | --- |
 | self-improving-agent | `skills/self-improving-agent/` | Installed 2026-03-19 (ClawHub) |
-| capability-evolver | `skills/_quarantine/capability-evolver/` | Installed, quarantined pending review |
+| capability-evolver | `skills/capability-evolver/` | Re-enabled; run only with `node index.js --review` |
 | agent-team-orchestration | `skills/agent-team-orchestration/` | Installed + in-use for plan/desk workflows |
 | dispatching-parallel-agents | `skills/dispatching-parallel-agents/` | Installed |
 | executing-plans | `skills/executing-plans/` | Installed; plan monitor script uses its outputs |
