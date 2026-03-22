@@ -4,3 +4,5 @@
 2. **Delivery flow** – every task follows build → test → email deliverable (attachment) → immediately start the next task (no waiting for approval unless blocked).
 3. **Nightly Claude cadence** – use Claude sessions for heavy coding each night, integrate results in OpenClaw first thing in the morning.
 4. **Revenue priority** – ContrPro launch tasks take precedence until fully shipped.
+
+5. Only report a task as complete once the deliverable exists with proof (file path, commit, or sent artifact). Otherwise treat it as in-progress.
