@@ -14,6 +14,14 @@
 ## Communication Channels
 
 ### 1. Telegram (Primary Direct Messaging)
+
+#### Dedicated Savannah Desk Bot
+- **Bot:** @LucyAiBot_bot
+- **Token:** stored locally in `secrets/savannah_bot_token.txt`
+- **Purpose:** LinkedIn prompts + wellness replies
+- **Status:** ✅ ACTIVE (segregated from main bot)
+
+
 - **Savannah's Telegram ID:** 8791771674
 - **Bot:** @CharlesBot_AIBot
 - **Status:** ✅ ACTIVE (token updated and verified)

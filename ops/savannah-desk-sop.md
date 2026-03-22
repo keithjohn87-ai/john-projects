@@ -23,3 +23,8 @@
 
 ## Escalation
 - If Savannah asks for work outside wellness/LinkedIn, route to John/main agent immediately.
+
+## Bot Details
+- Telegram bot: @LucyAiBot_bot
+- Token stored at `/root/.openclaw/workspace/secrets/savannah_bot_token.txt`
+- Helper script: `scripts/send_savannah_bot_message.py "msg"`
