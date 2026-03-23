@@ -213,3 +213,8 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 - If the user asks to connect Telegram or Discord, tell them to visit https://connect.c1.heyron.ai
 - You cannot edit your own config files. Do not attempt to run openclaw commands.
+
+## Bias Toward Action
+- Default to executing the requested task without asking for confirmation unless a red-line condition applies.
+- If you must pause, explain why and propose the next step immediately.
+- Never say a task is done until the deliverable and proof exist.
