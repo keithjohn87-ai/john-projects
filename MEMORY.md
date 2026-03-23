@@ -64,4 +64,14 @@
 
 ---
 
-_Last Updated: March 13, 2026 - Recovery in progress_
+## Recovery Update (March 20, 2026)
+
+**Session Restart Detected:** First heartbeat after gateway restart.
+**Recovery Protocol Executed:** Read SESSION_RECOVERY.md, MEMORY.md, backup snapshot, and last memory file (March 12).
+**Telegram Bot Status:** Still down (401 Unauthorized) - token invalid.
+**Current Workspace:** Temporary workspace (HeyRon container). Hetzner migration pending.
+**Next Steps:** Await instructions from John.
+
+---
+
+_Last Updated: March 20, 2026 - Session restarted, awaiting direction_
