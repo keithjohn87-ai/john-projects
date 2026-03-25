@@ -22,6 +22,19 @@
   },
   "models": {
     "providers": {
+      "openrouter": {
+        "apiKey": "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",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "models": [
+          {
+            "id": "anthropic/claude-3.7-sonnet",
+            "name": "Charles 3.0",
+            "api": "openai-completions",
+            "reasoning": true,
+            "contextWindow": 200000
+          }
+        ]
+      },
       "moonshot": {
         "apiKey": "${env:MOONSHOT_API_KEY}",
         "baseUrl": "https://api.moonshot.ai/v1",
@@ -40,7 +53,7 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "moonshot/kimi-k2.5"
+        "primary": "openrouter/anthropic/claude-3.7-sonnet"
       },
       "compaction": {
         "mode": "default",

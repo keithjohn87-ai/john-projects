@@ -1,0 +1,14 @@
+Subject: CSV import for Cable Pulling (Phase sheets) — 1‑click import
+
+Hi —
+
+Attached is the TomLosito Cable Pulling workbook. Please import the phase sheet CSVs into GoFormz using Admin → Developer → Import CSV.
+
+Steps:
+1) Open TomLosito.xlsx and save Phase A (or Phase B/C) as CSV UTF‑8.
+2) In GoFormz: Admin → Developer → Import CSV → Upload file. Map columns if prompted.
+3) Run a 5‑row test import. If OK, run the full import.
+
+If anything fails, reply and I’ll fix the mapping.
+
+Thanks!
