@@ -74,6 +74,7 @@ chown -R charles:charles /home/charles
 ```bash
 su - charles
 cd ~
+whoami  # Should return: charles
 ```
 
 **⚠️ CRITICAL: Install NVIDIA Container Toolkit first (for GPU access)**
@@ -203,7 +204,7 @@ cat > ~/.config/openclaw/config.json << 'EOF'
 {
   "llm": {
     "provider": "openai",
-    "model": "qwen/Qwen2.5-14B-Instruct-GGUF",
+    "model": "Qwen/Qwen2.5-14B-Instruct",
     "baseURL": "http://localhost:8000/v1",
     "apiKey": "dummy"
   },
@@ -470,7 +471,7 @@ curl "https://api.telegram.org/botYOUR_TOKEN/getMe"
 ```bash
 curl http://localhost:8000/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -d '{"model": "qwen/Qwen2.5-14B-Instruct-GGUF", "messages": [{"role": "user", "content": "hi"}]}'
+  -d '{"model": "Qwen/Qwen2.5-14B-Instruct", "messages": [{"role": "user", "content": "hi"}]}'
 ```
 Ensure baseURL is `http://localhost:8000/v1` (not https)
 
@@ -569,7 +570,7 @@ cat > ~/.config/openclaw/config.json << 'EOF'
 {
   "llm": {
     "provider": "openai",
-    "model": "qwen/Qwen2.5-14B-Instruct-GGUF",
+    "model": "Qwen/Qwen2.5-14B-Instruct",
     "baseURL": "http://localhost:8000/v1",
     "apiKey": "dummy"
   },
@@ -762,7 +763,7 @@ _Last Updated: March 26, 2026_
 - [ ] Have GitHub credentials handy
 - [ ] Server IP: _____________ (fill in after provisioning)
 - [ ] SSH password/key: _____________ (fill in)
-- [ ] Telegram bot token for Charles: 8622191614:AAHGx0C-27nKPhYCmdKL57AsHM_K2JylBkY (verify works before using)
+- [ ] Telegram bot token for Charles: _____________ (get new from @BotFather - old one is dead)
 - [ ] Savannah's Telegram bot token: _____________ (create via BotFather @LucyAiBot_bot)
 - [ ] John's Telegram Chat ID: _____________ (get via @userinfobot)
 
@@ -828,7 +829,7 @@ After execution, verify:
 
 1. **Verify Charles bot token works:**
    ```bash
-   curl "https://api.telegram.org/bot8622191614:AAHGx0C-27nKPhYCmdKL57AsHM_K2JylBkY/getMe"
+   curl "https://api.telegram.org/botYOUR_TOKEN/getMe"
    ```
    - If returns error: token invalid → get new from @BotFather
 
