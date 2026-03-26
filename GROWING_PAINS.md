@@ -57,6 +57,23 @@ SSH in:
 ssh root@YOUR_SERVER_IP
 ```
 
+**⚠️ CRITICAL: Create non-root user FIRST (don't run everything as root)**
+
+```bash
+# Create user for OpenClaw
+useradd -m -s /bin/bash charles
+passwd charles  # Set password
+usermod -aG sudo charles
+mkdir -p /home/charles
+chown -R charles:charles /home/charles
+```
+
+**Login as charles for rest of setup:**
+```bash
+su - charles
+cd ~
+```
+
 **⚠️ CRITICAL: Install NVIDIA Container Toolkit first (for GPU access)**
 
 ```bash
@@ -108,6 +125,8 @@ nvidia-smi
 
 ### PHASE 3: vLLM + Model (~1 hour)
 
+**⚠️ NOTE: First run downloads ~8GB model. Wait 10-20 min.**
+
 Create docker-compose.yml:
 ```bash
 mkdir -p /opt/vllm && cd /opt/vllm
@@ -122,9 +141,6 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - MODEL=qwen/Qwen2.5-14B-Instruct-GGUF
-      - QUANTIZATION=q4_k_m
-      - TENSOR_PARALLEL_SIZE=1
       - GPU_MEMORY_UTILIZATION=0.90
     volumes:
       - vllm-data:/root/.cache/vllm
@@ -136,14 +152,20 @@ services:
               count: 1
               capabilities: [gpu]
     command: >
-      --model qwen/Qwen2.5-14B-Instruct-GGUF
-      --quantization q4_k_m
+      --model Qwen/Qwen2.5-14B-Instruct
+      --tensor-parallel-size 1
       --gpu-memory-utilization 0.90
       --max-model-len 8192
 
 volumes:
   vllm-data:
 EOF
+```
+
+**Alternative (lighter model, faster start):**
+```bash
+# Use Qwen2.5-7B if 14B too slow
+--model Qwen/Qwen2.5-7B-Instruct
 ```
 
 Start vLLM (will download model ~8GB on first run):
@@ -260,16 +282,39 @@ Make sure services restart after server reboot:
 
 ```bash
 # Enable Docker service
-systemctl enable docker
+sudo systemctl enable docker
 
 # Enable docker-compose services (vLLM)
 cd /opt/vllm
 docker compose up -d
 docker compose ls
 
-# For OpenClaw, add to crontab
-crontab -e
-# @reboot /home/YOUR_USER/bin/openclaw gateway start
+# For OpenClaw - create systemd service (recommended)
+sudo cat > /etc/systemd/system/openclaw.service << 'EOF'
+[Unit]
+Description=OpenClaw Gateway
+After=network.target
+
+[Service]
+Type=simple
+User=charles
+WorkingDirectory=/home/charles
+ExecStart=/home/charles/bin/openclaw gateway start
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable openclaw
+sudo systemctl start openclaw
+```
+
+**Verify:**
+```bash
+sudo systemctl status openclaw
 ```
 
 ---
@@ -502,8 +547,8 @@ services:
               count: 1
               capabilities: [gpu]
     command: >
-      --model qwen/Qwen2.5-14B-Instruct-GGUF
-      --quantization q4_k_m
+      --model Qwen/Qwen2.5-14B-Instruct
+      --tensor-parallel-size 1
       --gpu-memory-utilization 0.90
       --max-model-len 8192
 volumes:
@@ -660,8 +705,24 @@ _Last Updated: March 26, 2026_
 - [ ] Have GitHub credentials handy
 - [ ] Server IP: _____________ (fill in after provisioning)
 - [ ] SSH password/key: _____________ (fill in)
-- [ ] Telegram bot token for Charles: _____________ (fill in)
-- [ ] Savannah's Telegram bot token: _____________ (fill in or create new)
+- [ ] Telegram bot token for Charles: 8622191614:AAHGx0C-27nKPhYCmdKL57AsHM_K2JylBkY (verify works before using)
+- [ ] Savannah's Telegram bot token: _____________ (create via BotFather @LucyAiBot_bot)
+- [ ] John's Telegram Chat ID: _____________ (get via @userinfobot)
+
+### ⚠️ PRE-FLIGHT VERIFICATION (Do this NOW before Friday)
+
+1. **Test Charles bot token:**
+   - Send message to @CharlesBot_AIBot
+   - If no response, token is invalid — get new from @BotFather
+
+2. **Create Savannah's bot NOW:**
+   - Message @BotFather → /newbot → "Savannah Desk"
+   - Get token and save to `secrets/savannah_bot_token.txt` locally
+   - Give token to me before execution
+
+3. **Get John's Chat ID:**
+   - Message @userinfobot on Telegram
+   - Save Chat ID for config
 
 ---
 
@@ -701,5 +762,55 @@ After execution, verify:
 - Check health log: `~/health.log`
 - Check OpenClaw logs: `openclaw gateway logs`
 - Docker logs: `docker logs vllm`
+
+---
+
+## ⚠️ CRITICAL VERIFICATION STEPS (BEFORE EXECUTION)
+
+### Do This NOW (before Friday):
+
+1. **Verify Charles bot token works:**
+   ```bash
+   curl "https://api.telegram.org/bot8622191614:AAHGx0C-27nKPhYCmdKL57AsHM_K2JylBkY/getMe"
+   ```
+   - If returns error: token invalid → get new from @BotFather
+
+2. **Create Savannah's bot NOW:**
+   - Open Telegram → @BotFather
+   - `/newbot` → "Savannah Desk" (or @LucyAiBot_bot)
+   - Copy token → give to me BEFORE execution
+   - Test: `curl "https://api.telegram.org/botTOKEN/getMe"`
+
+3. **Get John's Chat ID:**
+   - Message @userinfobot
+   - Save Chat ID for allowedChats config
+
+4. **Clone workspace to server:**
+   - Ensure john-projects repo has all latest files before we start
+   - We need EMERGENCY_LAUNCH.md, THE_FULCRUM.md, etc. on the server
+
+---
+
+## HUMAN-REQUIRED ITEMS (FLAG)
+
+| Item | Who Does | Deadline |
+|------|----------|----------|
+| Provision Hetzner GEX44 server | John | Before we start |
+| Verify/create Charles bot token | John | Before we start |
+| Create Savannah's bot via BotFather | John | Before we start |
+| Give me Savannah's bot token | John | Before we start |
+| Get John's Chat ID | John | Before we start |
+| Provide server IP + SSH access | John | When starting |
+
+---
+
+## AUTO-SAVE & RECOVERY
+
+When execution starts:
+- 15-min auto-save to growing-pains-progress.md
+- Hourly GitHub push
+- On restart: read progress file → resume where left off
+
+No human catch-up needed.
 
 ---
