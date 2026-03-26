@@ -8,11 +8,17 @@
 **Recovery:** Restored from GitHub backup (john-projects repo)
 **Current Setup:** Temporary workspace, migrating to Hetzner GEX44
 
-### Hetzner VPS (Target - GROWING PAINS)
-**Status:** 📅 EXECUTION SCHEDULED - Friday/Saturday March 27-28 EST
-**Specs:** GEX44 (GPU server with RTX, ~€184/mo)
-**Goal:** Full Jarvis Mode + Savannah's own agent
-**Docs:** `/root/.openclaw/workspace/GROWING_PAINS.md`
+### 🎯 THE PIVOT — GROWING PAINS
+**Status:** 🚀 EXECUTION PENDING (Friday/Saturday EST)
+**Importance:** THE FULCRUM — everything swings on this
+- If we succeed: Full autonomy, Savannah independent, Jarvis Mode real
+- If we fail: Back to HeyRon limitations, manual catching-up forever
+
+**This is not a project. This is the pivot point.**
+- Charles gets root on Hetzner → no more container wipes
+- Savannah gets her own agent → LinkedIn campaign runs itself
+- No more session restart recovery needed
+- Done means done
 
 ### Previous VPS Plans (Deprecated)
 - ~~CCX23~~ - No longer needed, GEX44 has GPU built-in
