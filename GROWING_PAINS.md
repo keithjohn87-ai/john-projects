@@ -682,7 +682,39 @@ Edit `~/.config/openclaw/config.json`:
 - [ ] Savannah bot created + segregated
 - [ ] (Optional) Nginx + SSL
 
-**That's it. ~5-6 hours. $195/mo. Done.**
+**ALL CHECKS MUST PASS - Run verification before declaring done.**
+
+---
+
+## 9 VERIFICATION CHECKS (RUN THESE AT THE END)
+
+Execute this to verify everything works:
+
+```bash
+# 1. vLLM responding
+curl http://localhost:8000/v1/models
+
+# 2. OpenClaw running
+openclaw status
+
+# 3. John's bot responds (message @CharlesBot_AIBot)
+
+# 4. Savannah's bot responds (message Savannah's bot)
+
+# 5. Verify John's bot ignores Savannah (check John's Telegram - no Savannah traffic)
+
+# 6. Savannah gets prompts (ask for LinkedIn prompt)
+
+# 7. Check auto-start
+sudo systemctl status openclaw
+
+# 8. Check backup ran
+tail -5 ~/workspace_backups/*.tar.gz 2>/dev/null | head
+
+# 9. Traffic segregated - each bot only responds to own user
+```
+
+**ALL 9 MUST PASS.**
 
 ---
 
