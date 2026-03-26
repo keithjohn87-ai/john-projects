@@ -42,9 +42,9 @@ services:
               count: 1
               capabilities: [gpu]
     command: >
-      --model qwen/Qwen2.5-14B-Instruct-GGUF
-      --quantization q4_k_m
-      --gpu-memory-utilization 0.90
+      --model Qwen/Qwen2.5-14B-Instruct
+      --dtype auto
+      --gpu-memory-utilization 0.85
       --max-model-len 8192
 volumes:
   vllm-data:
@@ -55,7 +55,7 @@ docker compose up -d
 
 # WAIT HERE! Check if model is loaded:
 # curl http://localhost:8000/v1/models
-# Keep checking until you see "qwen/Qwen2.5-14B-Instruct-GGUF" in the response
+# Keep checking until you see "Qwen/Qwen2.5-14B-Instruct" in the response
 
 # ============================================
 # STEP 3: OPENCLAW (~30 min)
@@ -73,14 +73,32 @@ openclaw --version
 
 # Create OpenClaw config
 # IMPORTANT: Replace YOUR_TELEGRAM_TOKEN_HERE with your actual token from @BotFather
+export VLLM_API_KEY="vllm-local"
 
 cat > ~/.config/openclaw/config.json << 'EOF'
 {
-  "llm": {
-    "provider": "openai",
-    "model": "qwen/Qwen2.5-14B-Instruct-GGUF",
-    "baseURL": "http://localhost:8000/v1",
-    "apiKey": "dummy"
+  "models": {
+    "providers": {
+      "vllm": {
+        "baseUrl": "http://localhost:8000/v1",
+        "apiKey": "vllm-local",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "Qwen/Qwen2.5-14B-Instruct",
+            "name": "Local Qwen 14B",
+            "reasoning": false,
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": { "primary": "vllm/Qwen/Qwen2.5-14B-Instruct" }
+    }
   },
   "telegram": {
     "enabled": true,
