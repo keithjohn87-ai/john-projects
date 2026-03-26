@@ -83,7 +83,7 @@ If user says "recover" or "what happened" or "where are we":
 
 ---
 
-## AUTO-SAVE SYSTEM
+## AUTO-SAVE & RECOVERY
 
 **⚠️ CRITICAL: Execution is FOCUS ONLY. ALL OR NOTHING.**
 
@@ -97,7 +97,25 @@ When Growing Pains starts:
 **If John asks for something else during execution:**
 > "Growing Pains is running — all or nothing. We finish first, then anything else."
 
-While Growing Pains is executing:
+---
+
+## CONTINUOUS IMPROVEMENT
+
+**Every heartbeat, check for:**
+- New issues in GROWING_PAINS.md
+- Outdated commands or URLs
+- Missing verification steps
+- Better ways to do things
+
+**If found:**
+1. Update GROWING_PAINS.md
+2. Run `./scripts/notify-change.sh` to email John
+
+**Scripts:**
+- `./scripts/mark-complete.sh` - Mark task done
+- `./scripts/gp-status.sh` - Show progress
+- `./scripts/gp-review.sh` - Review for improvements
+- `./scripts/notify-change.sh` - Email John changes
 - **Every 15 min:** Auto-saves progress to `growing-pains-progress.md`
 - **Every hour:** Full workspace backup to GitHub
 - **On restart:** Reads progress file, knows exactly where we left off

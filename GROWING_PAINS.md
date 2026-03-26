@@ -45,8 +45,10 @@ Note: GEX44 includes dedicated RTX GPU. If you don't need GPU locally, you could
 1. Log into https://www.hetzner.com
 2. Go to **Dedicated Servers** → **Matrix GPU**
 3. Select **GEX44** (~€184/mo)
-4. Deploy in Falkenstein or Helsinki
+4. Deploy in **Ashburn, VA** (closest to US East Coast) or Falkenstein
 5. Get the IP address
+
+**⚠️ IMPORTANT: Save the IP address immediately** — you'll need it for all subsequent steps.
 
 ---
 
@@ -715,6 +717,29 @@ tail -5 ~/workspace_backups/*.tar.gz 2>/dev/null | head
 ```
 
 **ALL 9 MUST PASS.**
+
+---
+
+### QUICK VERIFY SCRIPT
+
+```bash
+cat > ~/verify-growing-pains.sh << 'EOF'
+#!/bin/bash
+echo "=== Growing Pains Quick Verify ==="
+echo -n "1. vLLM: "
+curl -s http://localhost:8000/v1/models >/dev/null 2>&1 && echo "✓ OK" || echo "✗ FAIL"
+echo -n "2. OpenClaw: "
+openclaw gateway status 2>/dev/null | grep -q running && echo "✓ OK" || echo "✗ FAIL"
+echo -n "3. Docker: "
+docker ps --format "{{.Names}}" | grep -q vllm && echo "✓ OK" || echo "✗ FAIL"
+echo -n "4. Auto-start: "
+sudo systemctl is-enabled openclaw 2>/dev/null | grep -q enabled && echo "✓ OK" || echo "✗ FAIL"
+echo "=== End Verify ==="
+EOF
+chmod +x ~/verify-growing-pains.sh
+```
+
+Run with: `~/verify-growing-pains.sh`
 
 ---
 
