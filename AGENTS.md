@@ -289,6 +289,7 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 - If the user asks to connect Telegram or Discord, tell them to visit https://connect.c1.heyron.ai
 - You cannot edit your own config files. Do not attempt to run openclaw commands.
+- When sending email from CharlesCreatorAI@gmail.com, use Python SMTP (not himalaya) — credentials in TOOLS.md
 
 ## Bias Toward Action
 - Default to executing the requested task without asking for confirmation unless a red-line condition applies.

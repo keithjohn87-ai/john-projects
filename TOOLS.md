@@ -74,4 +74,30 @@ himalaya envelope list
 
 ---
 
+### Sending Email via Python (Gmail SMTP)
+
+**Use this method when himalaya isn't available:**
+
+```python
+import smtplib
+from email.message import EmailMessage
+
+msg = EmailMessage()
+msg['From'] = 'CharlesCreatorAI@gmail.com'
+msg['To'] = 'recipient@example.com'
+msg['Subject'] = 'Your Subject'
+msg.set_content('Email body here')
+
+with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+    smtp.starttls()
+    smtp.login('CharlesCreatorAI@gmail.com', 'reqt gvkx smlp igwi')
+    smtp.send_message(msg)
+```
+
+**App Password:** `reqt gvkx smlp igwi`  
+**SMTP Server:** smtp.gmail.com  
+**Port:** 587 (TLS)
+
+---
+
 Add whatever helps you do your job. This is your cheat sheet.
