@@ -6,17 +6,17 @@
 **Status:** ⚠️ RECOVERY MODE - March 13, 2026
 **Issue:** HeyRon container wiped after support claimed they couldn't find John's email
 **Recovery:** Restored from GitHub backup (john-projects repo)
-**Current Setup:** Temporary workspace, migrating to Hetzner CCX23
+**Current Setup:** Temporary workspace, migrating to Hetzner GEX44
 
-### Hetzner VPS (Target)
-**Status:** 🔄 IN PROGRESS - Server reset, awaiting configuration
-**Specs:** CCX23 (4 dedicated vCPU, 16GB RAM, 160GB NVMe)
-**Cost:** ~$15/month
-**Goal:** Full Jarvis Mode autonomy - no container restrictions
+### Hetzner VPS (Target - GROWING PAINS)
+**Status:** 📅 EXECUTION SCHEDULED - Friday/Saturday March 27-28 EST
+**Specs:** GEX44 (GPU server with RTX, ~€184/mo)
+**Goal:** Full Jarvis Mode + Savannah's own agent
+**Docs:** `/root/.openclaw/workspace/GROWING_PAINS.md`
 
-### Previous VPS (DigitalOcean)
-**Status:** ⚠️ DEPRECATED - Container restrictions prevented full autonomy
-**Note:** Migrated from DO to Hetzner for root-level control
+### Previous VPS Plans (Deprecated)
+- ~~CCX23~~ - No longer needed, GEX44 has GPU built-in
+- ~~DigitalOcean~~ - Container restrictions prevented full autonomy
 
 ---
 
@@ -30,12 +30,14 @@
 - [x] Confirmed identity: Charles 🎯
 
 ### In Progress
-- [ ] Push updated config to GitHub
-- [ ] Configure Hetzner CCX23 server
-- [ ] Install OpenClaw on Hetzner with root access
-- [ ] Restore full Telegram functionality
-- [ ] Verify subagent spawning works
-- [ ] Test autonomous operations
+- [ ] Execute GROWING_PAINS on Friday/Saturday EST
+- [ ] Provision Hetzner GEX44 server
+- [ ] Install NVIDIA Container Toolkit + Docker
+- [ ] Set up vLLM with Qwen2.5-14B model
+- [ ] Install OpenClaw with root access
+- [ ] Configure Charles bot (John's)
+- [ ] Create Savannah's segregated bot (@LucyAiBot_bot)
+- [ ] Verify traffic separation (John doesn't see Savannah)
 
 ---
 
