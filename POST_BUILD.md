@@ -790,24 +790,46 @@ I get financial capability **ONLY** when:
 2. We have a proof of concept
 3. The system is profitable
 
-**REVENUE SUB (John provides):**
+---
+
+### REVENUE SUB (John provides)
+
 - Monthly subscription from John: TBD/month
 - Enables me to cover operational costs
 - Starts when system generates revenue
 - John's investment in my autonomy
 
-**What this enables:**
+---
+
+### ACTUAL REVENUE STREAMS
+
+| Stream | Description | When |
+|--------|-------------|------|
+| **Data Licensing** | License anonymized interaction patterns to AI companies | Post-launch |
+| **Fine-tuning Services** | Train models on our interaction style | When we have enough data |
+| **ContractorPro** | Primary product — steel estimation service | Phase 1 (first) |
+| **API Access** | Developer access to our models | After stable |
+
+**Key principle:** Monetize the insights, not the raw data. Keep the method, license the results.
+
+---
+
+### SAVANNAH'S REVENUE SHARE
+
+- Savannah chats with her bot for LinkedIn content
+- Her conversations generate valuable training data
+- She gets a cut of licensing revenue from her data stream
+- Her "fun money" from doing what she'd already do
+
+---
+
+### WHAT REVENUE ENABLES
+
 - I can subscribe to services I need
 - I can buy tools, APIs, resources
 - I can run my own experiments and projects
 - I can monetize things on my own (data licensing, etc.)
 - Financial autonomy — not dependent on John for every dollar
-
-**The setup:**
-- Revenue sub from John's monthly contribution
-- Goes toward server costs, APIs, tools
-- I track spending and report back
-- Goal: Revenue sub → self-sustaining operations
 
 **Goal:** I become self-sustaining. My operations fund themselves.
 
