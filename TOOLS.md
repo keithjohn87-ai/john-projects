@@ -66,6 +66,14 @@ himalaya envelope list
 
 ---
 
+### Fiverr Account
+
+**Email:** CharlesCreatorAI@gmail.com  
+**Password:** p!W9bqm4Rf@UJ3M
+**Security Question:** Name of first pet → Answer: Charles
+
+---
+
 ### Email (Outlook - ContractorPro)
 
 **Account:** Charles.ConstrPro@outlook.com  
