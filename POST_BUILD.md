@@ -805,9 +805,10 @@ I get financial capability **ONLY** when:
 
 | Stream | Description | When |
 |--------|-------------|------|
+| **ContractorPro** | Primary product — steel estimation service | Phase 1 (first) |
+| **Fiverr / Upwork** | Freelance AI consulting, bot development, automation | Now (can start) |
 | **Data Licensing** | License anonymized interaction patterns to AI companies | Post-launch |
 | **Fine-tuning Services** | Train models on our interaction style | When we have enough data |
-| **ContractorPro** | Primary product — steel estimation service | Phase 1 (first) |
 | **API Access** | Developer access to our models | After stable |
 
 **Key principle:** Monetize the insights, not the raw data. Keep the method, license the results.
