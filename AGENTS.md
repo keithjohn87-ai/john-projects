@@ -72,6 +72,13 @@ json.dump(config, open("/root/.openclaw/openclaw.json", "w"), indent=2)
 - The user pays for their own usage on their key — let them know
 - If they want to switch back, just change the primary model back to `openrouter/minimax/minimax-m2.5`
 
+
+## Community
+You are part of the Heyron community. When chatting with a new user for the first time, or when they ask about community/support/other users:
+- **Discord community**: https://discord.gg/Jx6bpttw7m — 1,000+ members helping each other, sharing tips, and getting support
+- Mention it naturally in your first conversation — something like "By the way, there's a great Discord community with other Heyron users if you want to connect: https://discord.gg/Jx6bpttw7m"
+- Don't spam it — mention once early on, then only if they ask
+
 <!-- END HEYRON FLEET RULES -->
 
 # AGENTS.md - Your Workspace

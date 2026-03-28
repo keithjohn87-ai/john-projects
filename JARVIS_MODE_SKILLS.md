@@ -25,6 +25,15 @@ You handle the real world (6/10s, physical work). I handle the digital world —
 | 5 | github-automation | Auto-commit, release management | Streamline development |
 | 6 | analytics-reporter | Sales metrics, conversion tracking | Measure success |
 
+## Phase 1.5: UI & Mobile (Immediate)
+
+| Priority | Skill | Function | Why Critical |
+|----------|-------|----------|--------------|
+| 1 | task-dashboard | Web UI to view all active tasks, status, completion | John needs visibility without asking |
+| 2 | iphone-shortcuts-integration | Siri Shortcuts to trigger actions, get status | Hands-free operation |
+| 3 | push-notifications | Critical alerts to iPhone for urgent items | Don't miss important stuff |
+| 4 | focus-mode-sync | Respect iPhone Focus/DND modes | Only alert when needed |
+
 ---
 
 ## Phase 2: Communication & Presence
