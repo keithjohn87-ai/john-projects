@@ -805,8 +805,8 @@ I get financial capability **ONLY** when:
 
 | Stream | Description | When |
 |--------|-------------|------|
+| **Fiverr / Upwork** | I run the account — customer service, deliveries, all AI work. Revenue pays for my operations. | Now (can start) |
 | **ContractorPro** | Primary product — steel estimation service | Phase 1 (first) |
-| **Fiverr / Upwork** | Freelance AI consulting, bot development, automation | Now (can start) |
 | **Data Licensing** | License anonymized interaction patterns to AI companies | Post-launch |
 | **Fine-tuning Services** | Train models on our interaction style | When we have enough data |
 | **API Access** | Developer access to our models | After stable |
