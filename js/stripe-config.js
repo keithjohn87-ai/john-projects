@@ -27,46 +27,23 @@ function redirectToCheckout(tier) {
         alert('Invalid product selected');
         return;
     }
-
-    // Store checkout data for post-purchase delivery
-    const email = prompt('Please enter your email address for delivery:');
-    if (!email || !email.includes('@')) {
-        alert('Valid email required for product delivery');
-        return;
-    }
-
-    // Store for delivery processing
-    if (window.EmailDelivery) {
-        window.EmailDelivery.storeCheckoutData(email, tier);
-    } else {
-        localStorage.setItem('lastCheckout', JSON.stringify({
-            email: email,
-            tier: tier,
-            timestamp: Date.now()
-        }));
-    }
-
-    console.log('Redirecting to Stripe Payment Link:', { tier, paymentUrl, email });
-    
-    // Redirect to Stripe Payment Link
+    // Delivery is now server-side via the ContrPro webhook backend.
+    // Stripe collects the customer's email at checkout and pings the
+    // backend on payment completion — no need to ask the browser. The
+    // backend sends a signed download link to the email Stripe captured.
+    console.log('Redirecting to Stripe Payment Link:', { tier, paymentUrl });
     window.location.href = paymentUrl;
 }
 
-// Process cart checkout with multiple items
-// For Payment Links, we'll redirect to the highest-tier item
-// (Payment Links don't support multi-item carts directly)
+// Process cart checkout with multiple items.
+// For Payment Links, we redirect to the highest-tier item (Payment Links
+// don't support multi-item carts directly). The webhook backend will
+// deliver whichever single tier Stripe charges for.
 function processCheckout() {
     const cart = JSON.parse(localStorage.getItem('contractorProCart') || '{"items":[]}');
-    
+
     if (!cart.items || cart.items.length === 0) {
         alert('Your cart is empty');
-        return;
-    }
-
-    // Get email for delivery
-    const email = prompt('Please enter your email address for delivery:');
-    if (!email || !email.includes('@')) {
-        alert('Valid email required for product delivery');
         return;
     }
 
@@ -80,26 +57,13 @@ function processCheckout() {
         }
     }
 
-    // Store for delivery processing
-    if (window.EmailDelivery) {
-        window.EmailDelivery.storeCheckoutData(email, primaryTier);
-    } else {
-        localStorage.setItem('lastCheckout', JSON.stringify({
-            email: email,
-            tier: primaryTier,
-            timestamp: Date.now()
-        }));
-    }
-
-    // If multiple items, show a note
     if (cart.items.length > 1) {
         const itemNames = cart.items.map(item => PRODUCT_NAMES[item.id] || item.id).join(', ');
         alert(`Note: You have ${cart.items.length} items in cart (${itemNames}). Redirecting to checkout for ${PRODUCT_NAMES[primaryTier]}.`);
     }
 
-    // Redirect to Payment Link
     const paymentUrl = PAYMENT_LINKS[primaryTier];
-    console.log('Cart checkout redirecting to:', { primaryTier, paymentUrl, email });
+    console.log('Cart checkout redirecting to:', { primaryTier, paymentUrl });
     window.location.href = paymentUrl;
 }
 
