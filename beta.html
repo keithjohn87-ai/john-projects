@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
     <title>Beta Tester Account - ContractorPro</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -52,24 +53,33 @@
             <p style="color: #6b7280; margin-bottom: 1.5rem;">Use the credentials below to access the beta test environment.</p>
             
             <div class="test-account">
-                <h3 style="color: #0ea5e9; margin-bottom: 1rem;">🧪 Test Account Credentials</h3>
-                
-                <div class="credential">
-                    <span><strong>Email:</strong></span>
-                    <code style="background: #f3f4f6; padding: 0.25rem 0.5rem; border-radius: 4px;">beta@contrpro.com</code>
-                </div>
-                
-                <div class="credential">
-                    <span><strong>Password:</strong></span>
-                    <code style="background: #f3f4f6; padding: 0.25rem 0.5rem; border-radius: 4px;">BetaTest2026!</code>
-                </div>
-                
-                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #bae6fd;">
-                    <p style="font-size: 0.875rem; color: #0369a1;">
-                        <strong>Note:</strong> This is a shared test account. All purchases are simulated — no real charges.
-                    </p>
-                </div>
+                <h3 style="color: #0ea5e9; margin-bottom: 1rem;">🧪 Beta Access</h3>
+                <p style="color: #0369a1; margin-bottom: 1rem;">
+                    Beta access is invitation-only while we vet the platform with real
+                    construction businesses. Credentials are issued individually.
+                </p>
+                <p style="font-size: 0.95rem; color: #0369a1; margin-bottom: 0.5rem;">
+                    To request access, email
+                    <a href="mailto:support@contrpro.com?subject=Beta%20access%20request"
+                       style="color: #0369a1; text-decoration: underline; font-weight: 600;">support@contrpro.com</a>
+                    with your company name, trade, and state. We respond within one
+                    business day.
+                </p>
+                <p style="font-size: 0.875rem; color: #6b7280; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #bae6fd;">
+                    <strong>Note:</strong> Beta accounts run in simulation mode — no real
+                    charges, no production data shared.
+                </p>
             </div>
+
+            <div id="loginFields" style="display: none; margin-top: 1.5rem;">
+                <label for="betaEmail" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email</label>
+                <input type="email" id="betaEmail" autocomplete="email"
+                       style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; margin-bottom: 1rem;">
+                <label for="betaPassword" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Password</label>
+                <input type="password" id="betaPassword" autocomplete="current-password"
+                       style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+            </div>
+                
 
             <div style="margin-top: 1.5rem;">
                 <button class="btn btn-primary btn-lg" onclick="login()" style="width: 100%;">
@@ -190,7 +200,31 @@
         });
 
         function login() {
-            // Simulate login (in real app, validate against server)
+            const fields = document.getElementById('loginFields');
+            const emailEl = document.getElementById('betaEmail');
+            const pwEl = document.getElementById('betaPassword');
+
+            // First click reveals the form. Second click with creds validates.
+            if (fields.style.display === 'none') {
+                fields.style.display = 'block';
+                emailEl.focus();
+                return;
+            }
+
+            const email = (emailEl.value || '').trim().toLowerCase();
+            const pw = pwEl.value || '';
+            if (email !== BETA_USER.email.toLowerCase() || pw !== BETA_USER.password) {
+                let err = document.getElementById('betaLoginErr');
+                if (!err) {
+                    err = document.createElement('p');
+                    err.id = 'betaLoginErr';
+                    err.style.cssText = 'color: #b91c1c; font-size: 0.875rem; margin-top: 0.75rem;';
+                    fields.appendChild(err);
+                }
+                err.textContent = 'Invalid credentials. Request access at support@contrpro.com.';
+                return;
+            }
+
             localStorage.setItem('betaLoggedIn', 'true');
             localStorage.setItem('betaUser', JSON.stringify(BETA_USER));
             showDashboard();

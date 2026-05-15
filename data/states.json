@@ -67,185 +67,251 @@
   },
   "CA": {
     "name": "California",
+    "last_verified": "2026-05-13",
     "licensing": {
       "board": "California Contractors State License Board (CSLB)",
       "url": "https://www.cslb.ca.gov/",
       "requirements": [
-        "License required for projects over $500",
-        "4 years of journeyman-level experience required",
-        "Pass trade exam and law/business exam",
-        "$25,000 contractor's bond required",
-        "Workers' compensation insurance required"
+        "License required for projects $1,000 or more (raised from $500 by AB 2622, effective Jan 1, 2025 — first change since 1939)",
+        "4 years of journeyman-level experience required (Bus. & Prof. Code §7068)",
+        "Pass Law and Business exam + trade exam for your classification",
+        "$25,000 contractor bond required (raised from $15,000 by SB 607, effective Jan 1, 2023)",
+        "Workers' compensation required if you have employees; C-20 HVAC must carry regardless (universal mandate punted to Jan 1, 2028 by SB 1455)",
+        "Common classifications: B (General Building), C-10 (Electrical), C-20 (HVAC/Mechanical), C-36 (Plumbing), C-51 (Structural Steel)"
       ]
     },
     "lien": {
-      "preliminary_notice": "Required within 20 days of first furnishing (subcontractors/suppliers)",
-      "deadline": "Within 90 days of completion",
-      "foreclosure": "Within 90 days of filing lien"
+      "preliminary_notice": "20-Day Preliminary Notice required for subs/suppliers (Civ. Code §8200). Late service forfeits lien rights for work performed before the 20-day lookback.",
+      "deadline": "Lien must be recorded within 90 days of completion, or 60 days after owner records Notice of Completion/Cessation (Civ. Code §8412, §8414)",
+      "foreclosure": "Suit to foreclose must commence within 90 days of recording the lien (Civ. Code §8460). Hard expiration by operation of law."
     },
     "taxes": {
-      "sales_tax": "7.25% base + local rates (up to 10.75%)",
-      "contractor_tax": "Materials taxable; labor generally not taxable"
-    }
+      "sales_tax": "7.25% state base + local district taxes up to ~3.5% (combined max ~10.75%)",
+      "contractor_tax": "Materials: contractor is consumer (pays tax at purchase). Fixtures: contractor is retailer (collects tax from customer). See CDTFA Reg. 1521 — most-litigated contractor tax issue in California."
+    },
+    "notes_2026": [
+      "SB 61 (eff. Jan 1, 2026) — Private-works retention capped at 5% by statute (new Civ. Code §8811). Owners previously withheld 10-15% with no cap.",
+      "SB 440 (eff. Jan 1, 2026) — Change-order claims procedure: mandatory 30-day owner response, 10-business-day post-meet-and-confer confirmation, 60-day payment of undisputed amounts, non-waivable right to suspend work for nonpayment.",
+      "Workers' comp universal mandate moved from Jan 1, 2026 to Jan 1, 2028 (SB 1455)."
+    ]
   },
   "TX": {
     "name": "Texas",
+    "last_verified": "2026-05-13",
     "licensing": {
-      "board": "Texas Department of Licensing and Regulation (TDLR)",
+      "board": "Trade-specific (no statewide GC license): TDLR for HVAC/Mechanical & Electrical; Texas State Board of Plumbing Examiners (TSBPE) for Plumbing; no state license for General Contractor or Structural Steel.",
       "url": "https://www.tdlr.texas.gov/",
       "requirements": [
-        "No state-level general contractor license",
-        "Specialty trades require licenses (electrical, plumbing, HVAC)",
-        "Local jurisdictions may require registration",
-        "Insurance recommended but not always required"
+        "General Contractor: NO state license required; local registration in major metros (Houston, Dallas, San Antonio, Austin) — verify with city building department",
+        "Mechanical / HVAC: TDLR-licensed (Air Conditioning & Refrigeration Contractor) under Tex. Occ. Code Chapter 1302",
+        "Electrical: TDLR-licensed under Tex. Occ. Code Chapter 1305 — Master, Journeyman, Residential Wireman classifications",
+        "Plumbing: separate TSBPE licensure under Tex. Occ. Code Chapter 1301 — Master Plumber (now 2-year journeyman experience, reduced from 4 by SB 947 eff. Sep 1, 2025)",
+        "Structural Steel: NO state license; AISC/AWS certifications + OSHA training apply",
+        "Workers' comp: Texas is the only state that allows opt-out (non-subscriber). State public works require WC under Tex. Lab. Code §406.096."
       ]
     },
     "lien": {
-      "preliminary_notice": "Required for residential projects (subcontractors)",
-      "deadline": "Within 3 months (residential) or 4 months (commercial) of last furnishing",
-      "foreclosure": "Within 1 year of filing lien (residential) or 2 years (commercial)"
+      "preliminary_notice": "Monthly Pre-Lien Notice: residential = 15th day of 2nd month after unpaid work; commercial = 15th day of 3rd month. Each unpaid month requires its own notice. HB 2237 (2022) eliminated USPS Registered Mail — Certified Mail or traceable private courier only under Tex. Prop. Code §53.003.",
+      "deadline": "Lien Affidavit recording: residential = 15th day of 3rd month after work ended; commercial = 15th day of 4th month (Tex. Prop. Code §53.052).",
+      "foreclosure": "Suit to foreclose: 1 year after recording for residential, 2 years for commercial (Tex. Prop. Code §53.158)."
     },
     "taxes": {
-      "sales_tax": "6.25% state + local rates (up to 8.25%)",
-      "contractor_tax": "Materials taxable; labor for new construction exempt"
-    }
+      "sales_tax": "6.25% state base + local up to 2% (combined max 8.25%) — no state income tax",
+      "contractor_tax": "Lump-sum contract: contractor is consumer of incorporated materials (pays tax at purchase). Separated contract: contractor charges sales tax on materials portion. Commercial repair/remodel LABOR is sales-taxable in TX — Texas Comptroller Rule 3.291."
+    },
+    "notes_2026": [
+      "Texas Construction Trust Fund Act (Tex. Prop. Code Ch. 162): every construction payment received is a trust fund. Diverting $500+ without paying subs = Class A misdemeanor; 3rd-degree felony (2-10 yrs prison) with intent to defraud. Corporate veil does NOT shield the officer.",
+      "Retainage: 10% statutory minimum on commercial private projects (Tex. Prop. Code §53.101) — TX has no statewide private-works retainage CAP, only a floor.",
+      "2025 89th Legislature changes: SB 929 (weekend/holiday deadline extension), SB 947 (Master Plumber experience 4→2 yrs), HB 2960 (voids out-of-state venue clauses), HB 3005 (ends perpetual-audit payment delay on public works).",
+      "Homestead lien trap: liens on residential homesteads require pre-work written contracts signed by both spouses and filed with the county clerk BEFORE any work begins."
+    ]
   },
   "FL": {
     "name": "Florida",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "Florida Department of Business and Professional Regulation",
-      "url": "http://www.myfloridalicense.com/DBPR/",
+      "board": "Department of Business and Professional Regulation (DBPR), Construction Industry Licensing Board (CILB)",
+      "url": "https://www2.myfloridalicense.com/dbpr/pro/construction/",
       "requirements": [
-        "Certified license: work anywhere in Florida",
-        "Registered license: work in specific local jurisdiction",
-        "Pass trade exam and business finance exam",
-        "4 years of experience required",
-        "Insurance and bond required"
+        "Statutory authority: Florida Statutes Chapter 489. No minimum project-value threshold like CA/TN.",
+        "CERTIFIED vs REGISTERED: Certified contractors work statewide. Registered contractors can ONLY work in jurisdictions where they registered. A registered contractor working outside their county = Class A misdemeanor, escalating to 3rd-degree FELONY during any declared state of emergency (§ 489.127(2)(c)).",
+        "Classifications: Class A General Contractor (unlimited), Class B Building Contractor, Class C Residential. Trade classes: Class A Air Conditioning (mechanical), Class B HVAC (limited tonnage), Class A Mechanical, electrical, plumbing.",
+        "Experience: 4 years documented at journeyman+ level (1 year supervisory) for primary qualifier",
+        "Financial responsibility: net worth + FICO ≥ 660 at application; below 660 requires 14-hour course + $10K-$20K bond by license class.",
+        "Workers' comp: required from the FIRST employee in construction (vs 4 employees minimum for non-construction industries). GC is statutory employer for any sub without WC."
       ]
     },
     "lien": {
-      "preliminary_notice": "Not required for prime contractors",
-      "deadline": "Within 90 days of last furnishing",
-      "foreclosure": "Within 1 year of filing lien"
+      "preliminary_notice": "Notice to Owner (NTO) is the perennial Florida trap (Fla. Stat. § 713.06(2)(a)). Subs and suppliers MUST serve NTO before commencing work OR within 45 days of first furnishing. Day 46 = complete defense to lien.",
+      "deadline": "Claim of Lien recording: 90 days after last work or last materials (Fla. Stat. § 713.08). Final Contractor's Affidavit must be delivered to owner at least 5 days BEFORE filing suit.",
+      "foreclosure": "Suit to foreclose: 1 year after recording the lien (Fla. Stat. § 713.22). Owner can file a Notice of Contest of Lien to shorten the enforcement window to 60 days."
     },
     "taxes": {
-      "sales_tax": "6% state + local surtaxes",
-      "contractor_tax": "Materials taxable; labor generally not taxable"
-    }
+      "sales_tax": "6% state base + local discretionary sales surtax up to 1.5% (combined max ~7.5%). Fla. Stat. § 212.05.",
+      "contractor_tax": "Real property improvement contractor = consumer of materials (pays sales tax at purchase). Tangible personal property installer = retailer. The lump-sum vs cost-plus vs time-and-materials structure changes the treatment. See FL Dept. of Revenue Rule 12A-1.051."
+    },
+    "notes_2026": [
+      "SB 658 (effective July 1, 2025) KILLED the \"substantially similar\" lien waiver safe harbor. Waiver and release forms must match Fla. Stat. § 713.20 statutory templates EXACTLY.",
+      "SB 346 (effective July 1, 2023) flattened public-works retainage to 5% throughout the project. Punch list within 30 days of substantial completion.",
+      "SB 360 (effective April 13, 2023) cut the construction-defect statute of repose from 10 to 7 years. One-year grace period expired July 1, 2024.",
+      "Misapplication of construction funds (Fla. Stat. § 713.345) is a FIRST-DEGREE FELONY at $100K or more (up to 30 years' prison). Officers personally criminally liable regardless of corporate form.",
+      "Construction during declared states of emergency requires extra care: unlicensed practice penalties escalate to felony tier."
+    ]
   },
   "NY": {
     "name": "New York",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "NYC Department of Buildings (varies by locality)",
-      "url": "https://www1.nyc.gov/site/buildings/index.page",
+      "board": "Municipal patchwork — no state GC license. NYC: Dept. of Buildings (DOB) for GC Registration + Dept. of Consumer & Worker Protection (DCWP) for Home Improvement Contractor (residential). Nassau, Suffolk, Westchester, Rockland: separate county licensing.",
+      "url": "https://www.nyc.gov/site/buildings/index.page",
       "requirements": [
-        "No state-level general contractor license",
-        "NYC requires Home Improvement Contractor license",
-        "Home improvement projects over $200 require license in NYC",
-        "Insurance and bonding requirements vary by locality"
+        "NYC GC Registration (DOB) does NOT authorize work in Nassau — separate license. Treat every metro as its own jurisdiction.",
+        "NYC residential remodeling: BOTH NYC DOB GCR AND DCWP Home Improvement Contractor license are typically required",
+        "Master Plumber + Master Electrician: city-specific licenses (NYC has its own Master Plumber license under DOB)",
+        "Workers' comp required for all employers (NY WCL §2 et seq.); construction industry has no employee-count threshold",
+        "CE-200 workers' comp exemption covers ONLY the corporate officer personally — prime contractor still liable under WCL §56 for uncovered subs"
       ]
     },
     "lien": {
-      "preliminary_notice": "Not required",
-      "deadline": "Within 8 months of last furnishing (residential: 4 months)",
-      "foreclosure": "Within 1 year of filing lien"
+      "preliminary_notice": "No statewide preliminary notice required. But Notice of Lending (Lien Law §13) and Notice of Furnishing (Lien Law §76 for trust-fund claims) are required for certain claim types.",
+      "deadline": "Mechanic's lien filing: 8 months from last work (commercial), 4 months (residential 1-2 family) (NY Lien Law §10). Public improvement: 30 days from completion or 90 days from acceptance (NY Lien Law §12).",
+      "foreclosure": "Suit to foreclose: 1 year after recording (NY Lien Law §17). Extendable by court order or extension filed before expiry."
     },
     "taxes": {
-      "sales_tax": "4% state + local rates (up to 8.875% in NYC)",
-      "contractor_tax": "Materials and certain services taxable"
-    }
+      "sales_tax": "4% state + local up to 4.875% (NYC = 4.5%) — combined max ~8.875% (NY Tax Law §1105)",
+      "contractor_tax": "Capital improvement to real property: NOT taxable to customer (contractor pays tax on materials at purchase). Repair/maintenance: TAXABLE to customer. Form ST-124 (Certificate of Capital Improvement) must be obtained from customer BEFORE work begins or the DTF can re-characterize as repair and assess sales tax on the entire contract."
+    },
+    "notes_2026": [
+      "Pay-if-paid clauses are VOID in NY (West-Fair Electric Contractors v. Aetna Cas. & Sur. Co., 87 N.Y.2d 148, 1995).",
+      "Article 3-A trust fund liability (NY Lien Law §70 et seq.): every construction payment is a statutory trust fund. Diverting trust funds = larceny under Lien Law §79-a, scaling to Class B felony (up to 25 years) for diversions over $1M. NO corporate-veil protection.",
+      "HIC non-compliance forfeits BOTH contract enforcement AND lien rights against the homeowner (NY Gen. Bus. Law §771 series).",
+      "5% retainage cap on private commercial applies ONLY to contracts signed on or after November 17, 2023 AND for contract amounts > $150,000 (NY Gen. Bus. Law §756-c, effective 2023).",
+      "NYC Local Law 196 (2017) — Site Safety Training cards required for construction workers; 40 hours of SST minimum.",
+      "NYC Local Law 152 (2016) — Periodic gas piping inspection by licensed Master Plumber every 4 years."
+    ]
   },
   "IL": {
     "name": "Illinois",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "Illinois Department of Financial and Professional Regulation (local licensing)",
+      "board": "Illinois has NO statewide General Contractor license. Trade-specific state licensing: Plumbing under Illinois Department of Public Health (225 ILCS 320). Roofing under Illinois Department of Financial and Professional Regulation (IDFPR, 225 ILCS 335). Electrical and HVAC are licensed MUNICIPALLY.",
       "url": "https://idfpr.illinois.gov/",
       "requirements": [
-        "No state-level general contractor license",
-        "Chicago requires General Contractor license",
-        "Cook County requires contractor registration",
-        "Specialty trades (electrical, plumbing) state-licensed",
-        "Local jurisdictions set their own requirements"
+        "Plumbing: Illinois state license required (225 ILCS 320); $20,000 bond.",
+        "Roofing: Illinois state license required (225 ILCS 335) — $10,000 limited bond OR $25,000 unlimited.",
+        "Electrical/HVAC: NO statewide license; each municipality licenses separately. A Chicago Master Electrician license does NOT authorize work in Aurora.",
+        "General Contractor: no state license; major cities require local registration (Chicago: GC license Classes A-E with insurance limits scaling from $1M GL for Class E up to $5M GL for Class A).",
+        "Workers' comp (820 ILCS 305): NO employee-count threshold for construction. Auto-applies from one worker up.",
+        "Worker classification trap: 820 ILCS 185 (Employee Classification Act) presumes construction workers are EMPLOYEES unless contractor proves all 3 prongs of the ABC test. Penalties: $1K-$2.5K per worker + doubled damages + personal officer liability."
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice of Intent to Lien required within 90 days of last furnishing (subcontractors/suppliers)",
-      "deadline": "Within 4 months of last furnishing",
-      "foreclosure": "Within 2 years of filing lien"
+      "preliminary_notice": "90-day Subcontractor Notice (770 ILCS 60/24): must be served on owner AND lender within 90 days of last work. As of January 2025 (Public Act 103-0827), FedEx/UPS/DHL with tracking are now accepted in addition to certified mail — and the legal service date is the MAILING date, not delivery.",
+      "deadline": "Original contractor lien: 4 months from completion to file with county recorder AND preserve lien rights against bona-fide purchasers and lenders. After 4 months: rights survive ONLY against the original owner.",
+      "foreclosure": "Suit to foreclose: must commence within 2 years of completion. But Section 34 demand (770 ILCS 60/34) — the owner can serve a written demand and force you to sue within 30 days or forfeit lien rights entirely."
     },
     "taxes": {
-      "sales_tax": "6.25% state + local rates (up to 11% in Chicago)",
-      "contractor_tax": "Materials taxable; labor generally exempt for new construction"
-    }
+      "sales_tax": "6.25% state base + local up to 4.75% (combined max ~11% in Cook County / Chicago). 35 ILCS 120/2.",
+      "contractor_tax": "Real property improvement contractor = consumer of materials. Chicago Home Rule adds 1.25% beyond local. Manufacturing facility exemptions exist."
+    },
+    "notes_2026": [
+      "Public Act 103-0827 (eff. January 1, 2025) modernized 770 ILCS 60/24: traceable couriers (FedEx/UPS/DHL with tracking) are now valid for sub notices, and date of MAILING — not delivery — is the legal service date.",
+      "Retainage cap: 10% initial, drops to 5% at 50% complete. Applies to private (since 2019), local government (since January 2024 — Public Act 103-0445), state agencies (effective June 2027). Residential 12-units-or-fewer exempt.",
+      "ILLINOIS HAS NO CONSTRUCTION TRUST FUND like Texas Ch. 162 or NY Article 3-A.",
+      "Chicago Class A-E GC license tiers scale required insurance from $1M GL (Class E) to $5M GL (Class A).",
+      "Section 34 demand procedure (770 ILCS 60/34) is unique — the owner can shrink your foreclosure window to 30 days."
+    ]
   },
   "GA": {
     "name": "Georgia",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "Georgia State Licensing Board for Residential and General Contractors",
-      "url": "https://sos.ga.gov/index.php/licensing",
+      "board": "Georgia State Licensing Board for Residential and General Contractors (SLBRGC) under Georgia Secretary of State. Trade-specific licensing (Electrical, Plumbing, HVAC, Low-Voltage) is separate under O.C.G.A. Title 43 Chapter 14.",
+      "url": "https://sos.ga.gov/georgia-state-licensing-board-residential-and-general-contractors",
       "requirements": [
-        "License required for residential and general contracting",
-        "Pass NASCLA General Contractor Exam",
-        "Pass Georgia Business Law Exam",
-        "General liability insurance required",
-        "Workers' compensation required with 3+ employees"
+        "Project value thresholds with REAL teeth: Residential Basic Contractor required for residential projects $2,500+; General Contractor required for commercial $100,000+.",
+        "O.C.G.A. § 43-41-17(b): a contract signed by an unlicensed contractor above the threshold is UNENFORCEABLE — no lawsuit, no lien, no quantum meruit. Getting licensed later does NOT cure prior contracts.",
+        "Experience: 2 years documented for Residential-Basic; 4 years for General Contractor unlimited tier",
+        "Workers' comp required for employers with 3+ employees; statutory employer rule (O.C.G.A. § 34-9-8) means GC's WC policy backstops any sub without coverage.",
+        "HOLDING THE GC LICENSE DOES NOT AUTHORIZE TRADE WORK. Self-performing electrical, plumbing, HVAC, or low-voltage requires separate Title 43 Chapter 14 licenses."
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice to Owner/Contractor required within 30 days for some claimants",
-      "deadline": "Within 90 days of last furnishing",
-      "foreclosure": "Within 365 days of filing lien (must file commencement of action within 30 days of suit)"
+      "preliminary_notice": "Notice to Contractor (NTC) required by sub-subs and suppliers NOT in direct privity with the prime contractor. 30-day fuse from Notice of Commencement filing OR first delivery (O.C.G.A. § 44-14-361.5). Miss the 30-day deadline = lien rights die entirely.",
+      "deadline": "Claim of Lien recording: 90 days from last day of furnishing labor or material (O.C.G.A. § 44-14-361.1). 2-BUSINESS-DAY service deadline: copy of the recorded lien must be served on the owner within 2 business days of filing — miss it and the lien is VOID.",
+      "foreclosure": "Suit to enforce lien must commence within 365 days of filing the lien (O.C.G.A. § 44-14-361.1(a)(3))."
     },
     "taxes": {
-      "sales_tax": "4% state + local rates",
-      "contractor_tax": "Materials taxable; labor generally not taxable"
-    }
+      "sales_tax": "4% state base + local up to 5% (combined max 9%) — O.C.G.A. § 48-8-30 series",
+      "contractor_tax": "Real-property improvement contractor = consumer of materials (pays sales tax at purchase). Manufacturing facility exemptions exist for specific projects."
+    },
+    "notes_2026": [
+      "SB 143 (2021) — Interim lien waivers (O.C.G.A. § 44-14-366) convert to UNCONDITIONAL after 90 days. If you sign an interim waiver against a check that bounces or short-pays, you MUST file an Affidavit of Nonpayment in superior court within 90 days.",
+      "Prompt Payment Act (O.C.G.A. § 13-11-1 et seq.) interest is 1%/month — BUT § 13-11-7 only attaches the interest if the pay application STATES the statutory notice.",
+      "Public works retainage typically 10%, reducible at 50% complete per contract."
+    ]
   },
   "NC": {
     "name": "North Carolina",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "North Carolina Licensing Board for General Contractors",
-      "url": "https://www.nclbgc.org/",
+      "board": "North Carolina Licensing Board for General Contractors (NCLBGC). Trade-specific licensing under separate boards: NC Board of Examiners of Electrical Contractors, NC State Board of Examiners of Plumbing, Heating and Fire Sprinkler Contractors.",
+      "url": "https://nclbgc.org/",
       "requirements": [
-        "License required for projects $40,000 or more",
-        "Pass NC General Contractor Exam",
-        "Financial statement required",
-        "Minimum net worth requirements apply",
-        "Continuing education required for renewal"
+        "Project value threshold: $30,000+ requires license (N.C. Gen. Stat. § 87-1)",
+        "GC monetary classifications are PER-PROJECT caps, NOT annual: Limited ($750,000), Intermediate ($1,500,000), Unlimited (no cap). A Limited GC cannot lawfully take a $900K project even if annual volume stays under $1M — operating outside classification VOIDS the entire contract under Brady v. Fulghum.",
+        "Working capital: $17,000 Limited / $80,000 Intermediate / $150,000 Unlimited",
+        "Experience: 1-3 years documented (escalates with classification tier)",
+        "Holding NCLBGC GC license does NOT authorize self-performing electrical, plumbing, HVAC, or fire-sprinkler work.",
+        "Workers' comp required for 3+ employees, BUT § 97-19 statutory-employer liability kicks in if cumulative on-site headcount (GC + uninsured sub's employees) reaches 3."
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice to Lien Agent required within 15 days of first furnishing (subcontractors/suppliers)",
-      "deadline": "Within 120 days of last furnishing",
-      "foreclosure": "Within 1 year of filing lien"
+      "preliminary_notice": "Notice to Lien Agent via LiensNC.com — for any project $30,000+, owner must register the project with a Lien Agent (NC Gen. Stat. § 44A-11.1). Every sub and supplier must serve Notice to Lien Agent through LiensNC.com WITHIN 15 CALENDAR DAYS of first furnishing. Day 16+ = lien rights for pre-notice work are FORFEIT.",
+      "deadline": "Claim of Lien on Real Property: 120 days from last furnishing (N.C. Gen. Stat. § 44A-12). Lien priority relates back to PROJECT first furnishing (not claimant first furnishing).",
+      "foreclosure": "Suit to enforce: 180 days from last furnishing (NC Gen. Stat. § 44A-13)."
     },
     "taxes": {
-      "sales_tax": "4.75% state + local rates",
-      "contractor_tax": "Materials taxable; labor exempt for real property contracts"
-    }
+      "sales_tax": "4.75% state base + local up to 2.75% (combined max 7.5%). N.C. Gen. Stat. § 105-164.4.",
+      "contractor_tax": "2017 sales tax overhaul created TWO regimes. (1) Real Property Contract (RPC): new construction → contractor is CONSUMER of materials. (2) Repair, Maintenance, Installation Services (RMI): service-call work → contractor is RETAILER, collects sales tax on FULL GROSS RECEIPTS."
+    },
+    "notes_2026": [
+      "Pre-furnishing lien waivers are VOID under N.C. Gen. Stat. § 44A-12.1(b) — despite aggressive subcontract boilerplate from some GCs.",
+      "LiensNC.com / Lien Agent system (effective April 2013 for $30K+ projects) has matured — the 15-day Notice to Lien Agent service window is the single most-litigated deadline.",
+      "§ 97-19 statutory-employer rule extends beyond the 3-employee floor when cumulative project headcount crosses 3.",
+      "Brady v. Fulghum doctrine: a contractor operating beyond their monetary classification CANNOT enforce the contract OR a quantum meruit claim."
+    ]
   },
   "WA": {
     "name": "Washington",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "Washington State Department of Labor & Industries",
-      "url": "https://lni.wa.gov/",
+      "board": "Washington Department of Labor & Industries (L&I) — Contractor Registration (RCW 18.27, NOT licensure). Trade-specific licensing under separate state regulators: Electrical (RCW 19.28), Plumbing (RCW 18.106).",
+      "url": "https://www.lni.wa.gov/licensing-permits/contractors/",
       "requirements": [
-        "Registration required for any work over $500",
-        "General Contractor or Specialty Contractor registration",
-        "Surety bond required ($12,000 for general contractors)",
-        "General liability insurance required",
-        "Workers' compensation required if employees"
+        "Registration (not licensing) under RCW 18.27 — Washington uses a financial-filing model rather than competency exam for GCs. Two classes: General Contractor and Specialty Contractor.",
+        "Bond requirements DOUBLED effective July 1, 2024 (HB 1534): $30,000 for General, $15,000 for Specialty (up from $12K / $6K).",
+        "Insurance: $200,000 public liability + $50,000 property damage MINIMUMS (RCW 18.27.050)",
+        "Workers' comp: MONOPOLY state — only Washington L&I State Fund or qualified self-insurance.",
+        "Electrical (RCW 19.28) and Plumbing (RCW 18.106) are EXAM-based licenses, separate from L&I registration.",
+        "RCW 18.27.080 SUIT BAR: any registration lapse DURING work strips collection rights."
       ]
     },
     "lien": {
-      "preliminary_notice": "Model Disclosure Statement required for residential; Notice to Owner within 60 days for commercial (subcontractors)",
-      "deadline": "Within 90 days of last furnishing",
-      "foreclosure": "Within 8 months of filing lien"
+      "preliminary_notice": "Pre-Claim Notice (Notice of Right to Claim Lien) required for residential 1-4 unit dwellings — 10-day lookback for new SFR construction, 60-day lookback for commercial (RCW 60.04.031). Among the shortest in the country.",
+      "deadline": "Claim of Lien: 90 days from last work (RCW 60.04.091). Plus a 14-day owner-service deadline AFTER recording — miss it and you forfeit attorney's fees.",
+      "foreclosure": "Suit to foreclose: 8 months from filing (RCW 60.04.141). Foreclosure summons must be served within 90 days of filing. Residential remodel liens are capped at unpaid-to-prime amounts (RCW 60.04.031(3))."
     },
     "taxes": {
-      "sales_tax": "6.5% state + local rates",
-      "contractor_tax": "Retail sales tax applies to construction services"
-    }
+      "sales_tax": "6.5% state base + local up to 4% (combined max 10.6% in some jurisdictions). RCW 82.08.020.",
+      "contractor_tax": "WASHINGTON IS THE INVERSE OF MOST STATES: construction LABOR is a retail sale under RCW 82.04.050(2)(b). Contractor charges sales tax on the TOTAL CONTRACT (labor + materials + markup). Plus: B&O (Business & Occupation) tax on GROSS RECEIPTS — 0.471% Retailing / 0.484% Wholesaling, no deductions."
+    },
+    "notes_2026": [
+      "Bond requirements DOUBLED effective July 1, 2024 (HB 1534): General Contractor bond $30,000 (was $12K), Specialty Contractor $15,000 (was $6K).",
+      "Homeowner Recovery Program SURCHARGE begins July 1, 2026 — new fee on contractor registrations.",
+      "Sales-tax-on-total-contract is the single biggest WA gotcha. Out-of-state contractors face 4-YEAR audit recovery on the full labor-component tax delta.",
+      "Monopoly WC (Ohio is the other monopoly state). Construction rates are among the highest in the country."
+    ]
   },
   "CO": {
     "name": "Colorado",
@@ -272,164 +338,223 @@
   },
   "OH": {
     "name": "Ohio",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "Ohio Construction Industry Licensing Board (OCILB) / Local jurisdictions",
-      "url": "https://www.com.ohio.gov/",
+      "board": "NO statewide General Contractor license — licensing is municipal. State-licensed trades under Ohio Construction Industry Licensing Board (OCILB): HVAC, Refrigeration, Electrical, Plumbing, Hydronics (ORC Chapter 4740). Workers' comp MONOPOLY through Ohio Bureau of Workers' Compensation.",
+      "url": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/contractors-and-occupational-licensing",
       "requirements": [
-        "No state-level general contractor license",
-        "Home improvement contractors must register",
-        "Specialty trades (HVAC, electrical, plumbing, hydronics) state-licensed",
-        "Local jurisdictions may require registration",
-        "Must pass Ohio Home Improvement Contractor Exam for HIC"
+        "Working in 5 Ohio cities = 5 separate municipal registrations. Columbus ($25K bond + $300/yr), Cleveland ($150 + $120 renewal), Cincinnati ($131.25), Dayton ($10K trade bond), Toledo, Akron.",
+        "OCILB trade licenses: Master and Contractor tiers, exam + experience required",
+        "AS OF JAN 1, 2025: OCILB electrical contractors need a SEPARATE $120 annual registration ON TOP OF the underlying state license.",
+        "Workers' comp: Ohio BWC MONOPOLY. NO private market — Travelers/Hartford/Liberty DO NOT write WC in Ohio.",
+        "Municipal income tax: every Ohio city you work in wants its own income tax return."
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice of Furnishing required within 21 days of first furnishing (subcontractors/suppliers)",
-      "deadline": "Within 75 days of last furnishing",
-      "foreclosure": "Within 6 years of filing lien"
+      "preliminary_notice": "Notice of Furnishing (NOF) required by 2nd-tier subs and suppliers — must be served on owner/owner's designee within 21 CALENDAR DAYS of first furnishing (ORC § 1311.05). Late NOF = lien rights for work performed more than 21 days BEFORE service are FORFEIT permanently.",
+      "deadline": "THREE DIFFERENT CLOCKS based on project type: 60 days from last work for 1-2 family residential; 75 days for commercial/multi-family; 120 days for oil/gas projects (ORC § 1311.06).",
+      "foreclosure": "Standard 6 years for written contracts under ORC § 2305.06, but lien-specific procedures via § 1311.11."
     },
     "taxes": {
-      "sales_tax": "5.75% state + local rates",
-      "contractor_tax": "Materials taxable; labor generally exempt"
-    }
+      "sales_tax": "5.75% state base + local up to 2.25% (combined max 8%). ORC Chapter 5739.",
+      "contractor_tax": "Contractor as consumer of materials for real-property construction. Commercial Activity Tax (CAT) on gross receipts also applies — separate from sales tax."
+    },
+    "notes_2026": [
+      "HB 50 (effective September 20, 2024) — ALL residential remodels $25,000+ now governed by Home Construction Service Suppliers Act (HCSSA). Written-contract requirements, 3-day right of rescission.",
+      "OCILB electrical contractor SEPARATE $120 annual registration effective January 1, 2025.",
+      "Ohio Prompt Pay Act (ORC § 4113.61): unpaid subs collect 18% INTEREST + attorney fees when a prime sits on owner-received funds more than 10 days.",
+      "Ohio BWC monopoly is one of only TWO states with this structure (Washington is the other)."
+    ]
   },
   "PA": {
     "name": "Pennsylvania",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "No state-level licensing (local jurisdictions)",
-      "url": "https://www.attorneygeneral.gov/",
+      "board": "PA has NO statewide General Contractor or trade license. Home Improvement Contractor (HIC) registration is statewide under PA Attorney General (HICPA — 73 P.S. § 517.1 et seq.). GC and trade licensing is MUNICIPAL.",
+      "url": "https://www.attorneygeneral.gov/protect-yourself/hic/",
       "requirements": [
-        "No statewide general contractor license",
-        "Home improvement contractors must register with Attorney General",
-        "Required for contractors doing $5,000+ in home improvements annually",
-        "Local municipalities set their own requirements",
-        "Insurance and OSHA training often required locally"
+        "HICPA registration TRIGGER: $5,000+ ANNUAL revenue from residential remodeling work. $50/year fee.",
+        "HICPA written-contract TRIGGER: $500+ PER CONTRACT — different from the registration trigger.",
+        "HICPA DOWN-PAYMENT CAP: 1/3 of contract OR $1,000, whichever is GREATER. Industry-standard 30-50% deposits are ILLEGAL.",
+        "HICPA fraud at $2,000+ advance payment is a 3rd-DEGREE FELONY. If consumer is age 60+, bumps to 2nd-DEGREE FELONY (10 years/$25K).",
+        "Municipal licensing patchwork: Philadelphia eCLIPSE, Pittsburgh PLI, Allegheny County for plumbing. None reciprocal.",
+        "CWMA (Construction Workplace Misclassification Act, 43 P.S. § 933.1) has TEETH: three-part test for 1099 status, $1K-$2.5K per-worker civil penalties."
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice of Intent may be sent before filing",
-      "deadline": "Within 6 months of last furnishing",
-      "foreclosure": "Within 2 years of filing lien"
+      "preliminary_notice": "Subs MUST serve a 30-day Preliminary Notice of Intent to Lien before filing (no exceptions). Act 142 added a SCND Notice of Furnishing for projects > $1.5M — 45-day window from first furnishing.",
+      "deadline": "Filing: 6 months from completion for primes; 4 months for subs (49 P.S. § 1502).",
+      "foreclosure": "Suit to enforce: 2 years from filing (49 P.S. § 1701 series). Owner-occupied residential FULL-PAYMENT DEFENSE (Act 117) extinguishes sub liens."
     },
     "taxes": {
-      "sales_tax": "6% state + local rates",
-      "contractor_tax": "Materials taxable; labor generally exempt for new construction"
-    }
+      "sales_tax": "6% state base. Pittsburgh +1% = 7%; Philadelphia +2% = 8%.",
+      "contractor_tax": "Contractor as consumer of materials for real-property improvements."
+    },
+    "notes_2026": [
+      "CASPA (Contractor and Subcontractor Payment Act, 73 P.S. § 501 et seq.) is THE MOST AGGRESSIVE prompt-pay statute in the country: 1% interest + 1% penalty = 24% ANNUALIZED, NON-WAIVABLE post-2018.",
+      "HICPA down-payment cap of 1/3 or $1,000 is the trap that catches the most out-of-state remodelers.",
+      "HICPA fraud felony grading is among the harshest in the US.",
+      "Pittsburgh-area plumbing is licensed by Allegheny COUNTY Health Department, NOT the city.",
+      "CWMA three-part test: (1) written contract, (2) freedom from direction and control, (3) independently engaged trade with $50K GL."
+    ]
   },
   "MI": {
     "name": "Michigan",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "Michigan Department of Licensing and Regulatory Affairs",
-      "url": "https://www.michigan.gov/lara",
+      "board": "Michigan LARA (Department of Licensing and Regulatory Affairs). Residential Builder + Maintenance & Alteration Contractor (MCL Ch. 339). Commercial GC: NO statewide license — Stille-DeRossett-Hale Act delegates to municipalities.",
+      "url": "https://www.michigan.gov/lara/bureau-list/bcc",
       "requirements": [
-        "Residential builders and maintenance/alteration contractors must be licensed",
-        "60 hours of pre-licensure education required",
-        "Must pass licensing exam",
-        "3 years experience in work classification required",
-        "Commercial contractors: no state license (local only)"
+        "Residential Builder license TRIGGER: $600 — extraordinarily low compared to peer states.",
+        "Maintenance and Alteration Contractor license: separate specialty classifications (carpentry, concrete, etc.)",
+        "Commercial work: no statewide license; municipal patchwork — Detroit, Grand Rapids, Lansing, Ann Arbor each register separately.",
+        "Trade licensing under state regulators: Electrical, Plumbing, Mechanical/HVAC — all recodified to MCL Chapter 339 in 2018.",
+        "Workers' comp construction TRIGGER is 1 EMPLOYEE under MCL 418.151(2), not 3. Plus statutory-employer doctrine (MCL 418.171)."
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice of Furnishing within 20 days recommended",
-      "deadline": "Within 90 days of last furnishing",
-      "foreclosure": "Within 1 year of filing lien"
+      "preliminary_notice": "Notice of Furnishing required by subs and suppliers within 20 CALENDAR DAYS of first furnishing (MCL 570.1109). One day SHORTER than Ohio's 21-day window — multi-state trap. Notice of Commencement required for projects > $30,000.",
+      "deadline": "Filing deadline: 90 days from last day of furnishing (MCL 570.1111). Sworn Statement from GC must list all subs and suppliers paid and owed; knowingly false = misdemeanor.",
+      "foreclosure": "Suit to enforce: 1 year from filing (MCL 570.1117)."
     },
     "taxes": {
-      "sales_tax": "6% state + local rates",
-      "contractor_tax": "Materials taxable; labor generally exempt"
-    }
+      "sales_tax": "6% state base — NO LOCAL SALES TAX. Uniform statewide.",
+      "contractor_tax": "Contractor as consumer of materials for real-property construction (standard model). MCL 205.52."
+    },
+    "notes_2026": [
+      "MICHIGAN BUILDERS TRUST FUND ACT (MCL 570.151 et seq.): every owner payment is a statutory TRUST FUND. Diverting funds before paying subs is a FELONY — up to 3 YEARS PRISON. Pierces the LLC veil — officers personally criminally liable. Pay-if-paid is NOT a defense.",
+      "Statutory employer doctrine (MCL 418.171) makes the GC DIRECTLY LIABLE for an uninsured sub's injured workers.",
+      "$600 Residential Builder threshold is the LOWEST in the country among states audited.",
+      "20-day Notice of Furnishing vs Ohio's 21-day NOF — one day off. Contractors crossing state lines miss this.",
+      "Prevailing Wage Act of 2023 was REPEALED in 2018 then RESTORED effective Feb 13, 2024 — applies only to state-funded construction."
+    ]
   },
   "VA": {
     "name": "Virginia",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "Virginia Department of Professional and Occupational Regulation (DPOR)",
-      "url": "https://www.dpor.virginia.gov/",
+      "board": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors.",
+      "url": "https://www.dpor.virginia.gov/Boards/Contractors/",
       "requirements": [
-        "Class A: Projects over $120,000; Class B: $10K-$120K; Class C: under $10K",
-        "8 hours pre-license education required",
-        "Must pass Business Law exam",
-        "Trade exam may be required depending on classification",
-        "General liability and workers' comp insurance required"
+        "License classifications are DUAL-THRESHOLD (per-project AND annual aggregate): Class A (unlimited), Class B ($120K-$750K per project / $750K annual cap), Class C ($1,000-$10,000 per project / $150K annual cap).",
+        "Class C trap: 40 jobs at $5,000 each = $200,000 annual aggregate — blows the $150K Class C cap. § 54.1-1115 treats this as UNLICENSED practice.",
+        "Specialty classifications LAYER on top: Class A RBC (Residential Building) does NOT authorize commercial work.",
+        "NEW April 1, 2025: Residential HVAC Mechanic and Residential Plumber tier — RESIDENTIAL-ONLY licenses; operating on a commercial job is a misdemeanor.",
+        "Workers' comp required for 3+ employees BUT § 65.2-302 statutory-employer doctrine kicks in below that threshold for construction.",
+        "QI / DE separation triggers a 60-day clock to designate a replacement or the firm's license SUSPENDS."
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice to Owner required at time of filing for subcontractors",
-      "deadline": "Within 90 days of last furnishing",
-      "foreclosure": "Within 6 months of filing lien"
+      "preliminary_notice": "General contractors have automatic lien rights without preliminary notice. Subs and material suppliers must follow specific notice procedures per Va. Code § 43-7 et seq.",
+      "deadline": "Memorandum of Mechanic's Lien: 90 days from the last day of the MONTH in which work was performed — NOT 90 days from last day of work (Va. Code § 43-4). 150-DAY LOOK-BACK: any labor more than 150 days before your last day of work VOIDS the entire memorandum.",
+      "foreclosure": "Suit to enforce: 6 months from recording or 60 days from completion of project, whichever is later (Va. Code § 43-17)."
     },
     "taxes": {
-      "sales_tax": "5.3% state + local rates",
-      "contractor_tax": "Materials taxable; labor generally exempt"
-    }
+      "sales_tax": "4.3% state + 1% local (combined base 5.3%). Northern Virginia and Hampton Roads regions add an EXTRA 0.7%. Historic Triangle hits 7.0%.",
+      "contractor_tax": "Contractor as consumer of materials. PLUS the BPOL TAX (Business, Professional, and Occupational License) — gross-receipts tax assessed by every Virginia locality where you work."
+    },
+    "notes_2026": [
+      "SB 550 (effective January 1, 2023) KILLED pay-if-paid clauses in Virginia. Primes owe subs within 60 days of submission of pay app regardless of owner payment status.",
+      "Class A/B/C dual-threshold trap is the single most-litigated contractor licensing issue in Virginia.",
+      "90-day-from-end-of-MONTH lien clock is unique to Virginia.",
+      "150-day look-back means a long job needs MULTIPLE successive lien filings.",
+      "BPOL tax in every working locality is easy to miss for out-of-state contractors."
+    ]
   },
   "MA": {
     "name": "Massachusetts",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "Massachusetts Office of Consumer Affairs and Business Regulation",
-      "url": "https://www.mass.gov/orgs/office-of-consumer-affairs-and-business-regulation",
+      "board": "Massachusetts dual licensing for residential: Home Improvement Contractor (HIC) registration with OCABR (M.G.L. c. 142A) PLUS Construction Supervisor License (CSL) issued by Department of Public Safety (M.G.L. c. 143 § 95). Trade: Electrical (c. 141), Plumbing/Gas (c. 142).",
+      "url": "https://www.mass.gov/ocabr",
       "requirements": [
-        "Construction Supervisor License (CSL) required",
-        "Home Improvement Contractor (HIC) registration required",
-        "Must pass exam for CSL",
-        "3 years experience required for CSL",
-        "Boston requires additional city license"
+        "RESIDENTIAL DUAL-LICENSE TRAP: HIC registration (consumer protection regime) AND CSL (building-code regime) are INDEPENDENTLY required. Holding only one = exposed under both regimes simultaneously.",
+        "OWNER-PULLED PERMIT POISON PILL: contractor who lets the owner pull the permit FORFEITS Guaranty Fund eligibility under c. 142A § 5(c) AND is a PER SE 93A violation if used to evade CSL.",
+        "Workers' comp (M.G.L. c. 152): required for ALL employers regardless of size.",
+        "ABC test Prong B (independent contractor outside GC's usual business) torpedoes 1099 in core trades.",
+        "1/3 down-payment cap on residential remodels — anything more is VOIDABLE + 93A treble damages."
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice of Contract required for residential (record within 30 days of contract)",
-      "deadline": "Within 90 days of last furnishing (residential) or 60 days (commercial)",
-      "foreclosure": "Within 90 days of recording Statement of Account"
+      "preliminary_notice": "Notice of Contract — prime contractor needs a WRITTEN contract with the owner. Notice of Subcontract — subs/suppliers must file to be in the lien fund.",
+      "deadline": "Multi-step front-loaded process (M.G.L. c. 254): Notice of Contract 90 days from last work for primes, Statement of Account 120 days, then enforcement suit within 90 days after Statement.",
+      "foreclosure": "Suit to enforce: 90 days after Statement of Account is recorded. SUB LIEN CAPPED at owner's unpaid balance to prime at the MOMENT of Notice of Subcontract filing."
     },
     "taxes": {
-      "sales_tax": "6.25% state + local rates",
-      "contractor_tax": "Materials taxable; labor generally exempt"
-    }
+      "sales_tax": "6.25% state — NO LOCAL sales tax. M.G.L. c. 64H.",
+      "contractor_tax": "Contractor as consumer of materials. USE TAX on materials bought in NH (tax-free state) and brought into MA for installation is a SILENT KILLER — known DOR enforcement priority."
+    },
+    "notes_2026": [
+      "Chapter 93A (Mass consumer protection statute) is the per-se penalty machine. Almost any HIC technical violation = automatic TREBLE DAMAGES + attorney fees.",
+      "Net-Zero municipality patchwork: Brookline, Cambridge, Newton have PROHIBITED new fossil-fuel hookups in new construction.",
+      "MA Prompt Pay Act (c. 149 § 29E) only applies to PRIVATE projects $3,000,000+ — small/mid-sized residential work is not protected.",
+      "Dual residential licensing (HIC + CSL) is the most-litigated multi-state operator mistake.",
+      "Owner-pulled permit poison pill: if a contractor SUGGESTS the owner pull the permit, that suggestion alone is a per se 93A violation."
+    ]
   },
   "NJ": {
     "name": "New Jersey",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "New Jersey Division of Consumer Affairs",
-      "url": "https://www.njconsumeraffairs.gov/",
+      "board": "NJ Division of Consumer Affairs — Contractors' Registration Act (CRA, N.J.S.A. 56:8-136). Trade boards: NJ Board of Examiners of Electrical Contractors (N.J.S.A. 45:5A), NJ State Board of Master Plumbers (N.J.S.A. 45:14C), HVACR Contractor License (N.J.S.A. 45:16A).",
+      "url": "https://www.njconsumeraffairs.gov/regulatedprofessions/Pages/Home-Improvement-Contractors.aspx",
       "requirements": [
-        "Home Improvement Contractor registration required",
-        "Home Repair Contractor license required for financed contracts",
-        "Must register with Division of Consumer Affairs",
-        "Insurance and surety bond required",
-        "Local municipalities may have additional requirements"
+        "Home Improvement Contractor (HIC) registration REQUIRED for any residential remodeling — N.J.S.A. 56:8-136. Annual $90 fee, $25,000 surety bond.",
+        "Trade licenses (Electrical, Plumbing, HVAC) are SEPARATE state licenses under their own boards.",
+        "PUBLIC WORKS Contractor Registration (N.J.S.A. 34:11-56.55) is a SEPARATE registration from CRA.",
+        "Workers' comp: required from the FIRST employee. No minimum. N.J.S.A. 34:15.",
+        "Personal officer liability under N.J.S.A. 34:15-79 for WC violations — pierces the LLC veil.",
+        "CIICA (Construction Industry Independent Contractor Act, N.J.S.A. 34:20-4): subs are PRESUMPTIVELY EMPLOYEES."
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice of Unpaid Balance required within 60 days for residential",
-      "deadline": "Within 90 days of last furnishing",
-      "foreclosure": "Within 1 year of filing lien"
+      "preliminary_notice": "Notice of Unpaid Balance and Right to File Lien (NUB) — required preliminary notice. For RESIDENTIAL 1-2 family owner-occupied: NUB must be filed within 60 days, THEN a Demand for AAA Arbitration within 60 more days, THEN binding arbitration award, THEN lien filing within 10 days. Commercial: NO arbitration prerequisite.",
+      "deadline": "Filing: 90 days from last work for commercial (N.J.S.A. 2A:44A-6). Residential: 60 days NUB, then arbitration chain.",
+      "foreclosure": "Suit to enforce: 1 year from filing (N.J.S.A. 2A:44A-14). LIEN FUND CAP: sub/supplier liens are LIMITED to the amount the owner still owes the prime (N.J.S.A. 2A:44A-9)."
     },
     "taxes": {
-      "sales_tax": "6.625% state + local rates",
-      "contractor_tax": "Materials taxable; labor generally exempt"
-    }
+      "sales_tax": "6.625% state base. Urban Enterprise Zone (UEZ) reduced rate in specific cities.",
+      "contractor_tax": "Capital improvement (Form ST-8) = NO sales tax on labor. Repair/maintenance/installation = labor IS sales-taxable. Misclassification = back tax + penalty."
+    },
+    "notes_2026": [
+      "CFA TREBLE-DAMAGES TRAP: any technical violation of the Contractors' Registration Act or N.J.A.C. 13:45A-16 is a PER SE Consumer Fraud Act violation — MANDATORY 3x damages + attorney fees (Cox v. Sears, Bosland v. Warnock). THE WORST CONSUMER-LITIGATION EXPOSURE IN THE COUNTRY.",
+      "Residential lien pre-arbitration requirement is unique to NJ.",
+      "Lien fund cap means joint checks become critical.",
+      "CIICA Prong B (work within GC's usual business) torpedoes nearly every construction 1099-sub arrangement.",
+      "Workers' comp from the FIRST employee — strictest among states audited."
+    ]
   },
   "TN": {
     "name": "Tennessee",
+    "last_verified": "2026-05-13",
     "licensing": {
-      "board": "Tennessee Board for Licensing Contractors",
+      "board": "Tennessee Board for Licensing Contractors (TBLC)",
       "url": "https://www.tn.gov/commerce/regboards/contractor.html",
       "requirements": [
-        "License required for projects $25,000 or more",
-        "Must pass Tennessee Business and Law exam",
-        "Trade exam required for many classifications",
-        "Financial statement required",
-        "License required before bidding or contracting"
+        "License required before bidding or contracting on any project $25,000 or more (T.C.A. § 62-6-103)",
+        "Performing licensed work without a license = Class A misdemeanor + civil penalty up to $5,000 + disgorgement (§ 62-6-120)",
+        "Bond tiers: $500K bond if monetary limit < $1.5M; $1M bond if monetary limit ≥ $1.5M",
+        "Monetary limit = 10× working capital or net worth, whichever is less",
+        "Trade exam + Business and Law exam required",
+        "Financial statement: CPA-compiled now acceptable for renewal above $1.5M (TBLC rule change Nov 18, 2025); initial license still requires reviewed/audited at higher tiers",
+        "Common classifications: BC (General Building), CMC plus trade (Plumbing), CE (Electrical), S — Specialty Erection and Fabrication of Structural Steel",
+        "Home improvement contractors (residential remodels $3,000-$24,999): separate $10K bonded registration"
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice of Nonpayment may be sent before filing",
-      "deadline": "Within 90 days of last furnishing",
-      "foreclosure": "Within 1 year of filing lien"
+      "preliminary_notice": "Notice of Nonpayment required by remote claimants — served monthly on owner, hard deadline 90 days from last day of month of work (T.C.A. § 66-11-145). Prime contractors have automatic lien rights, no notice required.",
+      "deadline": "Lien must be recorded within 90 days of completion or abandonment. If owner records Notice of Completion, the lien filing window shrinks to 10 days.",
+      "foreclosure": "Suit to enforce lien must commence within 1 year of recording (T.C.A. § 66-11-126)."
     },
     "taxes": {
-      "sales_tax": "7% state + local rates",
-      "contractor_tax": "Materials taxable; labor generally exempt"
-    }
+      "sales_tax": "7% state base + local up to 2.75% (combined max ~9.75%)",
+      "contractor_tax": "Contractor is consumer of materials (pays sales tax at purchase) for real-property contracts. Labor not separately taxed."
+    },
+    "notes_2026": [
+      "Retainage cap 5% on all projects, public and private (T.C.A. § 66-34-103). Prime contracts ≥ $500K must hold retainage in third-party interest-bearing escrow. Failure to escrow = damages up to $300/day.",
+      "Workers' comp construction-industry trap: T.C.A. § 50-6-902 has NO 5-employee threshold for construction. Coverage required at 1 employee including owners unless individually registered for exemption.",
+      "No 2025-2026 legislative changes to lien law or licensing thresholds. CIPPA (Public Chapter 605 of 2020) remains the operative retainage framework."
+    ]
   },
   "IN": {
     "name": "Indiana",
@@ -818,26 +943,38 @@
   },
   "MD": {
     "name": "Maryland",
+    "last_verified": "2026-05-14",
     "licensing": {
-      "board": "Maryland Home Improvement Commission / DLLR",
-      "url": "https://www.dllr.state.md.us/",
+      "board": "Maryland Home Improvement Commission (MHIC), under DLLR. Trade licenses: Electrical (Bus. Occ. § 6-301), Plumbing (Bus. Occ. § 12-301), HVAC (Bus. Reg. § 9A-101). Commercial: no state license (municipal — Baltimore, Montgomery County, etc.).",
+      "url": "https://www.dllr.state.md.us/license/mhic/",
       "requirements": [
-        "Home Improvement Contractor license required for residential",
-        "No state-level commercial contractor license",
-        "Pass Maryland Home Improvement Law Exam",
-        "Surety bond required ($20,000)",
-        "Insurance required"
+        "Home Improvement Contractor license required for any residential remodeling — Bus. Reg. § 8-101 et seq. Salesperson license separate from Contractor license.",
+        "BERENTER DOCTRINE: an unlicensed HIC contract is VOID — no lawsuit for unpaid balances, no quantum meruit. Homeowner keeps the work AND recovers any deposits paid.",
+        "Trade licensing separate (Electrical, Plumbing, HVAC) — each its own board.",
+        "Commercial GC: NO state license — Baltimore City/County, Montgomery, Prince George's, Howard, Anne Arundel each have separate registration regimes.",
+        "Workers' comp under Md. Code Lab. & Empl. § 9-202 — required for ALL employers (no minimum).",
+        "County local income tax stacks 2.25-3.20% on top of 5.75% state."
       ]
     },
     "lien": {
-      "preliminary_notice": "Notice of Intent to Claim Lien required within 120 days",
-      "deadline": "Within 180 days of last furnishing",
-      "foreclosure": "Within 1 year of filing lien"
+      "preliminary_notice": "Mechanics' liens in Maryland are JUDICIAL, not recorded — you PETITION the circuit court (Md. Real Prop. § 9-105, Md. Rule 12-302). Show-cause hearing within ~15 days; lien exists only by court order. 120-day subcontractor Notice of Intent to owner.",
+      "deadline": "180-day petition deadline. 15% value-increase threshold for liens on existing buildings; tenant-occupied single-family dwellings are wholly excluded.",
+      "foreclosure": "Lien exists only by court order — once granted, foreclosure follows standard real-property procedure."
     },
     "taxes": {
-      "sales_tax": "6% state",
-      "contractor_tax": "Materials taxable; labor generally exempt"
-    }
+      "sales_tax": "6% state sales tax. County local income tax stacks 2.25-3.20% on top of 5.75% state — Baltimore City/Montgomery/PG County hit 8.95% combined income tax.",
+      "contractor_tax": "Contractor as consumer of materials (standard model)."
+    },
+    "notes_2026": [
+      "Berenter doctrine: unlicensed HIC contract = VOID entirely. Homeowner keeps work AND recovers deposits. Among the harshest unlicensed-contractor penalties in the US.",
+      "Judicial-lien procedure (vs recorded lien) is unique to Maryland among states audited.",
+      "Pre-work lien waivers are VOID as against public policy (§ 9-113(b)).",
+      "Deposit cap of 33⅓% of contract price on home improvement contracts (Bus. Reg. § 8-501(c)).",
+      "MHIC Guaranty Fund pays consumers $30K/claim, $200K aggregate per contractor; Fund payment triggers immediate license suspension until reimbursed.",
+      "Prompt Pay interest is 18%/yr (1.5%/month) — among the highest in the country.",
+      "Workplace Fraud Act ABC test (Lab. & Empl. § 3-903) — most subs fail prong C; stop-work orders + treble back wages.",
+      "No statewide commercial GC license — county/city patchwork."
+    ]
   },
   "MS": {
     "name": "Mississippi",

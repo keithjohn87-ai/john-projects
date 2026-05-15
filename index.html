@@ -42,26 +42,20 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Build Your Construction Business Right</h1>
-            <p class="hero-subtitle">Complete business framework, state-specific compliance tools, and SBA funding guidance — all in one platform.</p>
+            <div id="heroEyebrow" class="hero-eyebrow" style="display: none;">
+                <span id="heroEyebrowText"></span>
+            </div>
+            <h1 id="heroHeadline">Build Your Construction Business Right</h1>
+            <p class="hero-subtitle" id="heroSubline">Complete business framework, state-specific compliance tools, and SBA funding guidance — built for contractors who actually run the numbers.</p>
             <div class="hero-actions">
                 <button class="btn btn-primary btn-lg" onclick="scrollToSection('pricing')">Get Started</button>
                 <button class="btn btn-secondary btn-lg" onclick="scrollToSection('states')">Find Your State</button>
                 <a href="https://www.sba.gov" target="_blank" class="btn btn-outline btn-lg" style="text-decoration: none;">🏛️ SBA Resources</a>
             </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">50</span>
-                    <span class="stat-label">States Covered</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">10K+</span>
-                    <span class="stat-label">Documents Generated</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">$45B</span>
-                    <span class="stat-label">FY25 SBA Loans to Small Business</span>
-                </div>
+            <div id="heroCallout" class="hero-callout" style="display: none;">
+                <div class="hero-callout-label" id="heroCalloutLabel">CURRENT AS OF</div>
+                <div class="hero-callout-headline" id="heroCalloutHeadline"></div>
+                <div class="hero-callout-body" id="heroCalloutBody"></div>
             </div>
         </div>
         <div class="hero-visual">
@@ -207,17 +201,17 @@
                     <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select Plumbing</button>
                 </div>
                 
-                <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('hvac')">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">❄️</div>
-                    <h3>HVAC Contractor</h3>
-                    <p style="color: #6b7280; margin-top: 0.5rem;">Heating, ventilation, and air conditioning systems.</p>
+                <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('mechanical')">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚙️</div>
+                    <h3>Mechanical Contractor</h3>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">HVAC, refrigeration, process piping, and commercial mechanical systems.</p>
                     <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #374151; line-height: 1.8;">
-                        <li>HVAC installation contracts</li>
-                        <li>Maintenance agreements</li>
-                        <li>Refrigerant handling docs</li>
-                        <li>Energy efficiency forms</li>
+                        <li>Mechanical installation contracts</li>
+                        <li>HVAC & refrigerant handling docs</li>
+                        <li>Process piping & pipefitting specs</li>
+                        <li>Commissioning & balancing checklists</li>
                     </ul>
-                    <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select HVAC</button>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">Select Mechanical</button>
                 </div>
                 
                 <div class="contractor-type-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="selectContractorType('structural')">
@@ -738,14 +732,132 @@
             localStorage.setItem('contractorType', type);
             const typeNames = {
                 'general': 'General Contractor',
+                'mechanical': 'Mechanical Contractor',
                 'electrical': 'Electrical Contractor',
                 'plumbing': 'Plumbing Contractor',
-                'hvac': 'HVAC Contractor',
                 'structural': 'Structural Steel Contractor'
             };
             alert(`Selected: ${typeNames[type]}\n\nWe'll customize your experience with templates and resources specific to ${typeNames[type]} work.`);
             // Future: Redirect to specialized dashboard or filter products
         }
-    </script>
+    
+        // ----- Geo-aware Hero (recovery 2026-05-14) -----
+        // Detects visitor state via free IP lookup; swaps headline + shows
+        // state-specific compliance callout sourced from
+        // /Users/home/charles/contrpro/files/state-research/<XX>.md.
+        // 16 states currently audited: TN, CA, TX, NY, FL, GA, IL, NC, WA,
+        // OH, VA, PA, MI, NJ, MA, MD. Others get a soft "rolling out" badge.
+        const HERO_STATE_FACTS = {
+            'TN': {stateName:'Tennessee', lastVerified:'2026-05-13',
+                headline:'Tennessee Contractor — built for the way your state actually works.',
+                sub:'Lien filings, retainage escrow, license renewals, sales-tax treatment — every rule you bid against is in our compliance tools and updated as Tennessee changes the law.',
+                calloutHeadline:'New as of Nov 18, 2025: CPA-compiled financials are enough for renewal above $1.5M.',
+                calloutBody:'The TBLC dropped the audit/review requirement for license renewals at higher monetary limits — significant cost relief if you renew this year. We track changes like this so you do not miss a filing deadline or pay for paperwork you do not need.'},
+            'CA': {stateName:'California', lastVerified:'2026-05-13',
+                headline:'California Contractor — three new laws hit this year. We tracked all of them.',
+                sub:'CSLB licensing, 20-Day Notice timing, retention rules, sales-tax treatment of fixtures vs materials — every California-specific rule baked into our compliance tools and dated to the day the law changed.',
+                calloutHeadline:'Effective Jan 1, 2026: private-works retention is capped at 5% by statute (SB 61, Civ. Code §8811).',
+                calloutBody:'Owners previously withheld 10–15% on private projects with no statutory limit — that ends January. Add SB 440 (mandatory 30-day change-order responses, non-waivable right to suspend for nonpayment) and the $500→$1,000 unlicensed-work threshold raised by AB 2622 in 2025. Three major changes in 18 months. Most generic templates still cite the old numbers.'},
+            'TX': {stateName:'Texas', lastVerified:'2026-05-13',
+                headline:'Texas Contractor — four new laws hit in 2025. Plus the Trust Fund trap most templates ignore.',
+                sub:'Monthly pre-lien notice schedules, the Texas Construction Trust Fund Act, opt-out workers\' comp, lump-sum vs separated contract sales tax decisions — every Texas-specific rule with statute cites, dated to the day the law changed.',
+                calloutHeadline:'Trust Fund Act personal criminal liability (Tex. Prop. Code Ch. 162) — every construction payment is a trust fund.',
+                calloutBody:'An LLC manager who diverts $500+ without paying subs first commits a Class A misdemeanor; third-degree felony (2-10 years) if intent to defraud is proven. The corporate veil does NOT shield the officer. Add 2025 changes: SB 929 (weekend/holiday deadlines), SB 947 (Master Plumber 4→2 years post-Journeyman), HB 2960 (voids out-of-state venue clauses), HB 3005 (ends perpetual-audit payment delay on public works). We track every line.'},
+            'NY': {stateName:'New York', lastVerified:'2026-05-14',
+                headline:'New York Contractor — pay-if-paid clauses are VOID here. Are you signing one anyway?',
+                sub:'NY\'s patchwork of municipal licensing, the 8-month lien window, capital-improvement-vs-repair sales tax, Article 3-A trust funds, and the post-2023 retainage cap — every rule with statute citation, current as of today.',
+                calloutHeadline:'Pay-if-paid clauses are VOID in New York (West-Fair Electric, 87 N.Y.2d 148, 1995).',
+                calloutBody:'Out-of-state primes routinely slip pay-if-paid clauses into NY subcontracts. They are not enforceable. As of Nov 17, 2023, NY also caps private commercial retainage at 5% (contracts > $150K, GBL §756-c). Plus Article 3-A treats every construction payment as a statutory trust fund — diverting trust funds is larceny, scaling to a Class B felony (up to 25 years) for diversions over $1M. No corporate-veil protection. The legal stakes in NY are higher than most states; our templates and trackers reflect that.'},
+            'FL': {stateName:'Florida', lastVerified:'2026-05-14',
+                headline:'Florida Contractor — every lien waiver template written before July 2025 is now non-conforming.',
+                sub:'The 45-day Notice to Owner trap, certified vs registered licensing, FICO 660 requirement, 1st-employee workers\' comp threshold, and the post-2023/2025 lien-law overhaul — every rule with statute cite, dated to the day it changed.',
+                calloutHeadline:'SB 658 (eff. July 1, 2025) killed the "substantially similar" lien waiver safe harbor.',
+                calloutBody:'Lien waiver and release forms must now match Fla. Stat. §713.20 templates EXACTLY — recording clerks can reject non-conforming forms. If your template predates July 2025, replace it. Plus SB 346 (2023) flattened public-works retainage to flat 5%, SB 360 (2023) cut construction defect statute of repose from 10 to 7 years, and §713.345 misapplication of construction funds is a FIRST-degree felony at $100K+ (up to 30 years). The 45-day Notice to Owner deadline remains Florida\'s most-litigated lien trap — day 46 is a complete defense.'},
+            'GA': {stateName:'Georgia', lastVerified:'2026-05-14',
+                headline:'Georgia Contractor — an unlicensed contract above $2,500 / $100,000 is UNENFORCEABLE.',
+                sub:'The $2,500 residential and $100,000 commercial license thresholds have real teeth (O.C.G.A. § 43-41-17(b) voids unlicensed contracts entirely). Plus a 30-day Notice to Contractor fuse, a 2-business-day lien-service deadline, and interim waivers that auto-convert. Every rule with statute cite.',
+                calloutHeadline:'O.C.G.A. § 43-41-17(b): unlicensed contracts above threshold are unenforceable — no lawsuit, no lien, no quantum meruit.',
+                calloutBody:'Getting licensed AFTER the work doesn\'t cure prior contracts. Plus: filing a Claim of Lien is only step one — you have 2 BUSINESS DAYS to serve a copy on the owner or the lien is VOID (O.C.G.A. § 44-14-361.1). SB 143 (2021) made interim lien waivers convert to unconditional after 90 days, so a bounced check requires an Affidavit of Nonpayment in superior court — a fresh lien filing is no longer a substitute. Holding a GC license does NOT authorize self-performing electrical, plumbing, HVAC, or low-voltage; each trade needs its own license with a full-time qualifying agent.'},
+            'IL': {stateName:'Illinois', lastVerified:'2026-05-14',
+                headline:'Illinois Contractor — January 2025 changed how you serve sub notices. Your old forms are stale.',
+                sub:'No statewide GC license but trade licenses bind hard. The 4-month vs 2-year lien split, the new courier-friendly service rule, the ABC employee test that voids 1099 arrangements — every rule with statute cite, and a flag where Illinois differs sharply from TX/NY.',
+                calloutHeadline:'Public Act 103-0827 (eff. Jan 1, 2025) — FedEx/UPS/DHL with tracking now valid for the 90-day Subcontractor Notice. Date of MAILING is the legal service date.',
+                calloutBody:'Pre-2025 forms saying "certified mail only" are stale. Plus: 820 ILCS 185 (Employee Classification Act) presumes construction workers are EMPLOYEES — Prong B of the ABC test torpedoes nearly every 1099 sub arrangement (penalties $1K-$2.5K per worker + doubled damages + personal officer liability). And Section 34 demand collapses your foreclosure window from 2 years to 30 days — owners use it routinely.'},
+            'NC': {stateName:'North Carolina', lastVerified:'2026-05-14',
+                headline:'North Carolina Contractor — your monetary cap is PER-PROJECT, not annual. Cross it and the contract is void.',
+                sub:'The NC Lien Agent system\'s 15-day fuse, the per-project monetary cap doctrine (Brady v. Fulghum), the 2017 RPC vs RMI sales-tax split, and the statutory-employer rule that backstops uninsured subs — every rule with statute cite.',
+                calloutHeadline:'Notice to Lien Agent via LiensNC.com — 15 calendar days from first furnishing. Day 16 = lien rights for pre-notice work are FORFEIT.',
+                calloutBody:'NC\'s Lien Agent system applies to every project $30,000+ (§ 44A-11.1). Subs and suppliers MUST serve through LiensNC.com within 15 days of first furnishing or lose lien rights for pre-notice work. The single most-missed deadline in NC practice. Also: NCLBGC monetary caps (Limited $750K / Intermediate $1.5M / Unlimited) are PER-PROJECT not annual — a Limited GC taking a $900K job has a VOID contract under Brady v. Fulghum, with no quantum meruit fallback. And pre-furnishing lien waivers are unenforceable (§ 44A-12.1(b)) despite aggressive subcontract boilerplate from some GCs.'},
+            'WA': {stateName:'Washington', lastVerified:'2026-05-14',
+                headline:'Washington Contractor — your home-state sales-tax playbook does NOT work here. WA taxes labor.',
+                sub:'Washington flips the script: construction labor is a retail sale, B&O tax on gross receipts, monopoly WC system, 14-day lien-service deadline, July 2024 bond doubling. Every rule with statute cite — and a sharp flag where WA differs from the other 48 states.',
+                calloutHeadline:'RCW 82.04.050(2)(b) — Washington taxes the TOTAL contract (labor + materials + markup), not just materials.',
+                calloutBody:'Out-of-state contractors entering WA apply their home-state playbook (contractor as consumer of materials) and get hit with 4-YEAR audit recovery on the full labor-component tax delta. Materials flow through tax-free via reseller permit; sales tax (~8.5-10.6%) is charged TO the customer on the total. Add the B&O gross-receipts tax (0.471% retailing) with NO deductions — that\'s ~9.4% of NET profit for a 5%-margin contractor. Plus: monopoly WC system, bonds DOUBLED July 2024 (HB 1534: $30K general / $15K specialty), 14-day owner-service deadline on liens or you forfeit attorney\'s fees.'},
+            'OH': {stateName:'Ohio', lastVerified:'2026-05-14',
+                headline:'Ohio Contractor — 5 cities = 5 separate registrations. And your out-of-state WC policy doesn\'t work here.',
+                sub:'Ohio\'s municipal-licensing patchwork, BWC monopoly workers\' comp, the 21-day Notice of Furnishing trap, three different lien-affidavit clocks (60/75/120 days), and 2024-2025 statutory changes most templates miss. Every rule with statute cite.',
+                calloutHeadline:'Ohio BWC is a monopoly — Travelers/Hartford/Liberty don\'t write WC here. Your home-state policy does NOT cover Ohio work.',
+                calloutBody:'Out-of-state contractors must enroll separately with the Ohio Bureau of Workers\' Compensation BEFORE first day of work in Ohio. Construction premiums are among the highest WC rates in the US. Plus: the 21-day Notice of Furnishing (ORC § 1311.05) kills more Ohio lien claims than any other deadline — late NOF forfeits lien rights for all work performed more than 21 days before service. HB 50 (eff. Sept 20, 2024) brought every $25K+ residential remodel under HCSSA written-contract rules — pre-2024 informal contracts are now exposed. OCILB electrical contractors need a SEPARATE $120 annual registration as of Jan 1, 2025.'},
+            'VA': {stateName:'Virginia', lastVerified:'2026-05-14',
+                headline:'Virginia Contractor — your Class A/B/C cap is DUAL: per-project AND annual aggregate. Cross either and you\'re unlicensed.',
+                sub:'Virginia\'s dual-threshold license caps, the 90-day-from-end-of-MONTH lien quirk, the 150-day look-back that voids the WHOLE lien, the BPOL gross-receipts trap in every locality, and the 2023 ban on pay-if-paid clauses. Every rule with statute cite.',
+                calloutHeadline:'Class C cap is $10K per project AND $150K annual aggregate. 40 jobs at $5K each = blows the cap = UNLICENSED.',
+                calloutBody:'Va. Code § 54.1-1115 treats over-aggregate work as unlicensed practice — making the contracts UNENFORCEABLE even though no single job crossed the per-project ceiling. Plus: SB 550 (eff. Jan 1, 2023) killed pay-if-paid clauses statewide — primes owe subs in 60 days regardless of owner payment. The 90-day lien deadline counts from the LAST DAY OF THE MONTH (not last day of work), and a 150-DAY LOOK-BACK voids the entire memorandum if any labor was performed more than 150 days before your last day. Long jobs need multiple successive filings. Add the BPOL gross-receipts tax — every locality where you work assesses it separately.'},
+            'PA': {stateName:'Pennsylvania', lastVerified:'2026-05-14',
+                headline:'Pennsylvania Contractor — your 30-50% deposit is illegal under HICPA. Treble damages await.',
+                sub:'Pennsylvania\'s HICPA registration vs written-contract triggers, the 1/3 down-payment cap, CASPA\'s 24% prompt-pay teeth (non-waivable), the 30-day Preliminary Notice + 45-day Act 142 SCND, and the felony-grade HICPA fraud penalties. Every rule with statute cite.',
+                calloutHeadline:'HICPA down-payment cap: 1/3 of contract OR $1,000, whichever is greater. A 30-50% deposit on a residential remodel is ILLEGAL.',
+                calloutBody:'HICPA (73 P.S. § 517) caps residential remodel deposits at 1/3 or $1,000. Industry-standard 50% deposits are violations — and HICPA violations are per-se UTPCPL violations with TREBLE DAMAGES + fee-shifting. HICPA fraud at $2,000+ advance is a 3rd-DEGREE FELONY; if the customer is 60+, it bumps to 2nd-DEGREE FELONY (10 years/$25K). Plus: CASPA prompt-pay = 1% interest + 1% penalty = 24% ANNUALIZED on improper withholdings, plus attorney fees, NON-WAIVABLE since 2018 — the most aggressive prompt-pay statute in the country. The 30-day Preliminary Notice of Intent to Lien is mandatory before filing (no exceptions = no valid lien).'},
+            'MI': {stateName:'Michigan', lastVerified:'2026-05-14',
+                headline:'Michigan Contractor — diverting owner payments is a FELONY here. And your residential threshold is $600.',
+                sub:'Michigan\'s extraordinarily low $600 residential threshold, the 20-day Notice of Furnishing, the Builders Trust Fund Act\'s felony liability, the 1-employee WC trigger, and the 2018 statute recodification most templates miss. Every rule with statute cite.',
+                calloutHeadline:'Michigan Builders Trust Fund Act (MCL 570.151): diverting owner funds before paying subs = FELONY, up to 3 years prison. LLC veil pierced. Pay-if-paid is no defense.',
+                calloutBody:'Every owner payment received is a statutory trust fund. Officers are personally criminally liable for misapplication. Plus: the $600 residential threshold is the LOWEST in the country — a $700 handyman repair requires a Residential Builder license. The 20-day Notice of Furnishing (MCL 570.1109) is one day SHORTER than Ohio\'s 21-day window — multi-state contractors miss the spread. Workers\' comp triggers at 1 EMPLOYEE in construction (not 3), and the statutory-employer doctrine (MCL 418.171) makes the GC directly liable for an uninsured sub\'s injured workers. The 2018 recodification moved electrical/plumbing/mechanical statutes from MCL 338.x to Chapter 339 — old citations are obsolete.'},
+            'NJ': {stateName:'New Jersey', lastVerified:'2026-05-14',
+                headline:'New Jersey Contractor — any tech violation of CRA = AUTOMATIC treble damages. Worst consumer-litigation exposure in the country.',
+                sub:'New Jersey\'s CFA treble-damages trap, the mandatory AAA arbitration before residential liens, the lien fund cap that protects fully-paid owners, the CIICA worker-classification rule, and the public-works registration most contractors miss. Every rule with statute cite.',
+                calloutHeadline:'CFA per se rule: any technical CRA or N.J.A.C. 13:45A-16 violation = MANDATORY 3x damages + attorney fees (Cox v. Sears, Bosland v. Warnock).',
+                calloutBody:'Missing registration number on contract, missing COI, missing start/completion dates, missing right-to-cancel notice → AUTOMATIC Consumer Fraud Act violation = treble damages + fee-shifting. NJ has the worst consumer-litigation exposure of any state we\'ve audited. Plus: RESIDENTIAL liens require a 60-day NUB → 60-day AAA Demand for Arbitration → binding award → 10-day lien filing (out-of-state subs file the way they would in PA/NY and lose every time). Commercial liens are capped to the amount the owner still owes prime (N.J.S.A. 2A:44A-9) — a fully-paid owner is a complete defense. Workers\' comp from the FIRST employee, no threshold. Public Works Contractor Registration is SEPARATE from CRA — required before bidding any NJ public work.'},
+            'MA': {stateName:'Massachusetts', lastVerified:'2026-05-14',
+                headline:'Massachusetts Contractor — you need TWO residential licenses, not one. And Chapter 93A means treble damages on tech violations.',
+                sub:'Massachusetts\'s dual HIC+CSL trap, the Chapter 93A per-se treble damages exposure, the multi-step front-loaded lien process, the use-tax-on-NH-materials gotcha, and the Net-Zero municipality patchwork. Every rule with statute cite.',
+                calloutHeadline:'RESIDENTIAL DUAL LICENSE: HIC (M.G.L. c. 142A) + CSL (c. 143 § 95). Holding only one = exposed under both regimes simultaneously.',
+                calloutBody:'HIC = consumer protection (treble damages under Chapter 93A). CSL = building code (criminal fines/jail under c. 143 § 94). Independent renewal calendars. Plus: any contractor who suggests the OWNER pull the permit to evade CSL = AUTOMATIC 93A violation + forfeits Guaranty Fund eligibility. The lien process is front-loaded (Notice of Contract 90 days + Statement of Account 120 days + enforcement suit 90 days after) — strict construction, no equitable tolling. Use tax on NH-bought materials is a known DOR enforcement priority. Cambridge, Brookline, Newton: new fossil-fuel hookups PROHIBITED — natural gas furnace contracts unenforceable in those municipalities.'},
+            'MD': {stateName:'Maryland', lastVerified:'2026-05-14',
+                headline:'Maryland Contractor — your lien is a court PETITION here, not a recording. And unlicensed contracts are VOID.',
+                sub:'Maryland\'s judicial-lien procedure, the Berenter doctrine that voids unlicensed contracts entirely, the 33⅓% deposit cap, the 18%/yr prompt-pay interest, and the Workplace Fraud Act ABC test. Every rule with statute cite.',
+                calloutHeadline:'Berenter doctrine: an unlicensed HIC contract is VOID — no lawsuit for unpaid balances, no quantum meruit, AND the homeowner gets to keep the work AND recover their deposit.',
+                calloutBody:'Plus: mechanics\' liens in Maryland are JUDICIAL, not recorded — you petition the circuit court (Md. Real Prop. § 9-105, Md. Rule 12-302). Show-cause hearing within ~15 days; lien exists only by court order. 180-day petition deadline + 120-day subcontractor Notice of Intent to owner. 33⅓% deposit cap on home-improvement contracts (Bus. Reg. § 8-501(c)). MHIC Guaranty Fund pays consumers $30K/claim, $200K aggregate per contractor — payment triggers immediate license suspension until reimbursed. Workplace Fraud Act ABC test (most subs fail prong C) means stop-work orders + treble back wages. WC mandatory from the FIRST employee.'},
+        };
+
+        async function applyGeoHero() {
+            try {
+                const ctrl = new AbortController();
+                const t = setTimeout(() => ctrl.abort(), 1500);
+                const r = await fetch('https://ipapi.co/json/', { signal: ctrl.signal });
+                clearTimeout(t);
+                if (!r.ok) return;
+                const d = await r.json();
+                if (d && d.country_code === 'US' && d.region_code) {
+                    const facts = HERO_STATE_FACTS[d.region_code];
+                    if (facts) {
+                        document.getElementById('heroEyebrow').style.display = 'inline-block';
+                        document.getElementById('heroEyebrowText').textContent =
+                            `📍 ${facts.stateName} contractor • current as of ${facts.lastVerified}`;
+                        document.getElementById('heroHeadline').textContent = facts.headline;
+                        document.getElementById('heroSubline').textContent = facts.sub;
+                        document.getElementById('heroCalloutHeadline').textContent = facts.calloutHeadline;
+                        document.getElementById('heroCalloutBody').textContent = facts.calloutBody;
+                        document.getElementById('heroCallout').style.display = 'block';
+                    } else if (d.region) {
+                        document.getElementById('heroEyebrow').style.display = 'inline-block';
+                        document.getElementById('heroEyebrowText').textContent =
+                            `📍 ${d.region} contractor — state-specific tools rolling out`;
+                    }
+                }
+            } catch (e) { /* silent */ }
+        }
+        applyGeoHero();
+</script>
 </body>
 </html><!-- Deployed: Fri Mar  6 20:06:22 UTC 2026 -->
