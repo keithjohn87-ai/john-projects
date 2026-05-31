@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Your Files - ContractorPro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ContractorPro" class="logo-img" style="height: 40px; width: auto;">
+            </a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-ghost">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Download Content -->
+    <div class="download-page" style="min-height: 100vh; padding: 2rem; padding-top: 100px; max-width: 900px; margin: 0 auto;">
+        <div id="downloadContainer">
+            <div class="loading" style="text-align: center; padding: 4rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">⏳</div>
+                <h2>Loading your download...</h2>
+                <p style="color: #6b7280; margin-top: 1rem;">One moment.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ContrPro download backend — runs on the Mac Studio behind a Cloudflare
+        // Tunnel. The webhook server here verifies the HMAC-signed token and
+        // serves the file (or a multi-file index page for bundle tiers).
+        //
+        // The token came in via the email the customer received after paying.
+        // Tokens expire 72h after issue. Server enforces both the signature
+        // and the expiry.
+        //
+        // WEBHOOK_BASE points at the ContrPro webhook+delivery backend, now
+        // hosted on Fly.io (always-on, survives Mac downtime). Was previously a
+        // Cloudflare/Tailscale tunnel terminating on the Mac Studio.
+        const WEBHOOK_BASE = 'https://contrpro-webhook.fly.dev';
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        const container = document.getElementById('downloadContainer');
+
+        if (!token) {
+            container.innerHTML = `
+                <div class="error-card" style="text-align: center; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">❌</div>
+                    <h1 style="color: #1e3a5f; margin-bottom: 0.5rem;">No Download Link</h1>
+                    <p style="color: #6b7280; margin-bottom: 2rem;">This page needs a download token from your purchase email.</p>
+                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                </div>
+            `;
+        } else {
+            // Hand off to the backend — it verifies the signature, expiry, and
+            // single-use semantics, then renders the file list (or serves the
+            // single file directly for the SBA-only tier).
+            window.location.href = `${WEBHOOK_BASE}/download/${encodeURIComponent(token)}`;
+        }
+    </script>
+</body>
+</html>

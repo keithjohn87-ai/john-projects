@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanics Lien - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="info-page" style="padding-top: 100px; max-width: 800px; margin: 0 auto; padding-bottom: 4rem;">
+        <div class="container">
+            <a href="javascript:history.back()" class="btn btn-secondary" style="margin-bottom: 1.5rem;">← Back</a>
+            
+            <h1>⚖️ Mechanics Lien</h1>
+            <p class="subtitle" style="color: #6b7280; font-size: 1.125rem; margin-top: 0.5rem;">Your most powerful tool for getting paid.</p>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                <h2>What is a Mechanics Lien?</h2>
+                <p style="margin-top: 1rem; line-height: 1.8;">A Mechanics Lien (also called a "Construction Lien" or "Contractor's Lien") is a legal claim against a property for unpaid construction work, materials, or services. It creates a security interest in the property title, making it difficult for the owner to sell or refinance until the debt is paid.</p>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Why It's Powerful</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Secures your debt:</strong> Attaches to the property itself, not just the owner's bank account</li>
+                    <li><strong>Priority position:</strong> Often takes priority over other debts and mortgages</li>
+                    <li><strong>Forces payment:</strong> Property owners can't sell or refinance with a lien on the title</li>
+                    <li><strong>Legal leverage:</strong> Often prompts payment without going to court</li>
+                </ul>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Who Can File</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li>General contractors</li>
+                    <li>Subcontractors</li>
+                    <li>Material suppliers</li>
+                    <li>Equipment rental companies</li>
+                    <li>Laborers</li>
+                    <li>Design professionals (architects, engineers in some states)</li>
+                </ul>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>When to File</h2>
+                <p style="margin-top: 1rem; line-height: 1.8;">Deadlines vary dramatically by state:</p>
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>30-90 days</strong> after last furnishing labor/materials (most common)</li>
+                    <li><strong>Within X days of project completion</strong> (some states)</li>
+                    <li><strong>Before specific events</strong> — like owner occupancy or final inspection</li>
+                </ul>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: #fee2e2; border-radius: 8px; border-left: 4px solid #ef4444;">
+                    <strong>🚨 Critical:</strong> Missing your state's filing deadline means losing your lien rights permanently. Check your state's specific deadline.
+                </div>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Filing Process</h2>
+                <ol style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Prepare the lien document</strong> — must include specific information by state law</li>
+                    <li><strong>File with the county recorder</strong> — where the property is located</li>
+                    <li><strong>Pay filing fees</strong> — varies by county ($25-$100+)</li>
+                    <li><strong>Serve notice</strong> — most states require notifying the property owner</li>
+                    <li><strong>Record proof of service</strong> — document that notice was given</li>
+                </ol>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>After Filing</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Foreclosure deadline:</strong> You must file a lawsuit to foreclose on the lien within a specific timeframe (6 months to 2 years, depending on state)</li>
+                    <li><strong>Settlement negotiations:</strong> Many liens are resolved without going to court</li>
+                    <li><strong>Lien release:</strong> Once paid, you must file a release of lien</li>
+                </ul>
+            </div>
+            
+            <div class="cta-section" style="background: #1e3a5f; color: white; padding: 2rem; border-radius: 12px; margin-top: 2rem; text-align: center;">
+                <h2 style="color: white;">Get State-Specific Lien Forms</h2>
+                <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem;">Our forms include state-specific deadlines and filing requirements.</p>
+                <a href="../index.html#pricing" class="btn btn-primary" style="margin-top: 1rem; background: white; color: #1e3a5f;">View Packages</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

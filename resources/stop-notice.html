@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Notice - ContractorPro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">ContractorPro</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#features">Features</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../index.html#states">State Resources</a>
+                <a href="../index.html#sba">SBA Guide</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="showAccountModal()">Account</button>
+                <button class="btn btn-primary cart-btn" onclick="showCart()">
+                    Cart <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="info-page" style="padding-top: 100px; max-width: 800px; margin: 0 auto; padding-bottom: 4rem;">
+        <div class="container">
+            <a href="javascript:history.back()" class="btn btn-secondary" style="margin-bottom: 1.5rem;">← Back</a>
+            
+            <h1>🛑 Stop Notice</h1>
+            <p class="subtitle" style="color: #6b7280; font-size: 1.125rem; margin-top: 0.5rem;">Freeze construction funds before they're gone.</p>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                <h2>What is a Stop Notice?</h2>
+                <p style="margin-top: 1rem; line-height: 1.8;">A Stop Notice (also called a "Notice to Withhold Funds") is a legal document that freezes construction funds held by the property owner or lender. Unlike a mechanics lien which attaches to the property, a stop notice attaches to the money itself — preventing the owner or lender from releasing funds to the general contractor until your claim is resolved.</p>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Where It's Available</h2>
+                <p style="margin-top: 1rem; line-height: 1.8;">Stop notices are <strong>not available in all states</strong>. They're most commonly used in:</p>
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem; line-height: 2;">
+                    <li>California</li>
+                    <li>Alaska</li>
+                    <li>Arizona</li>
+                    <li>Washington</li>
+                    <li>Nevada</li>
+                    <li>Some other western states</li>
+                </ul>
+                <p style="margin-top: 1rem;">In states without stop notice laws, you must rely on mechanics liens or bond claims.</p>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Why Use a Stop Notice?</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>Freezes funds:</strong> Prevents money from being paid out to others</li>
+                    <li><strong>Faster than liens:</strong> Can be more immediate than filing a mechanics lien</li>
+                    <li><strong>Public projects:</strong> Often the only remedy on public jobs (where liens aren't allowed)</li>
+                    <li><strong>Pressure:</strong> Creates immediate pressure to resolve payment issues</li>
+                </ul>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Who Can File</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li>Subcontractors</li>
+                    <li>Material suppliers</li>
+                    <li>Laborers</li>
+                    <li>Anyone who furnished labor or materials to the project</li>
+                </ul>
+                <p style="margin-top: 1rem;">Note: General contractors typically <strong>cannot</strong> file stop notices against the owner — they must use mechanics liens.</p>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>When to File</h2>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li>When payment is overdue and you suspect funds are running low</li>
+                    <li>Before the owner makes final payment to the GC</li>
+                    <li>Within your state's deadline (varies by state)</li>
+                    <li>As soon as you realize there may be a payment problem</li>
+                </ul>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>How It Works</h2>
+                <ol style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                    <li><strong>File the stop notice</strong> — with the property owner, lender, or public entity</li>
+                    <li><strong>Funds are frozen</strong> — the recipient must withhold enough to cover your claim</li>
+                    <li><strong>Owner/GC responds</strong> — they must either pay you or dispute the claim</li>
+                    <li><strong>Resolution</strong> — either payment is released to you, or the dispute goes to court</li>
+                </ol>
+            </div>
+            
+            <div class="info-section" style="background: #f9fafb; padding: 2rem; border-radius: 12px; margin-top: 1.5rem;">
+                <h2>Stop Notice vs. Mechanics Lien</h2>
+                <table style="width: 100%; margin-top: 1rem; border-collapse: collapse;">
+                    <tr style="background: #e5e7eb;">
+                        <th style="padding: 0.75rem; text-align: left;">Feature</th>
+                        <th style="padding: 0.75rem; text-align: left;">Stop Notice</th>
+                        <th style="padding: 0.75rem; text-align: left;">Mechanics Lien</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">What it attaches to</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Construction funds</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Property itself</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Available on public jobs</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Yes</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">No (use bond claim)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">GC can file</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">No</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Yes</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem;">Available in all states</td>
+                        <td style="padding: 0.75rem;">No (limited states)</td>
+                        <td style="padding: 0.75rem;">Yes (all states)</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="cta-section" style="background: #1e3a5f; color: white; padding: 2rem; border-radius: 12px; margin-top: 2rem; text-align: center;">
+                <h2 style="color: white;">Get State-Specific Stop Notice Forms</h2>
+                <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem;">Available for states that recognize stop notices.</p>
+                <a href="../index.html#pricing" class="btn btn-primary" style="margin-top: 1rem; background: white; color: #1e3a5f;">View Packages</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
